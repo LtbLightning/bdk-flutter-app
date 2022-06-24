@@ -13,6 +13,9 @@ class Send extends StatefulWidget {
   State<Send> createState() => _SendState();
 }
 
+// 17QWYL4KxUNk5MAwAMCtMfjGE5UpQzw9ZF
+//ssl://electrum.blockstream.info:60002
+//         "pole account coconut skull draw more coyote sure neutral board large hello"
 class _SendState extends State<Send> {
   final _formKey = GlobalKey<FormState>();
   final  _amount = TextEditingController();
@@ -217,7 +220,7 @@ class _SendState extends State<Send> {
                                     ? const CircularProgressIndicator(
                                   value: null,
                                 )
-                                    : Text("Broadcast Transaction",
+                                    : Text("Send & Broadcast Transaction",
                                     style: GoogleFonts.montserrat(
                                         color: Colors.white,
                                         fontSize: 14,

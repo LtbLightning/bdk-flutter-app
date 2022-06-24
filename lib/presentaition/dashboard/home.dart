@@ -98,6 +98,16 @@ class _HomeState extends State<Home> {
                                 fontWeight: FontWeight.w700))
                       ]),
                   const SizedBox(height: 30),
+                  const Divider(),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Text("Pending Transactions",
+                          style: GoogleFonts.montserrat(
+                              fontSize: 12,
+                              color:Colors.black.withOpacity(.6),
+                              fontWeight: FontWeight.w400))
+                  ],),
                   const TransactionList()
                 ],),),
           ),

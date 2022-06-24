@@ -20,7 +20,7 @@ class _TransactionListState extends State<TransactionList> {
         return Center(
           child: state.isSubmitting? const CircularProgressIndicator(value: null, color: Colors.blue,):Container(
             padding: const EdgeInsets.only(top: 50),
-            child:  ( state.transactions!.isNotEmpty|| state.transactions!= null)? ListView.builder(
+            child:  ( state.transactions!.isNotEmpty && state.transactions!=null)? ListView.builder(
                 shrinkWrap: true,
                 reverse: true,
                 physics: const NeverScrollableScrollPhysics(),
@@ -34,7 +34,7 @@ class _TransactionListState extends State<TransactionList> {
                       received: state.transactions![index].received,)):
             Text('No Confirmed Transactions Found',
                 style: GoogleFonts.montserrat(
-                    fontSize: 18,
+                    fontSize: 15,
                     color:Colors.black.withOpacity(.8),
                     height: 2.2,
                     fontWeight: FontWeight.w600)),

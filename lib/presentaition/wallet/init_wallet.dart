@@ -48,7 +48,7 @@ class InitWallet extends StatelessWidget {
                     color: Colors.black.withOpacity(.9)
                 )),
             const SizedBox(height: 15),
-            Text("Built using Flutter version of Bitcoin Development Kit",
+            Text("Built using Flutter version of \n Bitcoin Development Kit",
                 textAlign: TextAlign.center,
                 style: GoogleFonts.montserrat(
                     decoration: TextDecoration.none,
