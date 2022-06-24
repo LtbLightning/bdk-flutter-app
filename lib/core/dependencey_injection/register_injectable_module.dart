@@ -1,3 +1,4 @@
+import 'package:bdk_flutter/bdk_flutter.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:injectable/injectable.dart';
 
@@ -5,7 +6,7 @@ import 'package:injectable/injectable.dart';
 abstract class RegisterModule {
   @preResolve
   Future<Connectivity> get connectivity async => Connectivity();
-// Future<GoogleSignIn> get googleSignIn async => GoogleSignIn();
+  BdkWallet get bdkWallet => BdkWallet();
 // @preResolve
 // Future<FirebaseAuth> get firebaseAuth async=> FirebaseAuth.instance;
 

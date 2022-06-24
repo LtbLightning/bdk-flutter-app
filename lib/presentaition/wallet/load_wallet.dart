@@ -1,34 +1,56 @@
+import 'package:bdk_wallet/application/wallet/wallet_bloc.dart';
+import 'package:bdk_wallet/domain/core/value_objects/value_objects.dart';
+import 'package:bdk_wallet/presentaition/core/routes/routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-class LoadWallet extends StatelessWidget {
-  const LoadWallet({Key? key}) : super(key: key);
+class LoadBdkWallet extends StatelessWidget {
+  const LoadBdkWallet({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      resizeToAvoidBottomInset: true,
-      backgroundColor: Colors.white,
-      appBar: appBar() as PreferredSizeWidget?,
-      body: const Body(),
+    return BlocConsumer<WalletBloc, WalletState>(
+      listener: (context, state) {
+        state.walletFailureOrSuccessOption.fold(() => null, (a) =>
+            a.fold((l) {
+              final snackBar = SnackBar(
+                content: Text(l.toString() ,style: const TextStyle(fontSize: 13, color: Colors.white),),
+
+              );
+              ScaffoldMessenger.of(context).showSnackBar(snackBar);
+            },
+                    (_) => Navigator.of(context)
+                    .pushReplacementNamed(Routes.wrapper)));
+      },
+      listenWhen: (p,q)=> p.isSubmitting!= q.isSubmitting,
+      builder: (context, state) {
+        return Scaffold(
+          resizeToAvoidBottomInset: true,
+          backgroundColor: Colors.white,
+          appBar: appBar() as PreferredSizeWidget?,
+          body: const Body(),
+        );
+      },
     );
   }
 
-  Widget appBar() => AppBar(
-    automaticallyImplyLeading: true,
-    centerTitle: true,
-    elevation: 0,
-    backgroundColor: Colors.white,
-    title: Text("Load Wallet",
-        textAlign: TextAlign.center,
-        style: TextStyle(
-
-            decoration: TextDecoration.none,
-            fontSize: 14,
-            color: Colors.black.withOpacity(.8)
-        )),
-  );
+  Widget appBar() =>
+      AppBar(
+        automaticallyImplyLeading: true,
+        centerTitle: true,
+        elevation: 0,
+        backgroundColor: Colors.white,
+        title: Text("Load Wallet",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+                decoration: TextDecoration.none,
+                fontSize: 14,
+                color: Colors.black.withOpacity(.8)
+            )),
+      );
 }
+
 class Body extends StatelessWidget {
   const Body({
     Key? key,
@@ -80,25 +102,17 @@ class SignInForm extends StatefulWidget {
   }
 }
 
-enum cState { Uninitialized, Authenticating, Authenticated }
 
 class SignInFormState extends State<SignInForm> {
-  cState currentState = cState.Uninitialized;
+
   final _formKey = GlobalKey<FormState>();
-  TextEditingController controllerPassword = TextEditingController();
-  TextEditingController controllerEmail = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
-
-    var size = MediaQuery.of(context).size;
-    _onPressed() async {
-      // setState(() {
-      //   currentState = cState.Authenticating;
-      // });
-      setState(() {
-        currentState = cState.Authenticated;
-      });
-      }
+    final walletBloc = context.read<WalletBloc>();
+    var size = MediaQuery
+        .of(context)
+        .size;
 
     return Form(
         key: _formKey,
@@ -106,13 +120,18 @@ class SignInFormState extends State<SignInForm> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               TextFormField(
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter your mnemonic';
-                  }
-                  return null;
-                },
-                controller: controllerEmail,
+                onChanged: (value) =>
+                    walletBloc.add(
+                        WalletEvent.mnemonicChanged(Mnemonic(value))),
+                validator: (_) =>
+                    walletBloc.state.walletEntity?.mnemonic?.
+                    value.fold(
+                            (f) =>
+                            f.maybeMap(
+                                invalidMnemonic: (_) => 'Please enter a '
+                                    'valid mnemonic seed',
+                                orElse: () => null),
+                            (s) => null),
                 style: const TextStyle(
                     color: Colors.black,
                     fontSize: 14,
@@ -122,25 +141,21 @@ class SignInFormState extends State<SignInForm> {
                   labelText: "Mnemonic",
                   errorStyle: const TextStyle(
                       color: Colors.red,
-                      fontSize: 12,
-                      fontWeight: FontWeight.w700),
+                      fontSize: 11,
+                      fontWeight: FontWeight.w400),
                   hintText: "Enter your Mnemonic",
                   labelStyle: const TextStyle(
-                      color: Colors.orange,
+                      color: Colors.blue,
                       fontSize: 13,
                       fontWeight: FontWeight.w500),
                   hintStyle: TextStyle(
                       decoration: TextDecoration.none,
-                      fontSize: 11,
+                      fontSize: 12,
                       fontWeight: FontWeight.w400,
                       color: Colors.black.withOpacity(.4)),
                   floatingLabelBehavior: FloatingLabelBehavior.always,
-                  suffixIcon: const Padding(
-                      padding: EdgeInsets.fromLTRB(0, 20, 20, 20),
-                      child: Icon(
-
-                        CupertinoIcons.doc_text_fill,
-                        color: Colors.orange,)
+                  suffixIcon: const Icon(
+                    CupertinoIcons.arrow_2_circlepath,
                   ),
                 ),
               ),
@@ -149,72 +164,94 @@ class SignInFormState extends State<SignInForm> {
                 height: 10,
               ),
               TextFormField(
-                validator: (value) {
-
-                },
-                controller: controllerEmail,
-                style: const TextStyle(
-                    color: Colors.black,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w500),
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  labelText: "Password",
-                  errorStyle: const TextStyle(
-                      color: Colors.red,
-                      fontSize: 12,
-                      fontWeight: FontWeight.w700),
-                  hintText: "Enter your Password (Optional)",
-                  labelStyle: const TextStyle(
-                      color: Colors.orange,
-                      fontSize: 13,
+                  onChanged: (value) =>
+                      walletBloc
+                          .add(WalletEvent.passwordChanged(Password(value))),
+                  validator: (_) => walletBloc.state.walletEntity?.password?.value.fold(
+                          (f) =>
+                          f.maybeMap(
+                              invalidPassword: (_) => 'Please enter a '
+                                  'valid Password',
+                              orElse: () => null),
+                          (s) => null),
+                  style: const TextStyle(
+                      color: Colors.black,
+                      fontSize: 14,
                       fontWeight: FontWeight.w500),
-                  hintStyle: TextStyle(
-                      decoration: TextDecoration.none,
-                      fontSize: 11,
-                      fontWeight: FontWeight.w400,
-                      color: Colors.black.withOpacity(.4)),
-                  floatingLabelBehavior: FloatingLabelBehavior.always,
-                  suffixIcon: const Padding(
-                      padding: EdgeInsets.fromLTRB(0, 20, 20, 20),
-                      child: Icon(
-                          CupertinoIcons.eye_slash_fill,
-                        color: Colors.orange,)
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                    labelText: "Password",
+                    errorStyle: const TextStyle(
+                        color: Colors.red,
+                        fontSize: 11,
+                        fontWeight: FontWeight.w400),
+                    hintText: "Enter your Password",
+                    labelStyle: const TextStyle(
+                        color: Colors.blue,
+                        fontSize: 13,
+                        fontWeight: FontWeight.w500),
+                    hintStyle: TextStyle(
+                        decoration: TextDecoration.none,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.black.withOpacity(.4)),
+                    floatingLabelBehavior: FloatingLabelBehavior.always,
+                    suffixIcon: const Icon(
+                      CupertinoIcons.lock,
+                    ),
+                  )),
+              const Divider(),
+              const SizedBox(
+                height: 10,
+              ),
+              GestureDetector(
+                onTap: () {
+                  (walletBloc.state.walletEntity!.mnemonic!.isValid()
+                      && walletBloc.state.walletEntity!.password!.isValid()
+                      && walletBloc.state.walletEntity!.blockChainUrl!.isValid())?
+                  walletBloc.
+                  add(
+                      const WalletEvent.loadWallet())
+                      :
+                  ScaffoldMessenger.of(context)
+                      .showSnackBar(SnackBar(
+                    content: Text(
+                        'All fields should be valid',
+                        style: Theme
+                            .of(context)
+                            .textTheme
+                            .bodyText1!
+                            .copyWith(
+                          color: Colors.white,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
+                        )),));
+                },
+                child: Container(
+                  alignment: Alignment.center,
+                  width: walletBloc.state.isSubmitting ? 60 : size.width,
+                  padding: EdgeInsets.symmetric(
+                      vertical: walletBloc.state.isSubmitting ? 10 : 20),
+                  decoration: BoxDecoration(
+                    borderRadius: walletBloc.state.isSubmitting
+                        ? BorderRadius.circular(60)
+                        : BorderRadius.circular(10),
+                    color: Colors.black,
                   ),
+                  child: walletBloc.state.isSubmitting
+                      ? const CircularProgressIndicator(
+                    value: null,
+                  )
+                      : const Text("Load Wallet",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w700)),
                 ),
               ),
-              const Divider(),
-              const SizedBox(height: 10),
-              CupertinoButton(
-     color: CupertinoColors.black,
-                onPressed: () {
-                  _onPressed();
-                },
-                child:  progressButton()),
 
             ]));
-   }
-
-
-
-
-
-  progressButton() {
-    if (currentState == cState.Uninitialized) {
-      return const Text("Load Wallet", style: TextStyle(
-          color: Colors.white,
-          fontSize: 14,
-          fontWeight: FontWeight.w500));
-    } else if (currentState == cState.Authenticating) {
-      print(currentState);
-      return const CircularProgressIndicator(
-        value: null,
-        valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-        strokeWidth: 4.0,
-      );
-    } else {
-      return const Icon(CupertinoIcons.check_mark, color: CupertinoColors.white);
-    }
   }
+
 }
 

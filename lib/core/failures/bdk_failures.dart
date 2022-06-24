@@ -9,5 +9,6 @@ class BdkFailure<T> with _$BdkFailure<T> {
   const factory BdkFailure.invalidString() = InvalidString<T>;
   const factory BdkFailure.invalidPassword() = InvalidPassword<T>;
   const factory BdkFailure.invalidEmail() = InvalidEmail<T>;
+  const factory BdkFailure.invalidBlockchainUrl() = InvalidBlockchainUrl<T>;
 
 }

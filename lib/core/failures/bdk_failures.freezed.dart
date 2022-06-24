@@ -24,6 +24,7 @@ mixin _$BdkFailure<T> {
     required TResult Function() invalidString,
     required TResult Function() invalidPassword,
     required TResult Function() invalidEmail,
+    required TResult Function() invalidBlockchainUrl,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -34,6 +35,7 @@ mixin _$BdkFailure<T> {
     TResult Function()? invalidString,
     TResult Function()? invalidPassword,
     TResult Function()? invalidEmail,
+    TResult Function()? invalidBlockchainUrl,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -44,6 +46,7 @@ mixin _$BdkFailure<T> {
     TResult Function()? invalidString,
     TResult Function()? invalidPassword,
     TResult Function()? invalidEmail,
+    TResult Function()? invalidBlockchainUrl,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -55,6 +58,8 @@ mixin _$BdkFailure<T> {
     required TResult Function(InvalidString<T> value) invalidString,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(InvalidBlockchainUrl<T> value)
+        invalidBlockchainUrl,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -65,6 +70,7 @@ mixin _$BdkFailure<T> {
     TResult Function(InvalidString<T> value)? invalidString,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidBlockchainUrl<T> value)? invalidBlockchainUrl,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -75,6 +81,7 @@ mixin _$BdkFailure<T> {
     TResult Function(InvalidString<T> value)? invalidString,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidBlockchainUrl<T> value)? invalidBlockchainUrl,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -144,6 +151,7 @@ class _$ServerError<T> implements ServerError<T> {
     required TResult Function() invalidString,
     required TResult Function() invalidPassword,
     required TResult Function() invalidEmail,
+    required TResult Function() invalidBlockchainUrl,
   }) {
     return serverError();
   }
@@ -157,6 +165,7 @@ class _$ServerError<T> implements ServerError<T> {
     TResult Function()? invalidString,
     TResult Function()? invalidPassword,
     TResult Function()? invalidEmail,
+    TResult Function()? invalidBlockchainUrl,
   }) {
     return serverError?.call();
   }
@@ -170,6 +179,7 @@ class _$ServerError<T> implements ServerError<T> {
     TResult Function()? invalidString,
     TResult Function()? invalidPassword,
     TResult Function()? invalidEmail,
+    TResult Function()? invalidBlockchainUrl,
     required TResult orElse(),
   }) {
     if (serverError != null) {
@@ -187,6 +197,8 @@ class _$ServerError<T> implements ServerError<T> {
     required TResult Function(InvalidString<T> value) invalidString,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(InvalidBlockchainUrl<T> value)
+        invalidBlockchainUrl,
   }) {
     return serverError(this);
   }
@@ -200,6 +212,7 @@ class _$ServerError<T> implements ServerError<T> {
     TResult Function(InvalidString<T> value)? invalidString,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidBlockchainUrl<T> value)? invalidBlockchainUrl,
   }) {
     return serverError?.call(this);
   }
@@ -213,6 +226,7 @@ class _$ServerError<T> implements ServerError<T> {
     TResult Function(InvalidString<T> value)? invalidString,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidBlockchainUrl<T> value)? invalidBlockchainUrl,
     required TResult orElse(),
   }) {
     if (serverError != null) {
@@ -273,6 +287,7 @@ class _$Unexpected<T> implements Unexpected<T> {
     required TResult Function() invalidString,
     required TResult Function() invalidPassword,
     required TResult Function() invalidEmail,
+    required TResult Function() invalidBlockchainUrl,
   }) {
     return unexpected();
   }
@@ -286,6 +301,7 @@ class _$Unexpected<T> implements Unexpected<T> {
     TResult Function()? invalidString,
     TResult Function()? invalidPassword,
     TResult Function()? invalidEmail,
+    TResult Function()? invalidBlockchainUrl,
   }) {
     return unexpected?.call();
   }
@@ -299,6 +315,7 @@ class _$Unexpected<T> implements Unexpected<T> {
     TResult Function()? invalidString,
     TResult Function()? invalidPassword,
     TResult Function()? invalidEmail,
+    TResult Function()? invalidBlockchainUrl,
     required TResult orElse(),
   }) {
     if (unexpected != null) {
@@ -316,6 +333,8 @@ class _$Unexpected<T> implements Unexpected<T> {
     required TResult Function(InvalidString<T> value) invalidString,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(InvalidBlockchainUrl<T> value)
+        invalidBlockchainUrl,
   }) {
     return unexpected(this);
   }
@@ -329,6 +348,7 @@ class _$Unexpected<T> implements Unexpected<T> {
     TResult Function(InvalidString<T> value)? invalidString,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidBlockchainUrl<T> value)? invalidBlockchainUrl,
   }) {
     return unexpected?.call(this);
   }
@@ -342,6 +362,7 @@ class _$Unexpected<T> implements Unexpected<T> {
     TResult Function(InvalidString<T> value)? invalidString,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidBlockchainUrl<T> value)? invalidBlockchainUrl,
     required TResult orElse(),
   }) {
     if (unexpected != null) {
@@ -402,6 +423,7 @@ class _$InvalidMnemonic<T> implements InvalidMnemonic<T> {
     required TResult Function() invalidString,
     required TResult Function() invalidPassword,
     required TResult Function() invalidEmail,
+    required TResult Function() invalidBlockchainUrl,
   }) {
     return invalidMnemonic();
   }
@@ -415,6 +437,7 @@ class _$InvalidMnemonic<T> implements InvalidMnemonic<T> {
     TResult Function()? invalidString,
     TResult Function()? invalidPassword,
     TResult Function()? invalidEmail,
+    TResult Function()? invalidBlockchainUrl,
   }) {
     return invalidMnemonic?.call();
   }
@@ -428,6 +451,7 @@ class _$InvalidMnemonic<T> implements InvalidMnemonic<T> {
     TResult Function()? invalidString,
     TResult Function()? invalidPassword,
     TResult Function()? invalidEmail,
+    TResult Function()? invalidBlockchainUrl,
     required TResult orElse(),
   }) {
     if (invalidMnemonic != null) {
@@ -445,6 +469,8 @@ class _$InvalidMnemonic<T> implements InvalidMnemonic<T> {
     required TResult Function(InvalidString<T> value) invalidString,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(InvalidBlockchainUrl<T> value)
+        invalidBlockchainUrl,
   }) {
     return invalidMnemonic(this);
   }
@@ -458,6 +484,7 @@ class _$InvalidMnemonic<T> implements InvalidMnemonic<T> {
     TResult Function(InvalidString<T> value)? invalidString,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidBlockchainUrl<T> value)? invalidBlockchainUrl,
   }) {
     return invalidMnemonic?.call(this);
   }
@@ -471,6 +498,7 @@ class _$InvalidMnemonic<T> implements InvalidMnemonic<T> {
     TResult Function(InvalidString<T> value)? invalidString,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidBlockchainUrl<T> value)? invalidBlockchainUrl,
     required TResult orElse(),
   }) {
     if (invalidMnemonic != null) {
@@ -531,6 +559,7 @@ class _$InvalidString<T> implements InvalidString<T> {
     required TResult Function() invalidString,
     required TResult Function() invalidPassword,
     required TResult Function() invalidEmail,
+    required TResult Function() invalidBlockchainUrl,
   }) {
     return invalidString();
   }
@@ -544,6 +573,7 @@ class _$InvalidString<T> implements InvalidString<T> {
     TResult Function()? invalidString,
     TResult Function()? invalidPassword,
     TResult Function()? invalidEmail,
+    TResult Function()? invalidBlockchainUrl,
   }) {
     return invalidString?.call();
   }
@@ -557,6 +587,7 @@ class _$InvalidString<T> implements InvalidString<T> {
     TResult Function()? invalidString,
     TResult Function()? invalidPassword,
     TResult Function()? invalidEmail,
+    TResult Function()? invalidBlockchainUrl,
     required TResult orElse(),
   }) {
     if (invalidString != null) {
@@ -574,6 +605,8 @@ class _$InvalidString<T> implements InvalidString<T> {
     required TResult Function(InvalidString<T> value) invalidString,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(InvalidBlockchainUrl<T> value)
+        invalidBlockchainUrl,
   }) {
     return invalidString(this);
   }
@@ -587,6 +620,7 @@ class _$InvalidString<T> implements InvalidString<T> {
     TResult Function(InvalidString<T> value)? invalidString,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidBlockchainUrl<T> value)? invalidBlockchainUrl,
   }) {
     return invalidString?.call(this);
   }
@@ -600,6 +634,7 @@ class _$InvalidString<T> implements InvalidString<T> {
     TResult Function(InvalidString<T> value)? invalidString,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidBlockchainUrl<T> value)? invalidBlockchainUrl,
     required TResult orElse(),
   }) {
     if (invalidString != null) {
@@ -660,6 +695,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     required TResult Function() invalidString,
     required TResult Function() invalidPassword,
     required TResult Function() invalidEmail,
+    required TResult Function() invalidBlockchainUrl,
   }) {
     return invalidPassword();
   }
@@ -673,6 +709,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     TResult Function()? invalidString,
     TResult Function()? invalidPassword,
     TResult Function()? invalidEmail,
+    TResult Function()? invalidBlockchainUrl,
   }) {
     return invalidPassword?.call();
   }
@@ -686,6 +723,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     TResult Function()? invalidString,
     TResult Function()? invalidPassword,
     TResult Function()? invalidEmail,
+    TResult Function()? invalidBlockchainUrl,
     required TResult orElse(),
   }) {
     if (invalidPassword != null) {
@@ -703,6 +741,8 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     required TResult Function(InvalidString<T> value) invalidString,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(InvalidBlockchainUrl<T> value)
+        invalidBlockchainUrl,
   }) {
     return invalidPassword(this);
   }
@@ -716,6 +756,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     TResult Function(InvalidString<T> value)? invalidString,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidBlockchainUrl<T> value)? invalidBlockchainUrl,
   }) {
     return invalidPassword?.call(this);
   }
@@ -729,6 +770,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     TResult Function(InvalidString<T> value)? invalidString,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidBlockchainUrl<T> value)? invalidBlockchainUrl,
     required TResult orElse(),
   }) {
     if (invalidPassword != null) {
@@ -789,6 +831,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     required TResult Function() invalidString,
     required TResult Function() invalidPassword,
     required TResult Function() invalidEmail,
+    required TResult Function() invalidBlockchainUrl,
   }) {
     return invalidEmail();
   }
@@ -802,6 +845,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function()? invalidString,
     TResult Function()? invalidPassword,
     TResult Function()? invalidEmail,
+    TResult Function()? invalidBlockchainUrl,
   }) {
     return invalidEmail?.call();
   }
@@ -815,6 +859,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function()? invalidString,
     TResult Function()? invalidPassword,
     TResult Function()? invalidEmail,
+    TResult Function()? invalidBlockchainUrl,
     required TResult orElse(),
   }) {
     if (invalidEmail != null) {
@@ -832,6 +877,8 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     required TResult Function(InvalidString<T> value) invalidString,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(InvalidBlockchainUrl<T> value)
+        invalidBlockchainUrl,
   }) {
     return invalidEmail(this);
   }
@@ -845,6 +892,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(InvalidString<T> value)? invalidString,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidBlockchainUrl<T> value)? invalidBlockchainUrl,
   }) {
     return invalidEmail?.call(this);
   }
@@ -858,6 +906,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(InvalidString<T> value)? invalidString,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidBlockchainUrl<T> value)? invalidBlockchainUrl,
     required TResult orElse(),
   }) {
     if (invalidEmail != null) {
@@ -869,4 +918,142 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
 
 abstract class InvalidEmail<T> implements BdkFailure<T> {
   const factory InvalidEmail() = _$InvalidEmail<T>;
+}
+
+/// @nodoc
+abstract class _$$InvalidBlockchainUrlCopyWith<T, $Res> {
+  factory _$$InvalidBlockchainUrlCopyWith(_$InvalidBlockchainUrl<T> value,
+          $Res Function(_$InvalidBlockchainUrl<T>) then) =
+      __$$InvalidBlockchainUrlCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$InvalidBlockchainUrlCopyWithImpl<T, $Res>
+    extends _$BdkFailureCopyWithImpl<T, $Res>
+    implements _$$InvalidBlockchainUrlCopyWith<T, $Res> {
+  __$$InvalidBlockchainUrlCopyWithImpl(_$InvalidBlockchainUrl<T> _value,
+      $Res Function(_$InvalidBlockchainUrl<T>) _then)
+      : super(_value, (v) => _then(v as _$InvalidBlockchainUrl<T>));
+
+  @override
+  _$InvalidBlockchainUrl<T> get _value =>
+      super._value as _$InvalidBlockchainUrl<T>;
+}
+
+/// @nodoc
+
+class _$InvalidBlockchainUrl<T> implements InvalidBlockchainUrl<T> {
+  const _$InvalidBlockchainUrl();
+
+  @override
+  String toString() {
+    return 'BdkFailure<$T>.invalidBlockchainUrl()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InvalidBlockchainUrl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() serverError,
+    required TResult Function() unexpected,
+    required TResult Function() invalidMnemonic,
+    required TResult Function() invalidString,
+    required TResult Function() invalidPassword,
+    required TResult Function() invalidEmail,
+    required TResult Function() invalidBlockchainUrl,
+  }) {
+    return invalidBlockchainUrl();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? serverError,
+    TResult Function()? unexpected,
+    TResult Function()? invalidMnemonic,
+    TResult Function()? invalidString,
+    TResult Function()? invalidPassword,
+    TResult Function()? invalidEmail,
+    TResult Function()? invalidBlockchainUrl,
+  }) {
+    return invalidBlockchainUrl?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? serverError,
+    TResult Function()? unexpected,
+    TResult Function()? invalidMnemonic,
+    TResult Function()? invalidString,
+    TResult Function()? invalidPassword,
+    TResult Function()? invalidEmail,
+    TResult Function()? invalidBlockchainUrl,
+    required TResult orElse(),
+  }) {
+    if (invalidBlockchainUrl != null) {
+      return invalidBlockchainUrl();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ServerError<T> value) serverError,
+    required TResult Function(Unexpected<T> value) unexpected,
+    required TResult Function(InvalidMnemonic<T> value) invalidMnemonic,
+    required TResult Function(InvalidString<T> value) invalidString,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(InvalidBlockchainUrl<T> value)
+        invalidBlockchainUrl,
+  }) {
+    return invalidBlockchainUrl(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ServerError<T> value)? serverError,
+    TResult Function(Unexpected<T> value)? unexpected,
+    TResult Function(InvalidMnemonic<T> value)? invalidMnemonic,
+    TResult Function(InvalidString<T> value)? invalidString,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidBlockchainUrl<T> value)? invalidBlockchainUrl,
+  }) {
+    return invalidBlockchainUrl?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ServerError<T> value)? serverError,
+    TResult Function(Unexpected<T> value)? unexpected,
+    TResult Function(InvalidMnemonic<T> value)? invalidMnemonic,
+    TResult Function(InvalidString<T> value)? invalidString,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidBlockchainUrl<T> value)? invalidBlockchainUrl,
+    required TResult orElse(),
+  }) {
+    if (invalidBlockchainUrl != null) {
+      return invalidBlockchainUrl(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InvalidBlockchainUrl<T> implements BdkFailure<T> {
+  const factory InvalidBlockchainUrl() = _$InvalidBlockchainUrl<T>;
 }

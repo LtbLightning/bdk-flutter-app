@@ -1,3 +1,5 @@
+import 'package:bdk_wallet/application/wallet/wallet_bloc.dart';
+import 'package:bdk_wallet/presentaition/core/routes/routes.dart';
 import 'package:bdk_wallet/presentaition/splash/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -11,14 +13,19 @@ class BdkWalletApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  BlocProvider<ConnectivityCubit>(
-        create: (context) => getIt<ConnectivityCubit>(),
-        child: MaterialApp(
-            title: 'Bdk Wallet',
-            debugShowCheckedModeBanner: false,
-            theme: ThemeData(),
-            home:const Splash()
-                ));
+    return  MultiBlocProvider(
+      providers: [
+        BlocProvider<ConnectivityCubit>(create: (context) => getIt<ConnectivityCubit>()),
+        BlocProvider<WalletBloc>(create: (context) => getIt<WalletBloc>())
+      ],
+      child: MaterialApp(
+          title: 'Bdk Wallet',
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(),
+          onGenerateRoute: (routeSettings) => Routes.generateRoute(routeSettings),
+          home:const Splash()
+              ),
+    );
 
   }
 }

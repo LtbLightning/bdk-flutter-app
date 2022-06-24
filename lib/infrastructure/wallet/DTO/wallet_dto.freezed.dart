@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'wallet.dart';
+part of 'wallet_dto.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,41 +14,45 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-/// @nodoc
-mixin _$WalletEntity {
-  String? get address => throw _privateConstructorUsedError;
-  String? get balance => throw _privateConstructorUsedError;
-  Mnemonic? get mnemonic => throw _privateConstructorUsedError;
-  Blockchain? get blockChain => throw _privateConstructorUsedError;
-  BlockchainUrl? get blockChainUrl => throw _privateConstructorUsedError;
-  Password? get password => throw _privateConstructorUsedError;
+WalletDTO _$WalletDTOFromJson(Map<String, dynamic> json) {
+  return _WalletDTO.fromJson(json);
+}
 
+/// @nodoc
+mixin _$WalletDTO {
+  String? get address => throw _privateConstructorUsedError;
+  int? get balance => throw _privateConstructorUsedError;
+  String? get mnemonic => throw _privateConstructorUsedError;
+  String? get blockChain => throw _privateConstructorUsedError;
+  String? get blockChainUrl => throw _privateConstructorUsedError;
+  String? get password => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $WalletEntityCopyWith<WalletEntity> get copyWith =>
+  $WalletDTOCopyWith<WalletDTO> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $WalletEntityCopyWith<$Res> {
-  factory $WalletEntityCopyWith(
-          WalletEntity value, $Res Function(WalletEntity) then) =
-      _$WalletEntityCopyWithImpl<$Res>;
+abstract class $WalletDTOCopyWith<$Res> {
+  factory $WalletDTOCopyWith(WalletDTO value, $Res Function(WalletDTO) then) =
+      _$WalletDTOCopyWithImpl<$Res>;
   $Res call(
       {String? address,
-      String? balance,
-      Mnemonic? mnemonic,
-      Blockchain? blockChain,
-      BlockchainUrl? blockChainUrl,
-      Password? password});
+      int? balance,
+      String? mnemonic,
+      String? blockChain,
+      String? blockChainUrl,
+      String? password});
 }
 
 /// @nodoc
-class _$WalletEntityCopyWithImpl<$Res> implements $WalletEntityCopyWith<$Res> {
-  _$WalletEntityCopyWithImpl(this._value, this._then);
+class _$WalletDTOCopyWithImpl<$Res> implements $WalletDTOCopyWith<$Res> {
+  _$WalletDTOCopyWithImpl(this._value, this._then);
 
-  final WalletEntity _value;
+  final WalletDTO _value;
   // ignore: unused_field
-  final $Res Function(WalletEntity) _then;
+  final $Res Function(WalletDTO) _then;
 
   @override
   $Res call({
@@ -67,53 +71,51 @@ class _$WalletEntityCopyWithImpl<$Res> implements $WalletEntityCopyWith<$Res> {
       balance: balance == freezed
           ? _value.balance
           : balance // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       mnemonic: mnemonic == freezed
           ? _value.mnemonic
           : mnemonic // ignore: cast_nullable_to_non_nullable
-              as Mnemonic?,
+              as String?,
       blockChain: blockChain == freezed
           ? _value.blockChain
           : blockChain // ignore: cast_nullable_to_non_nullable
-              as Blockchain?,
+              as String?,
       blockChainUrl: blockChainUrl == freezed
           ? _value.blockChainUrl
           : blockChainUrl // ignore: cast_nullable_to_non_nullable
-              as BlockchainUrl?,
+              as String?,
       password: password == freezed
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
-              as Password?,
+              as String?,
     ));
   }
 }
 
 /// @nodoc
-abstract class _$$_WalletEntityCopyWith<$Res>
-    implements $WalletEntityCopyWith<$Res> {
-  factory _$$_WalletEntityCopyWith(
-          _$_WalletEntity value, $Res Function(_$_WalletEntity) then) =
-      __$$_WalletEntityCopyWithImpl<$Res>;
+abstract class _$$_WalletDTOCopyWith<$Res> implements $WalletDTOCopyWith<$Res> {
+  factory _$$_WalletDTOCopyWith(
+          _$_WalletDTO value, $Res Function(_$_WalletDTO) then) =
+      __$$_WalletDTOCopyWithImpl<$Res>;
   @override
   $Res call(
       {String? address,
-      String? balance,
-      Mnemonic? mnemonic,
-      Blockchain? blockChain,
-      BlockchainUrl? blockChainUrl,
-      Password? password});
+      int? balance,
+      String? mnemonic,
+      String? blockChain,
+      String? blockChainUrl,
+      String? password});
 }
 
 /// @nodoc
-class __$$_WalletEntityCopyWithImpl<$Res>
-    extends _$WalletEntityCopyWithImpl<$Res>
-    implements _$$_WalletEntityCopyWith<$Res> {
-  __$$_WalletEntityCopyWithImpl(
-      _$_WalletEntity _value, $Res Function(_$_WalletEntity) _then)
-      : super(_value, (v) => _then(v as _$_WalletEntity));
+class __$$_WalletDTOCopyWithImpl<$Res> extends _$WalletDTOCopyWithImpl<$Res>
+    implements _$$_WalletDTOCopyWith<$Res> {
+  __$$_WalletDTOCopyWithImpl(
+      _$_WalletDTO _value, $Res Function(_$_WalletDTO) _then)
+      : super(_value, (v) => _then(v as _$_WalletDTO));
 
   @override
-  _$_WalletEntity get _value => super._value as _$_WalletEntity;
+  _$_WalletDTO get _value => super._value as _$_WalletDTO;
 
   @override
   $Res call({
@@ -124,7 +126,7 @@ class __$$_WalletEntityCopyWithImpl<$Res>
     Object? blockChainUrl = freezed,
     Object? password = freezed,
   }) {
-    return _then(_$_WalletEntity(
+    return _then(_$_WalletDTO(
       address: address == freezed
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
@@ -132,31 +134,31 @@ class __$$_WalletEntityCopyWithImpl<$Res>
       balance: balance == freezed
           ? _value.balance
           : balance // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       mnemonic: mnemonic == freezed
           ? _value.mnemonic
           : mnemonic // ignore: cast_nullable_to_non_nullable
-              as Mnemonic?,
+              as String?,
       blockChain: blockChain == freezed
           ? _value.blockChain
           : blockChain // ignore: cast_nullable_to_non_nullable
-              as Blockchain?,
+              as String?,
       blockChainUrl: blockChainUrl == freezed
           ? _value.blockChainUrl
           : blockChainUrl // ignore: cast_nullable_to_non_nullable
-              as BlockchainUrl?,
+              as String?,
       password: password == freezed
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
-              as Password?,
+              as String?,
     ));
   }
 }
 
 /// @nodoc
-
-class _$_WalletEntity extends _WalletEntity {
-  const _$_WalletEntity(
+@JsonSerializable()
+class _$_WalletDTO extends _WalletDTO {
+  const _$_WalletDTO(
       {this.address,
       this.balance,
       this.mnemonic,
@@ -165,29 +167,32 @@ class _$_WalletEntity extends _WalletEntity {
       this.password})
       : super._();
 
+  factory _$_WalletDTO.fromJson(Map<String, dynamic> json) =>
+      _$$_WalletDTOFromJson(json);
+
   @override
   final String? address;
   @override
-  final String? balance;
+  final int? balance;
   @override
-  final Mnemonic? mnemonic;
+  final String? mnemonic;
   @override
-  final Blockchain? blockChain;
+  final String? blockChain;
   @override
-  final BlockchainUrl? blockChainUrl;
+  final String? blockChainUrl;
   @override
-  final Password? password;
+  final String? password;
 
   @override
   String toString() {
-    return 'WalletEntity(address: $address, balance: $balance, mnemonic: $mnemonic, blockChain: $blockChain, blockChainUrl: $blockChainUrl, password: $password)';
+    return 'WalletDTO(address: $address, balance: $balance, mnemonic: $mnemonic, blockChain: $blockChain, blockChainUrl: $blockChainUrl, password: $password)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_WalletEntity &&
+            other is _$_WalletDTO &&
             const DeepCollectionEquality().equals(other.address, address) &&
             const DeepCollectionEquality().equals(other.balance, balance) &&
             const DeepCollectionEquality().equals(other.mnemonic, mnemonic) &&
@@ -198,6 +203,7 @@ class _$_WalletEntity extends _WalletEntity {
             const DeepCollectionEquality().equals(other.password, password));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -210,34 +216,42 @@ class _$_WalletEntity extends _WalletEntity {
 
   @JsonKey(ignore: true)
   @override
-  _$$_WalletEntityCopyWith<_$_WalletEntity> get copyWith =>
-      __$$_WalletEntityCopyWithImpl<_$_WalletEntity>(this, _$identity);
+  _$$_WalletDTOCopyWith<_$_WalletDTO> get copyWith =>
+      __$$_WalletDTOCopyWithImpl<_$_WalletDTO>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_WalletDTOToJson(this);
+  }
 }
 
-abstract class _WalletEntity extends WalletEntity {
-  const factory _WalletEntity(
+abstract class _WalletDTO extends WalletDTO {
+  const factory _WalletDTO(
       {final String? address,
-      final String? balance,
-      final Mnemonic? mnemonic,
-      final Blockchain? blockChain,
-      final BlockchainUrl? blockChainUrl,
-      final Password? password}) = _$_WalletEntity;
-  const _WalletEntity._() : super._();
+      final int? balance,
+      final String? mnemonic,
+      final String? blockChain,
+      final String? blockChainUrl,
+      final String? password}) = _$_WalletDTO;
+  const _WalletDTO._() : super._();
+
+  factory _WalletDTO.fromJson(Map<String, dynamic> json) =
+      _$_WalletDTO.fromJson;
 
   @override
   String? get address => throw _privateConstructorUsedError;
   @override
-  String? get balance => throw _privateConstructorUsedError;
+  int? get balance => throw _privateConstructorUsedError;
   @override
-  Mnemonic? get mnemonic => throw _privateConstructorUsedError;
+  String? get mnemonic => throw _privateConstructorUsedError;
   @override
-  Blockchain? get blockChain => throw _privateConstructorUsedError;
+  String? get blockChain => throw _privateConstructorUsedError;
   @override
-  BlockchainUrl? get blockChainUrl => throw _privateConstructorUsedError;
+  String? get blockChainUrl => throw _privateConstructorUsedError;
   @override
-  Password? get password => throw _privateConstructorUsedError;
+  String? get password => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$$_WalletEntityCopyWith<_$_WalletEntity> get copyWith =>
+  _$$_WalletDTOCopyWith<_$_WalletDTO> get copyWith =>
       throw _privateConstructorUsedError;
 }

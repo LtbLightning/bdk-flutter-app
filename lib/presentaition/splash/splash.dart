@@ -60,7 +60,6 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
 
     return BlocListener<ConnectivityCubit, ConnectivityState>(
       listener: (context, state) {
-
         if (state is Connected) {
           Future.delayed(const Duration(milliseconds: 800), () {
        Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const InitWallet()));

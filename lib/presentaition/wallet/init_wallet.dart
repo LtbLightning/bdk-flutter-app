@@ -45,7 +45,7 @@ class InitWallet extends StatelessWidget {
               color: Colors.black,
               padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
               onPressed: (){
-    Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const LoadWallet()));
+    Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const LoadBdkWallet()));
     },
               child:  const Text("Load wallet",
                   textAlign: TextAlign.center,
@@ -60,7 +60,7 @@ class InitWallet extends StatelessWidget {
               color: Colors.black,
               padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
               onPressed: (){
-      Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const CreateWallet()));
+              Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const CreateBdkWallet()));
       },
               child: const Text("Create new  wallet",
                   textAlign: TextAlign.center,

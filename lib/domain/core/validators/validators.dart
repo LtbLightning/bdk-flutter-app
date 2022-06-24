@@ -6,31 +6,40 @@ Either<BdkFailure<String>, String> validateEmailAddress(String input) {
   if (isEmail(input)) {
     return Right(input);
   } else {
-    return Left(const BdkFailure.invalidEmail());
+    return const Left(BdkFailure.invalidEmail());
   }
 }
 
 Either<BdkFailure<String>, String> validatePassword(String input) {
-  if (isAlphanumeric(input) && input.length >= 6) {
+  //isAlphanumeric(input) && input.length >= 6
+  if ( input.length >= 3) {
     return Right(input);
   } else {
     return const Left(BdkFailure.invalidPassword());
   }
 }
+Either<BdkFailure<String>, String> validateUrl(String input) {
+  if (input.endsWith('')) {
+    return Right(input);
+  } else {
+    return const Left(BdkFailure.invalidBlockchainUrl());
+  }
+}
 
 
 Either<BdkFailure<String>, String> validateInputField(String input) {
-  if (input.endsWith('') ) {
+  if (input.endsWith('')  ) {
     return Right(input);
   } else {
     return const Left(BdkFailure.invalidString());
   }
 }
+
   Either<BdkFailure<String>, String> validateMnemonic(String input) {
   if (input.length>10 ) {
     return Right(input);
   } else {
-    print(" mnemonic: $input");
-    return Left(const BdkFailure.invalidMnemonic());
+    return const Left(BdkFailure.invalidMnemonic());
   }
 }
+
