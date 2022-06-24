@@ -21,7 +21,6 @@ class WalletBloc extends Bloc<WalletEvent, WalletState> {
     on<LoadWallet>(_onLoadWallet);
     on<MnemonicChanged>(_onMnemonicChanged);
     on<PasswordChanged>(_onPasswordChanged);
-    on<BlockChainChanged>(_onBlockChainChanged);
     on<BlockChainUrlChanged>(_onBlockChainUrlChanged);
     on<GenSeed>(_onGenSeed);
     on<GetNewAddress>(_onGetNewAddress);
@@ -76,12 +75,6 @@ class WalletBloc extends Bloc<WalletEvent, WalletState> {
     final tempState = state.walletEntity?.copyWith(password: event.password);
     emit(state.copyWith(walletEntity: tempState, walletFailureOrSuccessOption: none()));
   }
-
-  FutureOr<void> _onBlockChainChanged(BlockChainChanged event, Emitter<WalletState> emit) {
-    final tempState = state.walletEntity?.copyWith(blockChain: event.blockChain);
-    emit(state.copyWith(walletEntity: tempState, walletFailureOrSuccessOption: none()));
-  }
-
   FutureOr<void> _onBlockChainUrlChanged(BlockChainUrlChanged event, Emitter<WalletState> emit) {
     final tempState = state.walletEntity?.copyWith(blockChainUrl: event.url);
     emit(state.copyWith(walletEntity: tempState, walletFailureOrSuccessOption: none()));

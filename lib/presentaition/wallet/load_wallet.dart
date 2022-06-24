@@ -4,6 +4,7 @@ import 'package:bdk_wallet/presentaition/core/routes/routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LoadBdkWallet extends StatelessWidget {
   const LoadBdkWallet({Key? key}) : super(key: key);
@@ -43,10 +44,10 @@ class LoadBdkWallet extends StatelessWidget {
         backgroundColor: Colors.white,
         title: Text("Load Wallet",
             textAlign: TextAlign.center,
-            style: TextStyle(
-                decoration: TextDecoration.none,
+            style:  GoogleFonts.montserrat(
+                color: Colors.black,
                 fontSize: 14,
-                color: Colors.black.withOpacity(.8)
+                fontWeight: FontWeight.w800
             )),
       );
 }
@@ -68,7 +69,7 @@ class Body extends StatelessWidget {
             const SizedBox(height: 80),
             Text("Welcome Back",
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style:GoogleFonts.montserrat(
                     decoration: TextDecoration.none,
                     fontSize: 25,
                     fontWeight: FontWeight.w900,
@@ -78,11 +79,11 @@ class Body extends StatelessWidget {
             Text(
                 "Load the wallet with your mnemonic and password ",
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: GoogleFonts.montserrat(
                     decoration: TextDecoration.none,
-                    fontSize: 12,
-                    fontWeight: FontWeight.w400,
-                    color: Colors.black.withOpacity(.4)
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.black.withOpacity(.8)
                 )),
             const SizedBox(height: 50),
             const SignInForm(),
@@ -132,26 +133,26 @@ class SignInFormState extends State<SignInForm> {
                                     'valid mnemonic seed',
                                 orElse: () => null),
                             (s) => null),
-                style: const TextStyle(
+                style: GoogleFonts.montserrat(
                     color: Colors.black,
                     fontSize: 14,
-                    fontWeight: FontWeight.w500),
+                    fontWeight: FontWeight.w700),
                 decoration: InputDecoration(
                   border: InputBorder.none,
                   labelText: "Mnemonic",
-                  errorStyle: const TextStyle(
+                  errorStyle: GoogleFonts.montserrat(
                       color: Colors.red,
                       fontSize: 11,
                       fontWeight: FontWeight.w400),
                   hintText: "Enter your Mnemonic",
-                  labelStyle: const TextStyle(
+                  labelStyle: GoogleFonts.montserrat(
                       color: Colors.blue,
                       fontSize: 13,
-                      fontWeight: FontWeight.w500),
-                  hintStyle: TextStyle(
+                      fontWeight: FontWeight.w700),
+                  hintStyle: GoogleFonts.montserrat(
                       decoration: TextDecoration.none,
                       fontSize: 12,
-                      fontWeight: FontWeight.w400,
+                      fontWeight: FontWeight.w500,
                       color: Colors.black.withOpacity(.4)),
                   floatingLabelBehavior: FloatingLabelBehavior.always,
                   suffixIcon: const Icon(
@@ -174,10 +175,10 @@ class SignInFormState extends State<SignInForm> {
                                   'valid Password',
                               orElse: () => null),
                           (s) => null),
-                  style: const TextStyle(
+                  style: GoogleFonts.montserrat(
                       color: Colors.black,
                       fontSize: 14,
-                      fontWeight: FontWeight.w500),
+                      fontWeight: FontWeight.w700),
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     labelText: "Password",
@@ -186,14 +187,14 @@ class SignInFormState extends State<SignInForm> {
                         fontSize: 11,
                         fontWeight: FontWeight.w400),
                     hintText: "Enter your Password",
-                    labelStyle: const TextStyle(
-                        color: Colors.blue,
-                        fontSize: 13,
-                        fontWeight: FontWeight.w500),
-                    hintStyle: TextStyle(
+                    labelStyle: GoogleFonts.montserrat(
+                      color: Colors.blue,
+                      fontSize: 13,
+                      fontWeight: FontWeight.w700),
+                    hintStyle: GoogleFonts.montserrat(
                         decoration: TextDecoration.none,
                         fontSize: 12,
-                        fontWeight: FontWeight.w400,
+                        fontWeight: FontWeight.w500,
                         color: Colors.black.withOpacity(.4)),
                     floatingLabelBehavior: FloatingLabelBehavior.always,
                     suffixIcon: const Icon(
@@ -217,11 +218,7 @@ class SignInFormState extends State<SignInForm> {
                       .showSnackBar(SnackBar(
                     content: Text(
                         'All fields should be valid',
-                        style: Theme
-                            .of(context)
-                            .textTheme
-                            .bodyText1!
-                            .copyWith(
+                        style: GoogleFonts.montserrat(
                           color: Colors.white,
                           fontSize: 14,
                           fontWeight: FontWeight.w600,
@@ -242,11 +239,11 @@ class SignInFormState extends State<SignInForm> {
                       ? const CircularProgressIndicator(
                     value: null,
                   )
-                      : const Text("Load Wallet",
-                      style: TextStyle(
+                      :  Text("Load Wallet",
+                      style:GoogleFonts.montserrat(
                           color: Colors.white,
                           fontSize: 14,
-                          fontWeight: FontWeight.w700)),
+                          fontWeight: FontWeight.w800)),
                 ),
               ),
 

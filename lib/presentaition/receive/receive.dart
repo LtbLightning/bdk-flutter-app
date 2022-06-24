@@ -4,10 +4,10 @@ import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
 import '../../application/wallet/wallet_bloc.dart';
-import '../core/widgets/wallet_widgets.dart';
 
 class Receive extends StatefulWidget {
   const Receive({Key? key}) : super(key: key);
@@ -31,7 +31,6 @@ class _ReceiveState extends State<Receive> {
      qrFutureBuilder(String? address) => FutureBuilder<ui.Image>(
       future: _loadOverlayImage(),
       builder: (ctx, snapshot) {
-
         if (!snapshot.hasData) {
           return SizedBox(width: size.width * .8, height: size.width * .8);
         }
@@ -42,7 +41,7 @@ class _ReceiveState extends State<Receive> {
             version: QrVersions.auto,
             eyeStyle: const QrEyeStyle(
               eyeShape: QrEyeShape.square,
-              color: Colors.orange,
+              color: Colors.blue,
             ),
             dataModuleStyle: const QrDataModuleStyle(
               dataModuleShape: QrDataModuleShape.circle,
@@ -84,10 +83,10 @@ class _ReceiveState extends State<Receive> {
                     onLongPress: () {},
                     child: Text(state.walletEntity!.address ?? "",
                         textAlign: TextAlign.center,
-                        style: TextStyle(
+                        style: GoogleFonts.montserrat(
                             decoration: TextDecoration.none,
                             fontSize: 14,
-                            fontWeight: FontWeight.w400,
+                            fontWeight: FontWeight.w700,
                             color: Colors.black.withOpacity(.9)
                         )),
                   ),
@@ -112,8 +111,8 @@ class _ReceiveState extends State<Receive> {
                         ? const CircularProgressIndicator(
                       value: null,
                     )
-                        : const Text("Create New Address",
-                        style: TextStyle(
+                        : Text("Create New Address",
+                        style: GoogleFonts.montserrat(
                             color: Colors.white,
                             fontSize: 14,
                             fontWeight: FontWeight.w700)),
@@ -140,8 +139,8 @@ class _ReceiveState extends State<Receive> {
                         ? const CircularProgressIndicator(
                       value: null,
                     )
-                        : const Text("Create Last Used Address",
-                        style: TextStyle(
+                        :  Text("Create Last Used Address",
+                        style: GoogleFonts.montserrat(
                             color: Colors.white,
                             fontSize: 14,
                             fontWeight: FontWeight.w700)),
@@ -171,9 +170,10 @@ class _ReceiveState extends State<Receive> {
         backgroundColor: Colors.white,
         title: Text("Receive via BTC Address",
             textAlign: TextAlign.center,
-            style: TextStyle(
+            style: GoogleFonts.montserrat(
                 decoration: TextDecoration.none,
                 fontSize: 14,
+                fontWeight: FontWeight.w700,
                 color: Colors.black.withOpacity(.8)
             )),
       );

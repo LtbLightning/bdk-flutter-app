@@ -2,6 +2,7 @@ import 'package:bdk_wallet/presentaition/core/widgets/wallet_widgets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../application/wallet/wallet_bloc.dart';
 
@@ -29,11 +30,20 @@ class _SendState extends State<Send> {
         builder: (BuildContext context)=>
             CupertinoAlertDialog(
               title: Column(
-                children: const <Widget>[
-                  Text("Broadcast Success"),
+                children: <Widget>[
+                  Text("Sent Successfully",
+                      style:GoogleFonts.montserrat(
+                    decoration: TextDecoration.none,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w700,
+                    color: Colors.black.withOpacity(.9)))
                 ],
               ),
-              content: Text("Your transaction was successful, transaction id: $id "),
+              content: Text("Your transaction was successful, transaction id: $id ", style: GoogleFonts.montserrat(
+                  decoration: TextDecoration.none,
+                  fontSize: 14,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.black.withOpacity(.9))),
               actions: <Widget>[
                 CupertinoDialogAction(
                   child: const Text("OK"),
@@ -68,9 +78,9 @@ class _SendState extends State<Send> {
               child: Column(
                 children: <Widget>[
                   const SizedBox(height: 80),
-                  Text("Send Bitcoin",
+                  Text("Send & Broadcast ",
                       textAlign: TextAlign.center,
-                      style: TextStyle(
+                      style: GoogleFonts.montserrat(
                           decoration: TextDecoration.none,
                           fontSize: 25,
                           fontWeight: FontWeight.w900,
@@ -80,11 +90,11 @@ class _SendState extends State<Send> {
                   Text(
                       "Send BTC to any online wallets",
                       textAlign: TextAlign.center,
-                      style: TextStyle(
+                      style: GoogleFonts.montserrat(
                           decoration: TextDecoration.none,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400,
-                          color: Colors.black.withOpacity(.4)
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.black.withOpacity(.8)
                       )),
                   const SizedBox(height: 50),
                   Form(
@@ -100,26 +110,26 @@ class _SendState extends State<Send> {
                                 }
                                 return null;
                               },
-                              style: const TextStyle(
+                              style:GoogleFonts.montserrat(
                                   color: Colors.black,
                                   fontSize: 14,
-                                  fontWeight: FontWeight.w500),
+                                  fontWeight: FontWeight.w700),
                               decoration: InputDecoration(
                                 border: InputBorder.none,
                                 labelText: "Address",
-                                errorStyle: const TextStyle(
+                                errorStyle: GoogleFonts.montserrat(
                                     color: Colors.red,
                                     fontSize: 11,
                                     fontWeight: FontWeight.w400),
                                 hintText: "Enter your Address",
-                                labelStyle: const TextStyle(
+                                labelStyle: GoogleFonts.montserrat(
                                     color: Colors.blue,
-                                    fontSize: 13,
-                                    fontWeight: FontWeight.w500),
-                                hintStyle: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w700),
+                                hintStyle: GoogleFonts.montserrat(
                                     decoration: TextDecoration.none,
                                     fontSize: 12,
-                                    fontWeight: FontWeight.w400,
+                                    fontWeight: FontWeight.w600,
                                     color: Colors.black.withOpacity(.4)),
                                 floatingLabelBehavior: FloatingLabelBehavior.always,
                                 suffixIcon: const Icon(
@@ -140,26 +150,26 @@ class _SendState extends State<Send> {
                                   }
                                   return null;
                                 },
-                                style: const TextStyle(
+                                style:  GoogleFonts.montserrat(
                                     color: Colors.black,
                                     fontSize: 14,
                                     fontWeight: FontWeight.w500),
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
                                   labelText: "Amount",
-                                  errorStyle: const TextStyle(
+                                  errorStyle:  GoogleFonts.montserrat(
                                       color: Colors.red,
                                       fontSize: 11,
                                       fontWeight: FontWeight.w400),
                                   hintText: "Enter your Amount",
-                                  labelStyle: const TextStyle(
+                                  labelStyle:  GoogleFonts.montserrat(
                                       color: Colors.blue,
-                                      fontSize: 13,
-                                      fontWeight: FontWeight.w500),
-                                  hintStyle: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w700),
+                                  hintStyle: GoogleFonts.montserrat(
                                       decoration: TextDecoration.none,
                                       fontSize: 12,
-                                      fontWeight: FontWeight.w400,
+                                      fontWeight: FontWeight.w600,
                                       color: Colors.black.withOpacity(.4)),
                                   floatingLabelBehavior: FloatingLabelBehavior.always,
                                   suffixIcon: const Icon(
@@ -186,11 +196,7 @@ class _SendState extends State<Send> {
                                     .showSnackBar(SnackBar(
                                   content: Text(
                                       'All fields must have a valid value',
-                                      style: Theme
-                                          .of(context)
-                                          .textTheme
-                                          .bodyText1!
-                                          .copyWith(
+                                      style:GoogleFonts.montserrat(
                                         color: Colors.white,
                                         fontSize: 14,
                                         fontWeight: FontWeight.w600,
@@ -211,8 +217,8 @@ class _SendState extends State<Send> {
                                     ? const CircularProgressIndicator(
                                   value: null,
                                 )
-                                    : const Text("Broadcast Transaction",
-                                    style: TextStyle(
+                                    : Text("Broadcast Transaction",
+                                    style: GoogleFonts.montserrat(
                                         color: Colors.white,
                                         fontSize: 14,
                                         fontWeight: FontWeight.w700)),
@@ -237,9 +243,10 @@ class _SendState extends State<Send> {
         backgroundColor: Colors.white,
         title: Text("Broadcast",
             textAlign: TextAlign.center,
-            style: TextStyle(
+            style: GoogleFonts.montserrat(
                 decoration: TextDecoration.none,
                 fontSize: 14,
+                fontWeight: FontWeight.w700,
                 color: Colors.black.withOpacity(.8)
             )),
       );
@@ -386,14 +393,13 @@ class _BroadcastFormState extends State<BroadcastForm> {
                       ? const CircularProgressIndicator(
                     value: null,
                   )
-                      : const Text("Broadcast Transaction",
-                      style: TextStyle(
+                      :  Text("Send",
+                      style: GoogleFonts.montserrat(
                           color: Colors.white,
                           fontSize: 14,
                           fontWeight: FontWeight.w700)),
                 ),
               ),
-
             ]));
   }
 

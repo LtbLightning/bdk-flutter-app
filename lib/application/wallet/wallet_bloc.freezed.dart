@@ -20,7 +20,6 @@ mixin _$WalletEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(Mnemonic mnemonic) mnemonicChanged,
     required TResult Function(Password password) passwordChanged,
-    required TResult Function(Blockchain blockChain) blockChainChanged,
     required TResult Function(BlockchainUrl url) blockChainUrlChanged,
     required TResult Function() createWallet,
     required TResult Function() loadWallet,
@@ -40,7 +39,6 @@ mixin _$WalletEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Mnemonic mnemonic)? mnemonicChanged,
     TResult Function(Password password)? passwordChanged,
-    TResult Function(Blockchain blockChain)? blockChainChanged,
     TResult Function(BlockchainUrl url)? blockChainUrlChanged,
     TResult Function()? createWallet,
     TResult Function()? loadWallet,
@@ -59,7 +57,6 @@ mixin _$WalletEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Mnemonic mnemonic)? mnemonicChanged,
     TResult Function(Password password)? passwordChanged,
-    TResult Function(Blockchain blockChain)? blockChainChanged,
     TResult Function(BlockchainUrl url)? blockChainUrlChanged,
     TResult Function()? createWallet,
     TResult Function()? loadWallet,
@@ -79,7 +76,6 @@ mixin _$WalletEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(MnemonicChanged value) mnemonicChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(BlockChainChanged value) blockChainChanged,
     required TResult Function(BlockChainUrlChanged value) blockChainUrlChanged,
     required TResult Function(CreateWallet value) createWallet,
     required TResult Function(LoadWallet value) loadWallet,
@@ -100,7 +96,6 @@ mixin _$WalletEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(MnemonicChanged value)? mnemonicChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainChanged value)? blockChainChanged,
     TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
     TResult Function(CreateWallet value)? createWallet,
     TResult Function(LoadWallet value)? loadWallet,
@@ -119,7 +114,6 @@ mixin _$WalletEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MnemonicChanged value)? mnemonicChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainChanged value)? blockChainChanged,
     TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
     TResult Function(CreateWallet value)? createWallet,
     TResult Function(LoadWallet value)? loadWallet,
@@ -220,7 +214,6 @@ class _$MnemonicChanged implements MnemonicChanged {
   TResult when<TResult extends Object?>({
     required TResult Function(Mnemonic mnemonic) mnemonicChanged,
     required TResult Function(Password password) passwordChanged,
-    required TResult Function(Blockchain blockChain) blockChainChanged,
     required TResult Function(BlockchainUrl url) blockChainUrlChanged,
     required TResult Function() createWallet,
     required TResult Function() loadWallet,
@@ -243,7 +236,6 @@ class _$MnemonicChanged implements MnemonicChanged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Mnemonic mnemonic)? mnemonicChanged,
     TResult Function(Password password)? passwordChanged,
-    TResult Function(Blockchain blockChain)? blockChainChanged,
     TResult Function(BlockchainUrl url)? blockChainUrlChanged,
     TResult Function()? createWallet,
     TResult Function()? loadWallet,
@@ -265,7 +257,6 @@ class _$MnemonicChanged implements MnemonicChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Mnemonic mnemonic)? mnemonicChanged,
     TResult Function(Password password)? passwordChanged,
-    TResult Function(Blockchain blockChain)? blockChainChanged,
     TResult Function(BlockchainUrl url)? blockChainUrlChanged,
     TResult Function()? createWallet,
     TResult Function()? loadWallet,
@@ -291,7 +282,6 @@ class _$MnemonicChanged implements MnemonicChanged {
   TResult map<TResult extends Object?>({
     required TResult Function(MnemonicChanged value) mnemonicChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(BlockChainChanged value) blockChainChanged,
     required TResult Function(BlockChainUrlChanged value) blockChainUrlChanged,
     required TResult Function(CreateWallet value) createWallet,
     required TResult Function(LoadWallet value) loadWallet,
@@ -315,7 +305,6 @@ class _$MnemonicChanged implements MnemonicChanged {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(MnemonicChanged value)? mnemonicChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainChanged value)? blockChainChanged,
     TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
     TResult Function(CreateWallet value)? createWallet,
     TResult Function(LoadWallet value)? loadWallet,
@@ -337,7 +326,6 @@ class _$MnemonicChanged implements MnemonicChanged {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MnemonicChanged value)? mnemonicChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainChanged value)? blockChainChanged,
     TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
     TResult Function(CreateWallet value)? createWallet,
     TResult Function(LoadWallet value)? loadWallet,
@@ -435,7 +423,6 @@ class _$PasswordChanged implements PasswordChanged {
   TResult when<TResult extends Object?>({
     required TResult Function(Mnemonic mnemonic) mnemonicChanged,
     required TResult Function(Password password) passwordChanged,
-    required TResult Function(Blockchain blockChain) blockChainChanged,
     required TResult Function(BlockchainUrl url) blockChainUrlChanged,
     required TResult Function() createWallet,
     required TResult Function() loadWallet,
@@ -458,7 +445,6 @@ class _$PasswordChanged implements PasswordChanged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Mnemonic mnemonic)? mnemonicChanged,
     TResult Function(Password password)? passwordChanged,
-    TResult Function(Blockchain blockChain)? blockChainChanged,
     TResult Function(BlockchainUrl url)? blockChainUrlChanged,
     TResult Function()? createWallet,
     TResult Function()? loadWallet,
@@ -480,7 +466,6 @@ class _$PasswordChanged implements PasswordChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Mnemonic mnemonic)? mnemonicChanged,
     TResult Function(Password password)? passwordChanged,
-    TResult Function(Blockchain blockChain)? blockChainChanged,
     TResult Function(BlockchainUrl url)? blockChainUrlChanged,
     TResult Function()? createWallet,
     TResult Function()? loadWallet,
@@ -506,7 +491,6 @@ class _$PasswordChanged implements PasswordChanged {
   TResult map<TResult extends Object?>({
     required TResult Function(MnemonicChanged value) mnemonicChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(BlockChainChanged value) blockChainChanged,
     required TResult Function(BlockChainUrlChanged value) blockChainUrlChanged,
     required TResult Function(CreateWallet value) createWallet,
     required TResult Function(LoadWallet value) loadWallet,
@@ -530,7 +514,6 @@ class _$PasswordChanged implements PasswordChanged {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(MnemonicChanged value)? mnemonicChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainChanged value)? blockChainChanged,
     TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
     TResult Function(CreateWallet value)? createWallet,
     TResult Function(LoadWallet value)? loadWallet,
@@ -552,7 +535,6 @@ class _$PasswordChanged implements PasswordChanged {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MnemonicChanged value)? mnemonicChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainChanged value)? blockChainChanged,
     TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
     TResult Function(CreateWallet value)? createWallet,
     TResult Function(LoadWallet value)? loadWallet,
@@ -580,223 +562,6 @@ abstract class PasswordChanged implements WalletEvent {
   Password get password => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$$PasswordChangedCopyWith<_$PasswordChanged> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$BlockChainChangedCopyWith<$Res> {
-  factory _$$BlockChainChangedCopyWith(
-          _$BlockChainChanged value, $Res Function(_$BlockChainChanged) then) =
-      __$$BlockChainChangedCopyWithImpl<$Res>;
-  $Res call({Blockchain blockChain});
-}
-
-/// @nodoc
-class __$$BlockChainChangedCopyWithImpl<$Res>
-    extends _$WalletEventCopyWithImpl<$Res>
-    implements _$$BlockChainChangedCopyWith<$Res> {
-  __$$BlockChainChangedCopyWithImpl(
-      _$BlockChainChanged _value, $Res Function(_$BlockChainChanged) _then)
-      : super(_value, (v) => _then(v as _$BlockChainChanged));
-
-  @override
-  _$BlockChainChanged get _value => super._value as _$BlockChainChanged;
-
-  @override
-  $Res call({
-    Object? blockChain = freezed,
-  }) {
-    return _then(_$BlockChainChanged(
-      blockChain == freezed
-          ? _value.blockChain
-          : blockChain // ignore: cast_nullable_to_non_nullable
-              as Blockchain,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$BlockChainChanged implements BlockChainChanged {
-  const _$BlockChainChanged(this.blockChain);
-
-  @override
-  final Blockchain blockChain;
-
-  @override
-  String toString() {
-    return 'WalletEvent.blockChainChanged(blockChain: $blockChain)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$BlockChainChanged &&
-            const DeepCollectionEquality()
-                .equals(other.blockChain, blockChain));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(blockChain));
-
-  @JsonKey(ignore: true)
-  @override
-  _$$BlockChainChangedCopyWith<_$BlockChainChanged> get copyWith =>
-      __$$BlockChainChangedCopyWithImpl<_$BlockChainChanged>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(Mnemonic mnemonic) mnemonicChanged,
-    required TResult Function(Password password) passwordChanged,
-    required TResult Function(Blockchain blockChain) blockChainChanged,
-    required TResult Function(BlockchainUrl url) blockChainUrlChanged,
-    required TResult Function() createWallet,
-    required TResult Function() loadWallet,
-    required TResult Function() genSeed,
-    required TResult Function() getNewAddress,
-    required TResult Function() getLastUsedAddress,
-    required TResult Function() sync,
-    required TResult Function() getConfirmedTransaction,
-    required TResult Function() getPendingTransaction,
-    required TResult Function(String recipient, double amount)
-        broadcastTransaction,
-    required TResult Function() walletExists,
-    required TResult Function() getWallet,
-  }) {
-    return blockChainChanged(blockChain);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Mnemonic mnemonic)? mnemonicChanged,
-    TResult Function(Password password)? passwordChanged,
-    TResult Function(Blockchain blockChain)? blockChainChanged,
-    TResult Function(BlockchainUrl url)? blockChainUrlChanged,
-    TResult Function()? createWallet,
-    TResult Function()? loadWallet,
-    TResult Function()? genSeed,
-    TResult Function()? getNewAddress,
-    TResult Function()? getLastUsedAddress,
-    TResult Function()? sync,
-    TResult Function()? getConfirmedTransaction,
-    TResult Function()? getPendingTransaction,
-    TResult Function(String recipient, double amount)? broadcastTransaction,
-    TResult Function()? walletExists,
-    TResult Function()? getWallet,
-  }) {
-    return blockChainChanged?.call(blockChain);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Mnemonic mnemonic)? mnemonicChanged,
-    TResult Function(Password password)? passwordChanged,
-    TResult Function(Blockchain blockChain)? blockChainChanged,
-    TResult Function(BlockchainUrl url)? blockChainUrlChanged,
-    TResult Function()? createWallet,
-    TResult Function()? loadWallet,
-    TResult Function()? genSeed,
-    TResult Function()? getNewAddress,
-    TResult Function()? getLastUsedAddress,
-    TResult Function()? sync,
-    TResult Function()? getConfirmedTransaction,
-    TResult Function()? getPendingTransaction,
-    TResult Function(String recipient, double amount)? broadcastTransaction,
-    TResult Function()? walletExists,
-    TResult Function()? getWallet,
-    required TResult orElse(),
-  }) {
-    if (blockChainChanged != null) {
-      return blockChainChanged(blockChain);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(MnemonicChanged value) mnemonicChanged,
-    required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(BlockChainChanged value) blockChainChanged,
-    required TResult Function(BlockChainUrlChanged value) blockChainUrlChanged,
-    required TResult Function(CreateWallet value) createWallet,
-    required TResult Function(LoadWallet value) loadWallet,
-    required TResult Function(GenSeed value) genSeed,
-    required TResult Function(GetNewAddress value) getNewAddress,
-    required TResult Function(GetLastUsedAddress value) getLastUsedAddress,
-    required TResult Function(Sync value) sync,
-    required TResult Function(GetConfirmedTransaction value)
-        getConfirmedTransaction,
-    required TResult Function(GetPendingTransaction value)
-        getPendingTransaction,
-    required TResult Function(BroadcastTransaction value) broadcastTransaction,
-    required TResult Function(WalletExists value) walletExists,
-    required TResult Function(GetWallet value) getWallet,
-  }) {
-    return blockChainChanged(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(MnemonicChanged value)? mnemonicChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainChanged value)? blockChainChanged,
-    TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
-    TResult Function(CreateWallet value)? createWallet,
-    TResult Function(LoadWallet value)? loadWallet,
-    TResult Function(GenSeed value)? genSeed,
-    TResult Function(GetNewAddress value)? getNewAddress,
-    TResult Function(GetLastUsedAddress value)? getLastUsedAddress,
-    TResult Function(Sync value)? sync,
-    TResult Function(GetConfirmedTransaction value)? getConfirmedTransaction,
-    TResult Function(GetPendingTransaction value)? getPendingTransaction,
-    TResult Function(BroadcastTransaction value)? broadcastTransaction,
-    TResult Function(WalletExists value)? walletExists,
-    TResult Function(GetWallet value)? getWallet,
-  }) {
-    return blockChainChanged?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(MnemonicChanged value)? mnemonicChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainChanged value)? blockChainChanged,
-    TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
-    TResult Function(CreateWallet value)? createWallet,
-    TResult Function(LoadWallet value)? loadWallet,
-    TResult Function(GenSeed value)? genSeed,
-    TResult Function(GetNewAddress value)? getNewAddress,
-    TResult Function(GetLastUsedAddress value)? getLastUsedAddress,
-    TResult Function(Sync value)? sync,
-    TResult Function(GetConfirmedTransaction value)? getConfirmedTransaction,
-    TResult Function(GetPendingTransaction value)? getPendingTransaction,
-    TResult Function(BroadcastTransaction value)? broadcastTransaction,
-    TResult Function(WalletExists value)? walletExists,
-    TResult Function(GetWallet value)? getWallet,
-    required TResult orElse(),
-  }) {
-    if (blockChainChanged != null) {
-      return blockChainChanged(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class BlockChainChanged implements WalletEvent {
-  const factory BlockChainChanged(final Blockchain blockChain) =
-      _$BlockChainChanged;
-
-  Blockchain get blockChain => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  _$$BlockChainChangedCopyWith<_$BlockChainChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -868,7 +633,6 @@ class _$BlockChainUrlChanged implements BlockChainUrlChanged {
   TResult when<TResult extends Object?>({
     required TResult Function(Mnemonic mnemonic) mnemonicChanged,
     required TResult Function(Password password) passwordChanged,
-    required TResult Function(Blockchain blockChain) blockChainChanged,
     required TResult Function(BlockchainUrl url) blockChainUrlChanged,
     required TResult Function() createWallet,
     required TResult Function() loadWallet,
@@ -891,7 +655,6 @@ class _$BlockChainUrlChanged implements BlockChainUrlChanged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Mnemonic mnemonic)? mnemonicChanged,
     TResult Function(Password password)? passwordChanged,
-    TResult Function(Blockchain blockChain)? blockChainChanged,
     TResult Function(BlockchainUrl url)? blockChainUrlChanged,
     TResult Function()? createWallet,
     TResult Function()? loadWallet,
@@ -913,7 +676,6 @@ class _$BlockChainUrlChanged implements BlockChainUrlChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Mnemonic mnemonic)? mnemonicChanged,
     TResult Function(Password password)? passwordChanged,
-    TResult Function(Blockchain blockChain)? blockChainChanged,
     TResult Function(BlockchainUrl url)? blockChainUrlChanged,
     TResult Function()? createWallet,
     TResult Function()? loadWallet,
@@ -939,7 +701,6 @@ class _$BlockChainUrlChanged implements BlockChainUrlChanged {
   TResult map<TResult extends Object?>({
     required TResult Function(MnemonicChanged value) mnemonicChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(BlockChainChanged value) blockChainChanged,
     required TResult Function(BlockChainUrlChanged value) blockChainUrlChanged,
     required TResult Function(CreateWallet value) createWallet,
     required TResult Function(LoadWallet value) loadWallet,
@@ -963,7 +724,6 @@ class _$BlockChainUrlChanged implements BlockChainUrlChanged {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(MnemonicChanged value)? mnemonicChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainChanged value)? blockChainChanged,
     TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
     TResult Function(CreateWallet value)? createWallet,
     TResult Function(LoadWallet value)? loadWallet,
@@ -985,7 +745,6 @@ class _$BlockChainUrlChanged implements BlockChainUrlChanged {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MnemonicChanged value)? mnemonicChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainChanged value)? blockChainChanged,
     TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
     TResult Function(CreateWallet value)? createWallet,
     TResult Function(LoadWallet value)? loadWallet,
@@ -1059,7 +818,6 @@ class _$CreateWallet implements CreateWallet {
   TResult when<TResult extends Object?>({
     required TResult Function(Mnemonic mnemonic) mnemonicChanged,
     required TResult Function(Password password) passwordChanged,
-    required TResult Function(Blockchain blockChain) blockChainChanged,
     required TResult Function(BlockchainUrl url) blockChainUrlChanged,
     required TResult Function() createWallet,
     required TResult Function() loadWallet,
@@ -1082,7 +840,6 @@ class _$CreateWallet implements CreateWallet {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Mnemonic mnemonic)? mnemonicChanged,
     TResult Function(Password password)? passwordChanged,
-    TResult Function(Blockchain blockChain)? blockChainChanged,
     TResult Function(BlockchainUrl url)? blockChainUrlChanged,
     TResult Function()? createWallet,
     TResult Function()? loadWallet,
@@ -1104,7 +861,6 @@ class _$CreateWallet implements CreateWallet {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Mnemonic mnemonic)? mnemonicChanged,
     TResult Function(Password password)? passwordChanged,
-    TResult Function(Blockchain blockChain)? blockChainChanged,
     TResult Function(BlockchainUrl url)? blockChainUrlChanged,
     TResult Function()? createWallet,
     TResult Function()? loadWallet,
@@ -1130,7 +886,6 @@ class _$CreateWallet implements CreateWallet {
   TResult map<TResult extends Object?>({
     required TResult Function(MnemonicChanged value) mnemonicChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(BlockChainChanged value) blockChainChanged,
     required TResult Function(BlockChainUrlChanged value) blockChainUrlChanged,
     required TResult Function(CreateWallet value) createWallet,
     required TResult Function(LoadWallet value) loadWallet,
@@ -1154,7 +909,6 @@ class _$CreateWallet implements CreateWallet {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(MnemonicChanged value)? mnemonicChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainChanged value)? blockChainChanged,
     TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
     TResult Function(CreateWallet value)? createWallet,
     TResult Function(LoadWallet value)? loadWallet,
@@ -1176,7 +930,6 @@ class _$CreateWallet implements CreateWallet {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MnemonicChanged value)? mnemonicChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainChanged value)? blockChainChanged,
     TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
     TResult Function(CreateWallet value)? createWallet,
     TResult Function(LoadWallet value)? loadWallet,
@@ -1244,7 +997,6 @@ class _$LoadWallet implements LoadWallet {
   TResult when<TResult extends Object?>({
     required TResult Function(Mnemonic mnemonic) mnemonicChanged,
     required TResult Function(Password password) passwordChanged,
-    required TResult Function(Blockchain blockChain) blockChainChanged,
     required TResult Function(BlockchainUrl url) blockChainUrlChanged,
     required TResult Function() createWallet,
     required TResult Function() loadWallet,
@@ -1267,7 +1019,6 @@ class _$LoadWallet implements LoadWallet {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Mnemonic mnemonic)? mnemonicChanged,
     TResult Function(Password password)? passwordChanged,
-    TResult Function(Blockchain blockChain)? blockChainChanged,
     TResult Function(BlockchainUrl url)? blockChainUrlChanged,
     TResult Function()? createWallet,
     TResult Function()? loadWallet,
@@ -1289,7 +1040,6 @@ class _$LoadWallet implements LoadWallet {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Mnemonic mnemonic)? mnemonicChanged,
     TResult Function(Password password)? passwordChanged,
-    TResult Function(Blockchain blockChain)? blockChainChanged,
     TResult Function(BlockchainUrl url)? blockChainUrlChanged,
     TResult Function()? createWallet,
     TResult Function()? loadWallet,
@@ -1315,7 +1065,6 @@ class _$LoadWallet implements LoadWallet {
   TResult map<TResult extends Object?>({
     required TResult Function(MnemonicChanged value) mnemonicChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(BlockChainChanged value) blockChainChanged,
     required TResult Function(BlockChainUrlChanged value) blockChainUrlChanged,
     required TResult Function(CreateWallet value) createWallet,
     required TResult Function(LoadWallet value) loadWallet,
@@ -1339,7 +1088,6 @@ class _$LoadWallet implements LoadWallet {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(MnemonicChanged value)? mnemonicChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainChanged value)? blockChainChanged,
     TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
     TResult Function(CreateWallet value)? createWallet,
     TResult Function(LoadWallet value)? loadWallet,
@@ -1361,7 +1109,6 @@ class _$LoadWallet implements LoadWallet {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MnemonicChanged value)? mnemonicChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainChanged value)? blockChainChanged,
     TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
     TResult Function(CreateWallet value)? createWallet,
     TResult Function(LoadWallet value)? loadWallet,
@@ -1427,7 +1174,6 @@ class _$GenSeed implements GenSeed {
   TResult when<TResult extends Object?>({
     required TResult Function(Mnemonic mnemonic) mnemonicChanged,
     required TResult Function(Password password) passwordChanged,
-    required TResult Function(Blockchain blockChain) blockChainChanged,
     required TResult Function(BlockchainUrl url) blockChainUrlChanged,
     required TResult Function() createWallet,
     required TResult Function() loadWallet,
@@ -1450,7 +1196,6 @@ class _$GenSeed implements GenSeed {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Mnemonic mnemonic)? mnemonicChanged,
     TResult Function(Password password)? passwordChanged,
-    TResult Function(Blockchain blockChain)? blockChainChanged,
     TResult Function(BlockchainUrl url)? blockChainUrlChanged,
     TResult Function()? createWallet,
     TResult Function()? loadWallet,
@@ -1472,7 +1217,6 @@ class _$GenSeed implements GenSeed {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Mnemonic mnemonic)? mnemonicChanged,
     TResult Function(Password password)? passwordChanged,
-    TResult Function(Blockchain blockChain)? blockChainChanged,
     TResult Function(BlockchainUrl url)? blockChainUrlChanged,
     TResult Function()? createWallet,
     TResult Function()? loadWallet,
@@ -1498,7 +1242,6 @@ class _$GenSeed implements GenSeed {
   TResult map<TResult extends Object?>({
     required TResult Function(MnemonicChanged value) mnemonicChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(BlockChainChanged value) blockChainChanged,
     required TResult Function(BlockChainUrlChanged value) blockChainUrlChanged,
     required TResult Function(CreateWallet value) createWallet,
     required TResult Function(LoadWallet value) loadWallet,
@@ -1522,7 +1265,6 @@ class _$GenSeed implements GenSeed {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(MnemonicChanged value)? mnemonicChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainChanged value)? blockChainChanged,
     TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
     TResult Function(CreateWallet value)? createWallet,
     TResult Function(LoadWallet value)? loadWallet,
@@ -1544,7 +1286,6 @@ class _$GenSeed implements GenSeed {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MnemonicChanged value)? mnemonicChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainChanged value)? blockChainChanged,
     TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
     TResult Function(CreateWallet value)? createWallet,
     TResult Function(LoadWallet value)? loadWallet,
@@ -1613,7 +1354,6 @@ class _$GetNewAddress implements GetNewAddress {
   TResult when<TResult extends Object?>({
     required TResult Function(Mnemonic mnemonic) mnemonicChanged,
     required TResult Function(Password password) passwordChanged,
-    required TResult Function(Blockchain blockChain) blockChainChanged,
     required TResult Function(BlockchainUrl url) blockChainUrlChanged,
     required TResult Function() createWallet,
     required TResult Function() loadWallet,
@@ -1636,7 +1376,6 @@ class _$GetNewAddress implements GetNewAddress {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Mnemonic mnemonic)? mnemonicChanged,
     TResult Function(Password password)? passwordChanged,
-    TResult Function(Blockchain blockChain)? blockChainChanged,
     TResult Function(BlockchainUrl url)? blockChainUrlChanged,
     TResult Function()? createWallet,
     TResult Function()? loadWallet,
@@ -1658,7 +1397,6 @@ class _$GetNewAddress implements GetNewAddress {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Mnemonic mnemonic)? mnemonicChanged,
     TResult Function(Password password)? passwordChanged,
-    TResult Function(Blockchain blockChain)? blockChainChanged,
     TResult Function(BlockchainUrl url)? blockChainUrlChanged,
     TResult Function()? createWallet,
     TResult Function()? loadWallet,
@@ -1684,7 +1422,6 @@ class _$GetNewAddress implements GetNewAddress {
   TResult map<TResult extends Object?>({
     required TResult Function(MnemonicChanged value) mnemonicChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(BlockChainChanged value) blockChainChanged,
     required TResult Function(BlockChainUrlChanged value) blockChainUrlChanged,
     required TResult Function(CreateWallet value) createWallet,
     required TResult Function(LoadWallet value) loadWallet,
@@ -1708,7 +1445,6 @@ class _$GetNewAddress implements GetNewAddress {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(MnemonicChanged value)? mnemonicChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainChanged value)? blockChainChanged,
     TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
     TResult Function(CreateWallet value)? createWallet,
     TResult Function(LoadWallet value)? loadWallet,
@@ -1730,7 +1466,6 @@ class _$GetNewAddress implements GetNewAddress {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MnemonicChanged value)? mnemonicChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainChanged value)? blockChainChanged,
     TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
     TResult Function(CreateWallet value)? createWallet,
     TResult Function(LoadWallet value)? loadWallet,
@@ -1799,7 +1534,6 @@ class _$GetLastUsedAddress implements GetLastUsedAddress {
   TResult when<TResult extends Object?>({
     required TResult Function(Mnemonic mnemonic) mnemonicChanged,
     required TResult Function(Password password) passwordChanged,
-    required TResult Function(Blockchain blockChain) blockChainChanged,
     required TResult Function(BlockchainUrl url) blockChainUrlChanged,
     required TResult Function() createWallet,
     required TResult Function() loadWallet,
@@ -1822,7 +1556,6 @@ class _$GetLastUsedAddress implements GetLastUsedAddress {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Mnemonic mnemonic)? mnemonicChanged,
     TResult Function(Password password)? passwordChanged,
-    TResult Function(Blockchain blockChain)? blockChainChanged,
     TResult Function(BlockchainUrl url)? blockChainUrlChanged,
     TResult Function()? createWallet,
     TResult Function()? loadWallet,
@@ -1844,7 +1577,6 @@ class _$GetLastUsedAddress implements GetLastUsedAddress {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Mnemonic mnemonic)? mnemonicChanged,
     TResult Function(Password password)? passwordChanged,
-    TResult Function(Blockchain blockChain)? blockChainChanged,
     TResult Function(BlockchainUrl url)? blockChainUrlChanged,
     TResult Function()? createWallet,
     TResult Function()? loadWallet,
@@ -1870,7 +1602,6 @@ class _$GetLastUsedAddress implements GetLastUsedAddress {
   TResult map<TResult extends Object?>({
     required TResult Function(MnemonicChanged value) mnemonicChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(BlockChainChanged value) blockChainChanged,
     required TResult Function(BlockChainUrlChanged value) blockChainUrlChanged,
     required TResult Function(CreateWallet value) createWallet,
     required TResult Function(LoadWallet value) loadWallet,
@@ -1894,7 +1625,6 @@ class _$GetLastUsedAddress implements GetLastUsedAddress {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(MnemonicChanged value)? mnemonicChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainChanged value)? blockChainChanged,
     TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
     TResult Function(CreateWallet value)? createWallet,
     TResult Function(LoadWallet value)? loadWallet,
@@ -1916,7 +1646,6 @@ class _$GetLastUsedAddress implements GetLastUsedAddress {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MnemonicChanged value)? mnemonicChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainChanged value)? blockChainChanged,
     TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
     TResult Function(CreateWallet value)? createWallet,
     TResult Function(LoadWallet value)? loadWallet,
@@ -1982,7 +1711,6 @@ class _$Sync implements Sync {
   TResult when<TResult extends Object?>({
     required TResult Function(Mnemonic mnemonic) mnemonicChanged,
     required TResult Function(Password password) passwordChanged,
-    required TResult Function(Blockchain blockChain) blockChainChanged,
     required TResult Function(BlockchainUrl url) blockChainUrlChanged,
     required TResult Function() createWallet,
     required TResult Function() loadWallet,
@@ -2005,7 +1733,6 @@ class _$Sync implements Sync {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Mnemonic mnemonic)? mnemonicChanged,
     TResult Function(Password password)? passwordChanged,
-    TResult Function(Blockchain blockChain)? blockChainChanged,
     TResult Function(BlockchainUrl url)? blockChainUrlChanged,
     TResult Function()? createWallet,
     TResult Function()? loadWallet,
@@ -2027,7 +1754,6 @@ class _$Sync implements Sync {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Mnemonic mnemonic)? mnemonicChanged,
     TResult Function(Password password)? passwordChanged,
-    TResult Function(Blockchain blockChain)? blockChainChanged,
     TResult Function(BlockchainUrl url)? blockChainUrlChanged,
     TResult Function()? createWallet,
     TResult Function()? loadWallet,
@@ -2053,7 +1779,6 @@ class _$Sync implements Sync {
   TResult map<TResult extends Object?>({
     required TResult Function(MnemonicChanged value) mnemonicChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(BlockChainChanged value) blockChainChanged,
     required TResult Function(BlockChainUrlChanged value) blockChainUrlChanged,
     required TResult Function(CreateWallet value) createWallet,
     required TResult Function(LoadWallet value) loadWallet,
@@ -2077,7 +1802,6 @@ class _$Sync implements Sync {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(MnemonicChanged value)? mnemonicChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainChanged value)? blockChainChanged,
     TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
     TResult Function(CreateWallet value)? createWallet,
     TResult Function(LoadWallet value)? loadWallet,
@@ -2099,7 +1823,6 @@ class _$Sync implements Sync {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MnemonicChanged value)? mnemonicChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainChanged value)? blockChainChanged,
     TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
     TResult Function(CreateWallet value)? createWallet,
     TResult Function(LoadWallet value)? loadWallet,
@@ -2170,7 +1893,6 @@ class _$GetConfirmedTransaction implements GetConfirmedTransaction {
   TResult when<TResult extends Object?>({
     required TResult Function(Mnemonic mnemonic) mnemonicChanged,
     required TResult Function(Password password) passwordChanged,
-    required TResult Function(Blockchain blockChain) blockChainChanged,
     required TResult Function(BlockchainUrl url) blockChainUrlChanged,
     required TResult Function() createWallet,
     required TResult Function() loadWallet,
@@ -2193,7 +1915,6 @@ class _$GetConfirmedTransaction implements GetConfirmedTransaction {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Mnemonic mnemonic)? mnemonicChanged,
     TResult Function(Password password)? passwordChanged,
-    TResult Function(Blockchain blockChain)? blockChainChanged,
     TResult Function(BlockchainUrl url)? blockChainUrlChanged,
     TResult Function()? createWallet,
     TResult Function()? loadWallet,
@@ -2215,7 +1936,6 @@ class _$GetConfirmedTransaction implements GetConfirmedTransaction {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Mnemonic mnemonic)? mnemonicChanged,
     TResult Function(Password password)? passwordChanged,
-    TResult Function(Blockchain blockChain)? blockChainChanged,
     TResult Function(BlockchainUrl url)? blockChainUrlChanged,
     TResult Function()? createWallet,
     TResult Function()? loadWallet,
@@ -2241,7 +1961,6 @@ class _$GetConfirmedTransaction implements GetConfirmedTransaction {
   TResult map<TResult extends Object?>({
     required TResult Function(MnemonicChanged value) mnemonicChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(BlockChainChanged value) blockChainChanged,
     required TResult Function(BlockChainUrlChanged value) blockChainUrlChanged,
     required TResult Function(CreateWallet value) createWallet,
     required TResult Function(LoadWallet value) loadWallet,
@@ -2265,7 +1984,6 @@ class _$GetConfirmedTransaction implements GetConfirmedTransaction {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(MnemonicChanged value)? mnemonicChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainChanged value)? blockChainChanged,
     TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
     TResult Function(CreateWallet value)? createWallet,
     TResult Function(LoadWallet value)? loadWallet,
@@ -2287,7 +2005,6 @@ class _$GetConfirmedTransaction implements GetConfirmedTransaction {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MnemonicChanged value)? mnemonicChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainChanged value)? blockChainChanged,
     TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
     TResult Function(CreateWallet value)? createWallet,
     TResult Function(LoadWallet value)? loadWallet,
@@ -2356,7 +2073,6 @@ class _$GetPendingTransaction implements GetPendingTransaction {
   TResult when<TResult extends Object?>({
     required TResult Function(Mnemonic mnemonic) mnemonicChanged,
     required TResult Function(Password password) passwordChanged,
-    required TResult Function(Blockchain blockChain) blockChainChanged,
     required TResult Function(BlockchainUrl url) blockChainUrlChanged,
     required TResult Function() createWallet,
     required TResult Function() loadWallet,
@@ -2379,7 +2095,6 @@ class _$GetPendingTransaction implements GetPendingTransaction {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Mnemonic mnemonic)? mnemonicChanged,
     TResult Function(Password password)? passwordChanged,
-    TResult Function(Blockchain blockChain)? blockChainChanged,
     TResult Function(BlockchainUrl url)? blockChainUrlChanged,
     TResult Function()? createWallet,
     TResult Function()? loadWallet,
@@ -2401,7 +2116,6 @@ class _$GetPendingTransaction implements GetPendingTransaction {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Mnemonic mnemonic)? mnemonicChanged,
     TResult Function(Password password)? passwordChanged,
-    TResult Function(Blockchain blockChain)? blockChainChanged,
     TResult Function(BlockchainUrl url)? blockChainUrlChanged,
     TResult Function()? createWallet,
     TResult Function()? loadWallet,
@@ -2427,7 +2141,6 @@ class _$GetPendingTransaction implements GetPendingTransaction {
   TResult map<TResult extends Object?>({
     required TResult Function(MnemonicChanged value) mnemonicChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(BlockChainChanged value) blockChainChanged,
     required TResult Function(BlockChainUrlChanged value) blockChainUrlChanged,
     required TResult Function(CreateWallet value) createWallet,
     required TResult Function(LoadWallet value) loadWallet,
@@ -2451,7 +2164,6 @@ class _$GetPendingTransaction implements GetPendingTransaction {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(MnemonicChanged value)? mnemonicChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainChanged value)? blockChainChanged,
     TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
     TResult Function(CreateWallet value)? createWallet,
     TResult Function(LoadWallet value)? loadWallet,
@@ -2473,7 +2185,6 @@ class _$GetPendingTransaction implements GetPendingTransaction {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MnemonicChanged value)? mnemonicChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainChanged value)? blockChainChanged,
     TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
     TResult Function(CreateWallet value)? createWallet,
     TResult Function(LoadWallet value)? loadWallet,
@@ -2577,7 +2288,6 @@ class _$BroadcastTransaction implements BroadcastTransaction {
   TResult when<TResult extends Object?>({
     required TResult Function(Mnemonic mnemonic) mnemonicChanged,
     required TResult Function(Password password) passwordChanged,
-    required TResult Function(Blockchain blockChain) blockChainChanged,
     required TResult Function(BlockchainUrl url) blockChainUrlChanged,
     required TResult Function() createWallet,
     required TResult Function() loadWallet,
@@ -2600,7 +2310,6 @@ class _$BroadcastTransaction implements BroadcastTransaction {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Mnemonic mnemonic)? mnemonicChanged,
     TResult Function(Password password)? passwordChanged,
-    TResult Function(Blockchain blockChain)? blockChainChanged,
     TResult Function(BlockchainUrl url)? blockChainUrlChanged,
     TResult Function()? createWallet,
     TResult Function()? loadWallet,
@@ -2622,7 +2331,6 @@ class _$BroadcastTransaction implements BroadcastTransaction {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Mnemonic mnemonic)? mnemonicChanged,
     TResult Function(Password password)? passwordChanged,
-    TResult Function(Blockchain blockChain)? blockChainChanged,
     TResult Function(BlockchainUrl url)? blockChainUrlChanged,
     TResult Function()? createWallet,
     TResult Function()? loadWallet,
@@ -2648,7 +2356,6 @@ class _$BroadcastTransaction implements BroadcastTransaction {
   TResult map<TResult extends Object?>({
     required TResult Function(MnemonicChanged value) mnemonicChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(BlockChainChanged value) blockChainChanged,
     required TResult Function(BlockChainUrlChanged value) blockChainUrlChanged,
     required TResult Function(CreateWallet value) createWallet,
     required TResult Function(LoadWallet value) loadWallet,
@@ -2672,7 +2379,6 @@ class _$BroadcastTransaction implements BroadcastTransaction {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(MnemonicChanged value)? mnemonicChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainChanged value)? blockChainChanged,
     TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
     TResult Function(CreateWallet value)? createWallet,
     TResult Function(LoadWallet value)? loadWallet,
@@ -2694,7 +2400,6 @@ class _$BroadcastTransaction implements BroadcastTransaction {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MnemonicChanged value)? mnemonicChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainChanged value)? blockChainChanged,
     TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
     TResult Function(CreateWallet value)? createWallet,
     TResult Function(LoadWallet value)? loadWallet,
@@ -2770,7 +2475,6 @@ class _$WalletExists implements WalletExists {
   TResult when<TResult extends Object?>({
     required TResult Function(Mnemonic mnemonic) mnemonicChanged,
     required TResult Function(Password password) passwordChanged,
-    required TResult Function(Blockchain blockChain) blockChainChanged,
     required TResult Function(BlockchainUrl url) blockChainUrlChanged,
     required TResult Function() createWallet,
     required TResult Function() loadWallet,
@@ -2793,7 +2497,6 @@ class _$WalletExists implements WalletExists {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Mnemonic mnemonic)? mnemonicChanged,
     TResult Function(Password password)? passwordChanged,
-    TResult Function(Blockchain blockChain)? blockChainChanged,
     TResult Function(BlockchainUrl url)? blockChainUrlChanged,
     TResult Function()? createWallet,
     TResult Function()? loadWallet,
@@ -2815,7 +2518,6 @@ class _$WalletExists implements WalletExists {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Mnemonic mnemonic)? mnemonicChanged,
     TResult Function(Password password)? passwordChanged,
-    TResult Function(Blockchain blockChain)? blockChainChanged,
     TResult Function(BlockchainUrl url)? blockChainUrlChanged,
     TResult Function()? createWallet,
     TResult Function()? loadWallet,
@@ -2841,7 +2543,6 @@ class _$WalletExists implements WalletExists {
   TResult map<TResult extends Object?>({
     required TResult Function(MnemonicChanged value) mnemonicChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(BlockChainChanged value) blockChainChanged,
     required TResult Function(BlockChainUrlChanged value) blockChainUrlChanged,
     required TResult Function(CreateWallet value) createWallet,
     required TResult Function(LoadWallet value) loadWallet,
@@ -2865,7 +2566,6 @@ class _$WalletExists implements WalletExists {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(MnemonicChanged value)? mnemonicChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainChanged value)? blockChainChanged,
     TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
     TResult Function(CreateWallet value)? createWallet,
     TResult Function(LoadWallet value)? loadWallet,
@@ -2887,7 +2587,6 @@ class _$WalletExists implements WalletExists {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MnemonicChanged value)? mnemonicChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainChanged value)? blockChainChanged,
     TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
     TResult Function(CreateWallet value)? createWallet,
     TResult Function(LoadWallet value)? loadWallet,
@@ -2955,7 +2654,6 @@ class _$GetWallet implements GetWallet {
   TResult when<TResult extends Object?>({
     required TResult Function(Mnemonic mnemonic) mnemonicChanged,
     required TResult Function(Password password) passwordChanged,
-    required TResult Function(Blockchain blockChain) blockChainChanged,
     required TResult Function(BlockchainUrl url) blockChainUrlChanged,
     required TResult Function() createWallet,
     required TResult Function() loadWallet,
@@ -2978,7 +2676,6 @@ class _$GetWallet implements GetWallet {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Mnemonic mnemonic)? mnemonicChanged,
     TResult Function(Password password)? passwordChanged,
-    TResult Function(Blockchain blockChain)? blockChainChanged,
     TResult Function(BlockchainUrl url)? blockChainUrlChanged,
     TResult Function()? createWallet,
     TResult Function()? loadWallet,
@@ -3000,7 +2697,6 @@ class _$GetWallet implements GetWallet {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Mnemonic mnemonic)? mnemonicChanged,
     TResult Function(Password password)? passwordChanged,
-    TResult Function(Blockchain blockChain)? blockChainChanged,
     TResult Function(BlockchainUrl url)? blockChainUrlChanged,
     TResult Function()? createWallet,
     TResult Function()? loadWallet,
@@ -3026,7 +2722,6 @@ class _$GetWallet implements GetWallet {
   TResult map<TResult extends Object?>({
     required TResult Function(MnemonicChanged value) mnemonicChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(BlockChainChanged value) blockChainChanged,
     required TResult Function(BlockChainUrlChanged value) blockChainUrlChanged,
     required TResult Function(CreateWallet value) createWallet,
     required TResult Function(LoadWallet value) loadWallet,
@@ -3050,7 +2745,6 @@ class _$GetWallet implements GetWallet {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(MnemonicChanged value)? mnemonicChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainChanged value)? blockChainChanged,
     TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
     TResult Function(CreateWallet value)? createWallet,
     TResult Function(LoadWallet value)? loadWallet,
@@ -3072,7 +2766,6 @@ class _$GetWallet implements GetWallet {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MnemonicChanged value)? mnemonicChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainChanged value)? blockChainChanged,
     TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
     TResult Function(CreateWallet value)? createWallet,
     TResult Function(LoadWallet value)? loadWallet,

@@ -18,14 +18,8 @@ class Splash extends StatefulWidget {
 class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> scaleAnimation;
-  bool _seen = false;
   bool isConnected = false;
   bool isCleaning = false;
-
-
-
-
-
   @override
   void initState() {
     _controller = AnimationController(

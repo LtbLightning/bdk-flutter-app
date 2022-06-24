@@ -2,6 +2,7 @@ import 'package:bdk_wallet/application/wallet/wallet_bloc.dart';
 import 'package:bdk_wallet/presentaition/dashboard/widgets/transaction_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class TransactionList extends StatefulWidget {
   const TransactionList({Key? key}) : super(key: key);
@@ -32,7 +33,7 @@ class _TransactionListState extends State<TransactionList> {
                       confirmationTime:state.transactions![index].confirmation_time,
                       received: state.transactions![index].received,)):
             Text('No Confirmed Transactions Found',
-                style: TextStyle(
+                style: GoogleFonts.montserrat(
                     fontSize: 18,
                     color:Colors.black.withOpacity(.8),
                     height: 2.2,

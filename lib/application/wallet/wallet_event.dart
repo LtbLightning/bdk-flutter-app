@@ -4,7 +4,6 @@ part of 'wallet_bloc.dart';
 class WalletEvent with _$WalletEvent {
   const factory WalletEvent.mnemonicChanged(Mnemonic mnemonic) = MnemonicChanged;
   const factory WalletEvent.passwordChanged(Password password) = PasswordChanged;
-  const factory WalletEvent.blockChainChanged(Blockchain blockChain) = BlockChainChanged;
   const factory WalletEvent.blockChainUrlChanged(BlockchainUrl url) =BlockChainUrlChanged;
   const factory WalletEvent.createWallet() = CreateWallet;
   const factory WalletEvent.loadWallet() = LoadWallet;

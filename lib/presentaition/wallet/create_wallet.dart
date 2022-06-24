@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:bdk_flutter/bdk_flutter.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CreateBdkWallet extends StatelessWidget {
   const CreateBdkWallet({Key? key}) : super(key: key);
@@ -43,10 +44,12 @@ class CreateBdkWallet extends StatelessWidget {
     backgroundColor: Colors.white,
     title: Text("Create Wallet",
         textAlign: TextAlign.center,
-        style: TextStyle(
+        style:GoogleFonts.montserrat(
             decoration: TextDecoration.none,
-            fontSize: 14,
-            color: Colors.black.withOpacity(.8))),
+            fontSize: 13,
+            fontWeight: FontWeight.w700,
+            color: Colors.black
+        )),
   );
 }
 
@@ -68,7 +71,7 @@ class Body extends StatelessWidget {
           children: <Widget>[
             Text("Create your new wallet",
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: GoogleFonts.montserrat(
                     decoration: TextDecoration.none,
                     fontSize: 25,
                     fontWeight: FontWeight.w900,
@@ -76,11 +79,11 @@ class Body extends StatelessWidget {
             const SizedBox(height: 10),
             Text("Create your Testnet Wallet with your mnemonic and password ",
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style:  GoogleFonts.montserrat(
                     decoration: TextDecoration.none,
-                    fontSize: 12,
+                    fontSize: 14,
                     fontWeight: FontWeight.w400,
-                    color: Colors.black.withOpacity(.4))),
+                    color: Colors.black.withOpacity(.8))),
             const SizedBox(height: 50),
             const SignInForm(),
           ],
@@ -137,26 +140,26 @@ class SignInFormState extends State<SignInForm> {
                                 'valid mnemonic seed',
                             orElse: () => null),
                             (s) => null),
-                style: const TextStyle(
+                style: GoogleFonts.montserrat(
                     color: Colors.black,
                     fontSize: 14,
-                    fontWeight: FontWeight.w500),
+                    fontWeight: FontWeight.w700),
                 decoration: InputDecoration(
                   border: InputBorder.none,
                   labelText: "Mnemonic",
-                  errorStyle: const TextStyle(
+                  errorStyle:GoogleFonts.montserrat(
                       color: Colors.red,
                       fontSize: 11,
-                      fontWeight: FontWeight.w400),
-                  hintText: "Enter your Mnemonic",
-                  labelStyle: const TextStyle(
-                      color: Colors.blue,
-                      fontSize: 13,
                       fontWeight: FontWeight.w500),
-                  hintStyle: TextStyle(
+                  hintText: "Enter your Mnemonic",
+                  labelStyle: GoogleFonts.montserrat(
+                      color: Colors.blue,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w700),
+                  hintStyle: GoogleFonts.montserrat(
                       decoration: TextDecoration.none,
                       fontSize: 12,
-                      fontWeight: FontWeight.w400,
+                      fontWeight: FontWeight.w600,
                       color: Colors.black.withOpacity(.4)),
                   floatingLabelBehavior: FloatingLabelBehavior.always,
                   suffixIcon: IconButton(
@@ -183,26 +186,26 @@ class SignInFormState extends State<SignInForm> {
                               'valid Password',
                           orElse: () => null),
                           (s) => null),
-                  style: const TextStyle(
+                  style: GoogleFonts.montserrat(
                       color: Colors.black,
                       fontSize: 14,
-                      fontWeight: FontWeight.w500),
+                      fontWeight: FontWeight.w700),
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     labelText: "Password",
-                    errorStyle: const TextStyle(
+                    errorStyle:GoogleFonts.montserrat(
                         color: Colors.red,
                         fontSize: 11,
                         fontWeight: FontWeight.w400),
                     hintText: "Enter your Password",
                     labelStyle: const TextStyle(
                         color: Colors.blue,
-                        fontSize: 13,
+                        fontSize: 14,
                         fontWeight: FontWeight.w500),
-                    hintStyle: TextStyle(
+                    hintStyle:GoogleFonts.montserrat(
                         decoration: TextDecoration.none,
                         fontSize: 12,
-                        fontWeight: FontWeight.w400,
+                        fontWeight: FontWeight.w600,
                         color: Colors.black.withOpacity(.4)),
                     floatingLabelBehavior: FloatingLabelBehavior.always,
                     suffixIcon: const Icon(
@@ -213,65 +216,6 @@ class SignInFormState extends State<SignInForm> {
               const SizedBox(
                 height: 10,
               ),
-              Padding(
-                padding: const EdgeInsets.only(right: 15),
-                child: FormField<String>(
-                  builder: (FormFieldState<String> state) {
-                    return InputDecorator(
-                      decoration: InputDecoration(
-                        border: InputBorder.none,
-                        labelText: "Blockchain",
-                        errorStyle: const TextStyle(
-                            color: Colors.red,
-                            fontSize: 12,
-                            fontWeight: FontWeight.w700),
-                        hintText: "Select your Blockchain",
-                        labelStyle: const TextStyle(
-                            color: Colors.blue,
-                            fontSize: 13,
-                            fontWeight: FontWeight.w500),
-                        hintStyle: TextStyle(
-                            decoration: TextDecoration.none,
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400,
-                            color: Colors.black.withOpacity(.4)),
-                        floatingLabelBehavior: FloatingLabelBehavior.always,
-                      ),
-                      child: DropdownButtonHideUnderline(
-                        child: DropdownButton<Blockchain>(
-                          borderRadius: BorderRadius.circular(10),
-                          elevation: 1,
-                          isDense: true,
-                          icon: const Icon(CupertinoIcons.down_arrow, size: 20, ),
-                          onChanged: (value) => context
-                              .read<WalletBloc>()
-                              .add(WalletEvent.blockChainChanged(value!)),
-                          items:[
-                            DropdownMenuItem<Blockchain>(
-                              value: Blockchain.ELECTRUM,
-                              child: Text(Blockchain.ELECTRUM.name, style: TextStyle(
-                                  decoration: TextDecoration.none,
-                                  fontSize: 13,
-                                  fontWeight: FontWeight.w700,
-                                  color: Colors.black.withOpacity(.8)),),
-                            ),
-                            DropdownMenuItem<Blockchain>(
-                              value: Blockchain.ESPLORA,
-                              child: Text(Blockchain.ESPLORA.name, style: TextStyle(
-                                  decoration: TextDecoration.none,
-                                  fontSize: 13,
-                                  fontWeight: FontWeight.w700,
-                                  color: Colors.black.withOpacity(.8)),),
-                            )
-                          ],
-                        ),
-                      ),
-                    );
-                  },
-                ),
-              ),
-              const Divider(),
-              const SizedBox(height: 10),
               TextFormField(
                   onChanged: (value) => walletBloc
                       .add(WalletEvent.blockChainUrlChanged(BlockchainUrl(value))),
@@ -279,29 +223,29 @@ class SignInFormState extends State<SignInForm> {
                       walletBloc.state.walletEntity?.blockChainUrl?.value.fold(
                           (f) => f.maybeMap(
                           invalidBlockchainUrl: (_) => 'Please enter a '
-                              'valid BlockChainUrl',
+                              'valid Bitcoin Node Url',
                           orElse: () => null),
                           (s) => null),
-                  style: const TextStyle(
+                  style: GoogleFonts.montserrat(
                       color: Colors.black,
                       fontSize: 14,
-                      fontWeight: FontWeight.w500),
+                      fontWeight: FontWeight.w700),
                   decoration: InputDecoration(
                     border: InputBorder.none,
-                    labelText: "Blockchain Url",
-                    errorStyle: const TextStyle(
+                    labelText: "Bitcoin Node Url",
+                    errorStyle: GoogleFonts.montserrat(
                         color: Colors.red,
                         fontSize: 11,
                         fontWeight: FontWeight.w400),
-                    hintText: "Enter your Blockchain Url",
-                    labelStyle: const TextStyle(
+                    hintText: "Enter your Bitcoin Node Url",
+                    labelStyle: GoogleFonts.montserrat(
                         color: Colors.blue,
                         fontSize: 13,
-                        fontWeight: FontWeight.w500),
-                    hintStyle: TextStyle(
+                        fontWeight: FontWeight.w700),
+                    hintStyle: GoogleFonts.montserrat(
                         decoration: TextDecoration.none,
                         fontSize: 12,
-                        fontWeight: FontWeight.w400,
+                        fontWeight: FontWeight.w600,
                         color: Colors.black.withOpacity(.4)),
                     floatingLabelBehavior: FloatingLabelBehavior.always,
                     suffixIcon: const Icon(CupertinoIcons.archivebox),
@@ -319,8 +263,7 @@ class SignInFormState extends State<SignInForm> {
                       .showSnackBar(SnackBar(
                     content: Text(
                         'All fields should be valid',
-                        style: Theme.of(context).textTheme.bodyText1!
-                            .copyWith(
+                        style: GoogleFonts.montserrat(
                           color: Colors.white,
                           fontSize: 14,
                           fontWeight: FontWeight.w600,
@@ -341,11 +284,11 @@ class SignInFormState extends State<SignInForm> {
                       ? const CircularProgressIndicator(
                     value: null,
                   )
-                      : const Text("Create Wallet",
-                      style: TextStyle(
+                      :  Text("Create Wallet",
+                      style: GoogleFonts.montserrat(
                           color: Colors.white,
                           fontSize: 14,
-                          fontWeight: FontWeight.w700)),
+                          fontWeight: FontWeight.w800)),
                 ),
               ),
             ]));

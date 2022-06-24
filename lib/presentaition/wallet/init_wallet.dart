@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'create_wallet.dart';
 import 'load_wallet.dart';
@@ -16,29 +17,45 @@ class InitWallet extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Image.asset(
-              'assets/logo2.png',
-              width: MediaQuery.of(context).size.width*.3,
-              height: MediaQuery.of(context).size.width*.3,
-              fit: BoxFit.cover,
+            Stack(
+              children: [
+                Image.asset(
+                  'assets/logo2.png',
+                  width: MediaQuery.of(context).size.width*.3,
+                  height: MediaQuery.of(context).size.width*.3,
+                  fit: BoxFit.cover,
+                ),
+                Positioned(
+                  bottom: 10,
+                  right: 0,
+                  child: Image.asset(
+                    'assets/flutter.png',
+                    width: MediaQuery.of(context).size.width*.1,
+                    height: MediaQuery.of(context).size.width*.1,
+                    fit: BoxFit.contain,
+                  ),
+                ),
+
+              ],
             ),
             const SizedBox(height: 20),
-            Text("bitcoin made easier",
+            Text("Demo Bitcoin App",
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style:GoogleFonts.montserrat(
                     decoration: TextDecoration.none,
-                    fontSize: 25,
+                    fontSize: 30,
                     fontWeight: FontWeight.w900,
                     color: Colors.black.withOpacity(.9)
                 )),
             const SizedBox(height: 15),
-            Text("start exploring the bitcoin world with the  wallet app",
+            Text("Built using Flutter version of Bitcoin Development Kit",
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: GoogleFonts.montserrat(
                     decoration: TextDecoration.none,
-                    fontSize: 12,
-                    fontWeight: FontWeight.w400,
-                    color: Colors.black.withOpacity(.4)
+                    fontSize: 14,
+                    height: 1.5,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.black.withOpacity(.7)
                 )),
           const Spacer(),
             CupertinoButton(
@@ -47,11 +64,12 @@ class InitWallet extends StatelessWidget {
               onPressed: (){
     Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const LoadBdkWallet()));
     },
-              child:  const Text("Load wallet",
+              child: Text("Load wallet",
                   textAlign: TextAlign.center,
-                  style: TextStyle(
+                  style: GoogleFonts.montserrat(
                       decoration: TextDecoration.none,
                       fontSize: 13,
+                      fontWeight: FontWeight.w700,
                       color: Colors.white
                   )),
             ),
@@ -62,11 +80,12 @@ class InitWallet extends StatelessWidget {
               onPressed: (){
               Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const CreateBdkWallet()));
       },
-              child: const Text("Create new  wallet",
+              child:  Text("Create new  wallet",
                   textAlign: TextAlign.center,
-                  style: TextStyle(
+                  style: GoogleFonts.montserrat(
                       decoration: TextDecoration.none,
                       fontSize: 13,
+                      fontWeight: FontWeight.w700,
                       color: Colors.white
                   )),
             )

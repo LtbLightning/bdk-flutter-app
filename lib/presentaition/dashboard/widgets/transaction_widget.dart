@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 
 class TransactionTile extends StatefulWidget {
@@ -35,7 +36,7 @@ class _TransactionTileState extends State<TransactionTile> {
                     color: Colors.black,),
                   child: Center(
                     child: Text(widget.txId.substring(0,2).toUpperCase(),
-                      style: const TextStyle(
+                      style: GoogleFonts.montserrat(
                           letterSpacing: 2,
                           fontSize: 16,
                           color:Colors.white,
@@ -49,14 +50,14 @@ class _TransactionTileState extends State<TransactionTile> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(widget.txId.substring(0,20),
-                        style: TextStyle(
+                        style: GoogleFonts.montserrat(
                             fontSize: 14,
                             color:Colors.black.withOpacity(.8),
                             fontWeight: FontWeight.w800)),
                      Text(getSendOrReceive(widget.sent.toString(), widget.received.toString()),
-                        style: TextStyle(
+                        style: GoogleFonts.montserrat(
                             fontSize: 13,
-                            color:Colors.black.withOpacity(.6),
+                            color:Colors.black.withOpacity(.7),
                             height: 2.2,
                             fontWeight: FontWeight.w500)),
                   ],
@@ -67,7 +68,7 @@ class _TransactionTileState extends State<TransactionTile> {
                   margin: const EdgeInsets.only(left: 20),
                   child: Text( DateFormat("MMMd").format(DateTime.fromMillisecondsSinceEpoch(int.parse(widget.confirmationTime!) *1000)
                   ),
-                    style: const TextStyle(
+                    style: GoogleFonts.montserrat(
                         fontSize: 13,
                         color:Colors.blue,
                         fontWeight: FontWeight.w800),),

@@ -5,6 +5,7 @@ import 'package:bdk_wallet/presentaition/dashboard/widgets/transaction_widget.da
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -25,9 +26,8 @@ class _HomeState extends State<Home> {
     return BlocConsumer<WalletBloc, WalletState>(
       listenWhen: (p, q)=> p.isSubmitting!= q.isSubmitting,
       listener: (context, state) {
-        state.walletFailureOrSuccessOption.fold(() => Center(
-            child: Container(child:
-        const CircularProgressIndicator(value: null, color: Colors.blue,),)),
+        state.walletFailureOrSuccessOption.fold(() => const Center(
+            child: CircularProgressIndicator(value: null, color: Colors.blue,)),
                 (a) => a.fold(
                     (failure) {
                   final snackBar = SnackBar(
@@ -40,9 +40,8 @@ class _HomeState extends State<Home> {
       },
       buildWhen: (p,q)=> p.isSubmitting!=q.isSubmitting,
       builder: (context, state) {
-        return  state.isSubmitting ? Center(
-            child: Container(child:
-            const CircularProgressIndicator(value: null, color: Colors.blue,),)):
+        return  state.isSubmitting ? const Center(
+            child: CircularProgressIndicator(value: null, color: Colors.blue,)):
         Scaffold(
           backgroundColor: Colors.white,
           resizeToAvoidBottomInset: true,
@@ -71,32 +70,32 @@ class _HomeState extends State<Home> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                     Text(state.walletEntity!.balance==''? '0': state.walletEntity!.balance.toString(),
-                        style: const TextStyle(
+                        style:GoogleFonts.montserrat(
                             fontSize: 35,
                             color:Colors.blue,
                             fontWeight: FontWeight.w900)),
                    const SizedBox(width: 10,),
-                      const Text("Sats",
-                          style: TextStyle(
+                       Text("Sats",
+                          style: GoogleFonts.montserrat(
                               fontSize: 15,
                               color:Colors.black,
-                              fontWeight: FontWeight.w500))
+                              fontWeight: FontWeight.w700))
                   ]),
                   const SizedBox(height: 10),
                   Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(state.walletEntity!.balance==''? '0':(int.parse(state.walletEntity?.balance!??'0') * 0.00000001).toString(),
-                            style: const TextStyle(
-                                fontSize: 15,
-                                color:Colors.blue,
-                                fontWeight: FontWeight.w500)),
-                        const SizedBox(width: 10,),
-                        const Text("BTC",
-                            style: TextStyle(
+                            style: GoogleFonts.montserrat(
                                 fontSize: 15,
                                 color:Colors.black,
-                                fontWeight: FontWeight.w500))
+                                fontWeight: FontWeight.w700)),
+                        const SizedBox(width: 10,),
+                        Text("BTC",
+                            style: GoogleFonts.montserrat(
+                                fontSize: 15,
+                                color:Colors.black,
+                                fontWeight: FontWeight.w700))
                       ]),
                   const SizedBox(height: 30),
                   const TransactionList()
