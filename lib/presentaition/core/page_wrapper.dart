@@ -1,12 +1,11 @@
 import 'package:bdk_wallet/presentaition/dashboard/home.dart';
-import 'package:bdk_wallet/presentaition/wallet/create_wallet.dart';
+import 'package:bdk_wallet/presentaition/wallet/load_wallet.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../application/wallet/wallet_bloc.dart';
 import '../receive/receive.dart';
 import '../send/send.dart';
+
 class PageWrapper extends StatefulWidget {
   const PageWrapper({Key? key}) : super(key: key);
 
@@ -16,7 +15,7 @@ class PageWrapper extends StatefulWidget {
 
 class _PageWrapperState extends State<PageWrapper> {
   int _selectedIndex = 0;
-  PageController ? pageController;
+  PageController? pageController;
 
   @override
   void initState() {
@@ -29,6 +28,7 @@ class _PageWrapperState extends State<PageWrapper> {
     pageController?.dispose();
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,7 +42,8 @@ class _PageWrapperState extends State<PageWrapper> {
             children: const [
               Home(),
               Send(),
-              Receive()
+              Receive(),
+              LoadBdkWallet()
             ],
           ),
         ),
@@ -53,17 +54,15 @@ class _PageWrapperState extends State<PageWrapper> {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const CreateBdkWallet(),
+                  builder: (context) => const Receive(),
                 ));
           },
           child: const Icon(
             Icons.qr_code_2_rounded,
-
             size: 25,
           ), //icon inside button
         ),
-        floatingActionButtonLocation:
-        FloatingActionButtonLocation.centerDocked,
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         bottomNavigationBar: BottomAppBar(
             color: Colors.white,
             elevation: 5.0,
@@ -77,41 +76,38 @@ class _PageWrapperState extends State<PageWrapper> {
                     'Home',
                     0,
                     _selectedIndex,
-                    Icon(
-                        CupertinoIcons.bitcoin_circle,
+                    Icon(CupertinoIcons.bitcoin_circle,
                         size: 25,
-                        color: _selectedIndex==0? Theme.of(context).primaryColor :Theme.of(context).hintColor
-                    )),
+                        color: _selectedIndex == 0
+                            ? Theme.of(context).primaryColor
+                            : Theme.of(context).hintColor)),
                 bottomAppBarItem(
                     'Send',
                     1,
                     _selectedIndex,
-                    Icon(
-                        CupertinoIcons.rocket,
+                    Icon(CupertinoIcons.rocket,
                         size: 25,
-                        color: _selectedIndex==1? Theme.of(context)
-                            .primaryColor :Theme.of(context).hintColor
-                    )),
+                        color: _selectedIndex == 1
+                            ? Theme.of(context).primaryColor
+                            : Theme.of(context).hintColor)),
                 bottomAppBarItem(
                     'Receive',
                     2,
                     _selectedIndex,
-                    Icon(
-                        CupertinoIcons.arrow_down_doc,
+                    Icon(CupertinoIcons.arrow_down_doc,
                         size: 25,
-                        color: _selectedIndex==2? Theme.of(context)
-                            .primaryColor :Theme.of(context).hintColor
-                    )),
+                        color: _selectedIndex == 2
+                            ? Theme.of(context).primaryColor
+                            : Theme.of(context).hintColor)),
                 bottomAppBarItem(
-                    'Settings',
+                    'Change',
                     3,
                     _selectedIndex,
-                    Icon(
-                        CupertinoIcons.settings,
+                    Icon(CupertinoIcons.arrow_right_arrow_left_circle,
                         size: 25,
-                        color: _selectedIndex==3? Theme.of(context)
-                            .primaryColor :Theme.of(context).hintColor
-                    )),
+                        color: _selectedIndex == 3
+                            ? Theme.of(context).primaryColor
+                            : Theme.of(context).hintColor)),
               ],
             )));
   }
@@ -121,7 +117,7 @@ class _PageWrapperState extends State<PageWrapper> {
     setState(() {
       _selectedIndex = index;
     });
-    if(pageController!.hasClients){
+    if (pageController!.hasClients) {
       pageController?.jumpToPage(_selectedIndex);
     }
   }
@@ -132,8 +128,8 @@ class _PageWrapperState extends State<PageWrapper> {
     });
   }
 
-  Widget bottomAppBarItem(String label, int index, int selectedIndex, Icon?
-  icon) {
+  Widget bottomAppBarItem(
+      String label, int index, int selectedIndex, Icon? icon) {
     return GestureDetector(
       onTap: () {
         bottomTapped(index);
@@ -143,21 +139,25 @@ class _PageWrapperState extends State<PageWrapper> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            _selectedIndex==index? Container(width: 10,height: 3,color: Theme
-                .of(context)
-                .primaryColor ):const SizedBox.shrink(),
+            _selectedIndex == index
+                ? Container(
+                    width: 10, height: 3, color: Theme.of(context).primaryColor)
+                : const SizedBox.shrink(),
             Container(
               margin: const EdgeInsets.all(5),
               height: 30,
               width: 40.5,
               child: icon,
             ),
-            Text(label, textAlign: TextAlign.start,
+            Text(
+              label,
+              textAlign: TextAlign.start,
               style: Theme.of(context).textTheme.bodyText1?.copyWith(
                   fontSize: 12,
-                  color: _selectedIndex==index? Theme.of(context)
-                      .primaryColor :Theme.of(context).hintColor
-              ),),
+                  color: _selectedIndex == index
+                      ? Theme.of(context).primaryColor
+                      : Theme.of(context).hintColor),
+            ),
           ],
         ),
       ),

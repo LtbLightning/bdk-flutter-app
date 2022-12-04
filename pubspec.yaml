@@ -1,6 +1,6 @@
 name: bdk_wallet
 description: A new Flutter project.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
@@ -9,23 +9,25 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  bdk_flutter:
-    git:
-      url: https://github.com/LtbLightning/bdk-flutter.git
-      ref: main
+
+  uuid:
   connectivity_plus: ^2.3.0
   cupertino_icons: ^1.0.2
+  path_provider: any
   dartz: ^0.10.1
   intl:
   qr_flutter:
   flutter_bloc: ^8.0.1
   get_it: ^7.2.0
   injectable: ^1.5.3
-  validators: 
-  rxdart: ^0.27.4
+  validators:
   google_fonts: ^3.0.1
+  bdk_flutter:
+    git:
+      url: https://github.com/LtbLightning/bdk-flutter.git
+      ref: align-api-with-ffi
 dev_dependencies:
-  build_runner: ^2.1.11
+  build_runner: ^2.3.2
   freezed: ^2.0.3+1
   injectable_generator: ^1.5.3
   json_serializable: ^6.2.0
@@ -44,7 +46,6 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.

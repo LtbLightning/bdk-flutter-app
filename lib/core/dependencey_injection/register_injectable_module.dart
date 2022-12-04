@@ -6,7 +6,7 @@ import 'package:injectable/injectable.dart';
 abstract class RegisterModule {
   @preResolve
   Future<Connectivity> get connectivity async => Connectivity();
-  BdkWallet get bdkWallet => BdkWallet();
+
 // @preResolve
 // Future<FirebaseAuth> get firebaseAuth async=> FirebaseAuth.instance;
 

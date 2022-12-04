@@ -1,49 +1,36 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../domain/core/value_objects/value_objects.dart';
-import '../../../domain/wallet/entity/wallet.dart';
+import 'package:bdk_flutter/bdk_flutter.dart';
 
-part 'wallet_dto.freezed.dart';
-part 'wallet_dto.g.dart';
-@freezed
-class WalletDTO with _$WalletDTO {
-  const WalletDTO._();
+class WalletDto{
+  final String mnemonic;
+  final String? password;
+  final  Network network;
 
-  const factory WalletDTO({
-    String? address,
-    int? balance,
-    String? mnemonic,
-    String? blockChain,
-    String? blockChainUrl,
-    String? password
-  }) = _WalletDTO;
+  WalletDto({required this.mnemonic, this.password, required this.network});
 
-  factory WalletDTO.empty() =>
-      const WalletDTO(
-        address: '',
-        balance: 0,
-        mnemonic: '',
-        password: '',
-        blockChain: '',
-        blockChainUrl: '',
-      );
-
-  factory WalletDTO.fromDomain(WalletEntity wallet) {
-    return WalletDTO(
-      address: wallet.address,
-      balance: int.parse(wallet.balance!),
-      mnemonic: wallet.mnemonic?.getOrCrash(),
-      blockChain: wallet.blockChain?.name,
-      blockChainUrl: wallet.blockChainUrl?.getOrCrash(),
-    );
+  Map<String, dynamic> toJson() {
+    return {
+      "mnemonic": this.mnemonic,
+      "password": this.password,
+      "network": this.network.name.toString(),
+    };
   }
 
-  WalletEntity toDomain(){
-    return WalletEntity(
-        address: address,
-         balance: balance.toString(),
+  factory WalletDto.fromJson(Map<String, dynamic> json) {
+    return WalletDto(
+      mnemonic: json["mnemonic"],
+      password: json["password"],
+      network: toNetwork(json["network"]) ,
     );
   }
-
-  factory WalletDTO.fromJson(Map<String, dynamic> json) => _$WalletDTOFromJson(json);
-   }
+  static  Network toNetwork(String network){
+    switch(network){
+      case "Testnet": return Network.Testnet;
+      case "Bitcoin": return Network.Bitcoin;
+      case "Regtest": return Network.Regtest;
+      case "Signet": return Network.Signet;
+      default: return Network.Testnet;
+    }
+  }
+//
+}
