@@ -27,8 +27,10 @@ class WalletService extends IWalletService {
   Future<Either<WalletFailure, Wallet>> createWallet({required WalletDto walletDto}) async {
     try {
       final extendedXprv = await createDescriptorSecret(walletDto);
-      final descriptor = createDescriptor(extendedXprv);
-      final changeDescriptor = createChangeDescriptor(extendedXprv);
+      final descriptorStr = createDescriptor(extendedXprv);
+      final changeDescriptorStr = createChangeDescriptor(extendedXprv);
+      final descriptor = await Descriptor.create(descriptor: descriptorStr, network: Network.Testnet);
+      final changeDescriptor = await Descriptor.create(descriptor: changeDescriptorStr, network: Network.Testnet);
     final wallets = await checkIfWalletSaved(walletDto);
       await writeWallet(wallets);
       _wallet = await Wallet.create(

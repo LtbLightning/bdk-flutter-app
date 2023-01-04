@@ -53,10 +53,10 @@ class _TransactionListState extends State<TransactionList> {
                                     .toString(),
                                 sent: state
                                     .walletEntity!.transactions![index].sent
-                                    .toString(),
+                                  ,
                                 received: state
                                     .walletEntity!.transactions![index].received
-                                    .toString(),
+
                               ))
                       : Text('No Transactions Found',
                           style: GoogleFonts.montserrat(

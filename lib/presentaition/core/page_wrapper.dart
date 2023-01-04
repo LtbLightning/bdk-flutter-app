@@ -113,7 +113,6 @@ class _PageWrapperState extends State<PageWrapper> {
   }
 
   void bottomTapped(int index) {
-    print(index);
     setState(() {
       _selectedIndex = index;
     });

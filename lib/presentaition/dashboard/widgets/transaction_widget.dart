@@ -4,11 +4,11 @@ import 'package:google_fonts/google_fonts.dart';
 class TransactionTile extends StatefulWidget {
   final String txId;
   final String? fees;
-  final String? sent;
-  final String? received;
+  final int  sent;
+  final int  received;
 
   const TransactionTile(
-      {Key? key, required this.txId, this.fees, this.sent, this.received})
+      {Key? key, required this.txId, this.fees, required this.sent, required this.received})
       : super(key: key);
 
   @override
@@ -59,8 +59,8 @@ class _TransactionTileState extends State<TransactionTile> {
                               color: Colors.black.withOpacity(.8),
                               fontWeight: FontWeight.w800)),
                       Text(
-                          getSendOrReceive(widget.sent.toString(),
-                              widget.received.toString()),
+                          getSendOrReceive(widget.sent,
+                              widget.received),
                           style: GoogleFonts.montserrat(
                               fontSize: 13,
                               color: Colors.black.withOpacity(.7),
@@ -79,11 +79,13 @@ class _TransactionTileState extends State<TransactionTile> {
     );
   }
 
-  String getSendOrReceive(String send, String receive) {
-    if (send == '0') {
+  String getSendOrReceive(int send, int receive) {
+    if (send == 0|| send < receive  ) {
+      return '+ ${receive-send}';
+    } else if(receive < send){
+      return '- ${send-receive}';
+    } else{
       return '+ $receive';
-    } else {
-      return '- $send';
     }
   }
 }
