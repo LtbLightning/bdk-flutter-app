@@ -15,23 +15,20 @@ class WalletService extends IWalletService {
 
   Future<List<WalletDto>> checkIfWalletSaved(WalletDto walletDto) async{
     final wallets = await getAllWallets();
-   final res =  wallets.map((e) => e.mnemonic).toList();
-   if(res.contains(walletDto.mnemonic)){
-     return wallets;
-   } else{
-     wallets.add(walletDto);
-     return wallets;
-   }
+    final res =  wallets.map((e) => e.mnemonic).toList();
+    if(res.contains(walletDto.mnemonic)){
+      return wallets;
+    } else{
+      wallets.add(walletDto);
+      return wallets;
+    }
   }
   @override
   Future<Either<WalletFailure, Wallet>> createWallet({required WalletDto walletDto}) async {
     try {
-      final extendedXprv = await createDescriptorSecret(walletDto);
-      final descriptorStr = createDescriptor(extendedXprv);
-      final changeDescriptorStr = createChangeDescriptor(extendedXprv);
-      final descriptor = await Descriptor.create(descriptor: descriptorStr, network: Network.Testnet);
-      final changeDescriptor = await Descriptor.create(descriptor: changeDescriptorStr, network: Network.Testnet);
-    final wallets = await checkIfWalletSaved(walletDto);
+      final descriptor = await createDescriptorSecret(walletDto, KeyChainKind.External );
+      final changeDescriptor = await createDescriptorSecret(walletDto,KeyChainKind.Internal );
+      final wallets = await checkIfWalletSaved(walletDto);
       await writeWallet(wallets);
       _wallet = await Wallet.create(
           descriptor: descriptor,
@@ -56,6 +53,7 @@ class WalletService extends IWalletService {
     final res = await Persist().deleteFile("wallets");
     return res;
   }
+
   @override
   Future<List<WalletDto>> getAllWallets() async {
     final res = await  Persist().readFromFile("wallets") ;
@@ -159,39 +157,17 @@ class WalletService extends IWalletService {
       return const Left(WalletFailure.unexpected());
     }
   }
-
-
 }
 
-String _parseDescriptor(String key, String path) {
-  if (key.contains("/*")) {
-    final res = key.replaceAll("/*", "$path/*");
-    return res;
-  } else {
-    final res = "$key$path/*";
-    return res;
-  }
-}
 
-Future<String> createDescriptorSecret(WalletDto walletDto) async {
+Future<Descriptor> createDescriptorSecret(WalletDto walletDto, KeyChainKind keyChainKind) async {
   final mnemonic = await Mnemonic.fromString(walletDto.mnemonic);
   final descriptorSecretKey = await DescriptorSecretKey.create(
       network: walletDto.network,
       mnemonic: mnemonic,
       password: walletDto.password
   );
-  final path = await DerivationPath.create(path: "m/84'/1'/0'");
-  final extendedXprv = await descriptorSecretKey.derive(path);
-  final extendedXprvStr = await extendedXprv.asString();
-  return extendedXprvStr;
+  final descriptor = await Descriptor.newBip84(secretKey: descriptorSecretKey.asString(), network: walletDto.network, keyChainKind: keyChainKind);
+  return descriptor;
 }
 
-String createDescriptor(String secretKey) {
-  final res = _parseDescriptor("wpkh($secretKey)", "/0");
-  return res;
-}
-
-String createChangeDescriptor(String secretKey) {
-  final res = _parseDescriptor("wpkh($secretKey)", "/1");
-  return res;
-}
