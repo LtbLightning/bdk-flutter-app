@@ -40,11 +40,11 @@ packages:
     dependency: "direct main"
     description:
       path: "."
-      ref: align-api-with-ffi
-      resolved-ref: "9110609cf434ccc8cbda31f72f1056efa9c7e119"
+      ref: "update-bdk-v0.26"
+      resolved-ref: ddc2de5bd36ef720bfffcb0c89654fd5f9b6e0ee
       url: "https://github.com/LtbLightning/bdk-flutter.git"
     source: git
-    version: "0.2.0"
+    version: "0.3.0"
   bloc:
     dependency: transitive
     description:
@@ -301,7 +301,7 @@ packages:
       name: flutter_rust_bridge
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.59.0"
+    version: "1.60.0"
   flutter_test:
     dependency: "direct dev"
     description: flutter

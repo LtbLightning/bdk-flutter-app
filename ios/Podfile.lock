@@ -1,5 +1,5 @@
 PODS:
-  - bdk_flutter (0.2.3):
+  - bdk_flutter (0.3.0):
     - Flutter
   - connectivity_plus (0.0.1):
     - Flutter
@@ -30,7 +30,7 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/path_provider_ios/ios"
 
 SPEC CHECKSUMS:
-  bdk_flutter: e78411cd1fb06a522180fac6276ebc1989ba480a
+  bdk_flutter: e07886d29c53a9c7deba3bec3b20418ce5bd9787
   connectivity_plus: 413a8857dd5d9f1c399a39130850d02fe0feaf7e
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
   path_provider_ios: 14f3d2fd28c4fdb42f44e0f751d12861c43cee02

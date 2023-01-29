@@ -21,7 +21,8 @@ class BlockchainDTO with _$BlockchainDTO {
               config: ElectrumConfig(
                   url: entity.blockchainUrl!.getOrCrash(),
                   stopGap: 10,
-                  retry: 10)));
+                  retry: 10,
+                  validateDomain: false)));
     } else {
       return BlockchainDTO(
           config: BlockchainConfig.esplora(

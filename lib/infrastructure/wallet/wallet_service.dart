@@ -1,12 +1,10 @@
 import 'dart:convert';
-
 import 'package:bdk_flutter/bdk_flutter.dart';
 import 'package:bdk_wallet/domain/wallet/failure/wallet_failure.dart';
 import 'package:bdk_wallet/domain/wallet/interface/i_wallet_Service.dart';
 import 'package:bdk_wallet/infrastructure/wallet/dto/wallet_dto.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
-
 import '../core/source/local.dart';
 
 @LazySingleton(as: IWalletService)
@@ -26,8 +24,8 @@ class WalletService extends IWalletService {
   @override
   Future<Either<WalletFailure, Wallet>> createWallet({required WalletDto walletDto}) async {
     try {
-      final descriptor = await createDescriptorSecret(walletDto, KeyChainKind.External );
-      final changeDescriptor = await createDescriptorSecret(walletDto,KeyChainKind.Internal );
+      final descriptor = await createDescriptorSecret(walletDto, KeychainKind.External );
+      final changeDescriptor = await createDescriptorSecret(walletDto,KeychainKind.Internal );
       final wallets = await checkIfWalletSaved(walletDto);
       await writeWallet(wallets);
       _wallet = await Wallet.create(
@@ -160,7 +158,7 @@ class WalletService extends IWalletService {
 }
 
 
-Future<Descriptor> createDescriptorSecret(WalletDto walletDto, KeyChainKind keyChainKind) async {
+Future<Descriptor> createDescriptorSecret(WalletDto walletDto, KeychainKind keyChainKind) async {
   final mnemonic = await Mnemonic.fromString(walletDto.mnemonic);
   final descriptorSecretKey = await DescriptorSecretKey.create(
       network: walletDto.network,
