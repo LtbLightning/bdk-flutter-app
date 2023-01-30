@@ -9,7 +9,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
   uuid:
   connectivity_plus: ^2.3.0
   cupertino_icons: ^1.0.2

@@ -79,7 +79,7 @@ class _ReceiveState extends State<Receive> {
                   flex: 1,
                   child: GestureDetector(
                     onLongPress: () {},
-                    child: Text(state.walletEntity!.address ?? "",
+                    child: SelectableText(state.walletEntity!.address ?? "",
                         textAlign: TextAlign.center,
                         style: GoogleFonts.montserrat(
                             decoration: TextDecoration.none,
@@ -91,7 +91,6 @@ class _ReceiveState extends State<Receive> {
                 GestureDetector(
                   onTap: () {
                     walletBloc.add(const WalletEvent.getNewAddress());
-                    print(state.walletEntity!.address);
                   },
                   child: Container(
                     alignment: Alignment.center,
