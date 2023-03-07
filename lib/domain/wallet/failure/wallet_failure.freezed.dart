@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'wallet_failure.dart';
 
@@ -28,12 +28,12 @@ mixin _$WalletFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? serverError,
-    TResult Function()? noTransactions,
-    TResult Function()? insufficientPermission,
-    TResult Function()? unexpected,
-    TResult Function()? walletNotFound,
-    TResult Function()? invalidMnemonicAndPasswordCombination,
+    TResult? Function()? serverError,
+    TResult? Function()? noTransactions,
+    TResult? Function()? insufficientPermission,
+    TResult? Function()? unexpected,
+    TResult? Function()? walletNotFound,
+    TResult? Function()? invalidMnemonicAndPasswordCombination,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -61,12 +61,12 @@ mixin _$WalletFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ServerError value)? serverError,
-    TResult Function(NoTransactions value)? noTransactions,
-    TResult Function(InsufficientPermission value)? insufficientPermission,
-    TResult Function(Unexpected value)? unexpected,
-    TResult Function(WalletNotFound value)? walletNotFound,
-    TResult Function(InvalidMnemonicAndPasswordCombination value)?
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(NoTransactions value)? noTransactions,
+    TResult? Function(InsufficientPermission value)? insufficientPermission,
+    TResult? Function(Unexpected value)? unexpected,
+    TResult? Function(WalletNotFound value)? walletNotFound,
+    TResult? Function(InvalidMnemonicAndPasswordCombination value)?
         invalidMnemonicAndPasswordCombination,
   }) =>
       throw _privateConstructorUsedError;
@@ -88,17 +88,18 @@ mixin _$WalletFailure {
 abstract class $WalletFailureCopyWith<$Res> {
   factory $WalletFailureCopyWith(
           WalletFailure value, $Res Function(WalletFailure) then) =
-      _$WalletFailureCopyWithImpl<$Res>;
+      _$WalletFailureCopyWithImpl<$Res, WalletFailure>;
 }
 
 /// @nodoc
-class _$WalletFailureCopyWithImpl<$Res>
+class _$WalletFailureCopyWithImpl<$Res, $Val extends WalletFailure>
     implements $WalletFailureCopyWith<$Res> {
   _$WalletFailureCopyWithImpl(this._value, this._then);
 
-  final WalletFailure _value;
   // ignore: unused_field
-  final $Res Function(WalletFailure) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -110,14 +111,11 @@ abstract class _$$ServerErrorCopyWith<$Res> {
 
 /// @nodoc
 class __$$ServerErrorCopyWithImpl<$Res>
-    extends _$WalletFailureCopyWithImpl<$Res>
+    extends _$WalletFailureCopyWithImpl<$Res, _$ServerError>
     implements _$$ServerErrorCopyWith<$Res> {
   __$$ServerErrorCopyWithImpl(
       _$ServerError _value, $Res Function(_$ServerError) _then)
-      : super(_value, (v) => _then(v as _$ServerError));
-
-  @override
-  _$ServerError get _value => super._value as _$ServerError;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -155,12 +153,12 @@ class _$ServerError implements ServerError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? serverError,
-    TResult Function()? noTransactions,
-    TResult Function()? insufficientPermission,
-    TResult Function()? unexpected,
-    TResult Function()? walletNotFound,
-    TResult Function()? invalidMnemonicAndPasswordCombination,
+    TResult? Function()? serverError,
+    TResult? Function()? noTransactions,
+    TResult? Function()? insufficientPermission,
+    TResult? Function()? unexpected,
+    TResult? Function()? walletNotFound,
+    TResult? Function()? invalidMnemonicAndPasswordCombination,
   }) {
     return serverError?.call();
   }
@@ -200,12 +198,12 @@ class _$ServerError implements ServerError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ServerError value)? serverError,
-    TResult Function(NoTransactions value)? noTransactions,
-    TResult Function(InsufficientPermission value)? insufficientPermission,
-    TResult Function(Unexpected value)? unexpected,
-    TResult Function(WalletNotFound value)? walletNotFound,
-    TResult Function(InvalidMnemonicAndPasswordCombination value)?
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(NoTransactions value)? noTransactions,
+    TResult? Function(InsufficientPermission value)? insufficientPermission,
+    TResult? Function(Unexpected value)? unexpected,
+    TResult? Function(WalletNotFound value)? walletNotFound,
+    TResult? Function(InvalidMnemonicAndPasswordCombination value)?
         invalidMnemonicAndPasswordCombination,
   }) {
     return serverError?.call(this);
@@ -243,14 +241,11 @@ abstract class _$$NoTransactionsCopyWith<$Res> {
 
 /// @nodoc
 class __$$NoTransactionsCopyWithImpl<$Res>
-    extends _$WalletFailureCopyWithImpl<$Res>
+    extends _$WalletFailureCopyWithImpl<$Res, _$NoTransactions>
     implements _$$NoTransactionsCopyWith<$Res> {
   __$$NoTransactionsCopyWithImpl(
       _$NoTransactions _value, $Res Function(_$NoTransactions) _then)
-      : super(_value, (v) => _then(v as _$NoTransactions));
-
-  @override
-  _$NoTransactions get _value => super._value as _$NoTransactions;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -288,12 +283,12 @@ class _$NoTransactions implements NoTransactions {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? serverError,
-    TResult Function()? noTransactions,
-    TResult Function()? insufficientPermission,
-    TResult Function()? unexpected,
-    TResult Function()? walletNotFound,
-    TResult Function()? invalidMnemonicAndPasswordCombination,
+    TResult? Function()? serverError,
+    TResult? Function()? noTransactions,
+    TResult? Function()? insufficientPermission,
+    TResult? Function()? unexpected,
+    TResult? Function()? walletNotFound,
+    TResult? Function()? invalidMnemonicAndPasswordCombination,
   }) {
     return noTransactions?.call();
   }
@@ -333,12 +328,12 @@ class _$NoTransactions implements NoTransactions {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ServerError value)? serverError,
-    TResult Function(NoTransactions value)? noTransactions,
-    TResult Function(InsufficientPermission value)? insufficientPermission,
-    TResult Function(Unexpected value)? unexpected,
-    TResult Function(WalletNotFound value)? walletNotFound,
-    TResult Function(InvalidMnemonicAndPasswordCombination value)?
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(NoTransactions value)? noTransactions,
+    TResult? Function(InsufficientPermission value)? insufficientPermission,
+    TResult? Function(Unexpected value)? unexpected,
+    TResult? Function(WalletNotFound value)? walletNotFound,
+    TResult? Function(InvalidMnemonicAndPasswordCombination value)?
         invalidMnemonicAndPasswordCombination,
   }) {
     return noTransactions?.call(this);
@@ -376,15 +371,11 @@ abstract class _$$InsufficientPermissionCopyWith<$Res> {
 
 /// @nodoc
 class __$$InsufficientPermissionCopyWithImpl<$Res>
-    extends _$WalletFailureCopyWithImpl<$Res>
+    extends _$WalletFailureCopyWithImpl<$Res, _$InsufficientPermission>
     implements _$$InsufficientPermissionCopyWith<$Res> {
   __$$InsufficientPermissionCopyWithImpl(_$InsufficientPermission _value,
       $Res Function(_$InsufficientPermission) _then)
-      : super(_value, (v) => _then(v as _$InsufficientPermission));
-
-  @override
-  _$InsufficientPermission get _value =>
-      super._value as _$InsufficientPermission;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -422,12 +413,12 @@ class _$InsufficientPermission implements InsufficientPermission {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? serverError,
-    TResult Function()? noTransactions,
-    TResult Function()? insufficientPermission,
-    TResult Function()? unexpected,
-    TResult Function()? walletNotFound,
-    TResult Function()? invalidMnemonicAndPasswordCombination,
+    TResult? Function()? serverError,
+    TResult? Function()? noTransactions,
+    TResult? Function()? insufficientPermission,
+    TResult? Function()? unexpected,
+    TResult? Function()? walletNotFound,
+    TResult? Function()? invalidMnemonicAndPasswordCombination,
   }) {
     return insufficientPermission?.call();
   }
@@ -467,12 +458,12 @@ class _$InsufficientPermission implements InsufficientPermission {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ServerError value)? serverError,
-    TResult Function(NoTransactions value)? noTransactions,
-    TResult Function(InsufficientPermission value)? insufficientPermission,
-    TResult Function(Unexpected value)? unexpected,
-    TResult Function(WalletNotFound value)? walletNotFound,
-    TResult Function(InvalidMnemonicAndPasswordCombination value)?
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(NoTransactions value)? noTransactions,
+    TResult? Function(InsufficientPermission value)? insufficientPermission,
+    TResult? Function(Unexpected value)? unexpected,
+    TResult? Function(WalletNotFound value)? walletNotFound,
+    TResult? Function(InvalidMnemonicAndPasswordCombination value)?
         invalidMnemonicAndPasswordCombination,
   }) {
     return insufficientPermission?.call(this);
@@ -509,14 +500,12 @@ abstract class _$$UnexpectedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$UnexpectedCopyWithImpl<$Res> extends _$WalletFailureCopyWithImpl<$Res>
+class __$$UnexpectedCopyWithImpl<$Res>
+    extends _$WalletFailureCopyWithImpl<$Res, _$Unexpected>
     implements _$$UnexpectedCopyWith<$Res> {
   __$$UnexpectedCopyWithImpl(
       _$Unexpected _value, $Res Function(_$Unexpected) _then)
-      : super(_value, (v) => _then(v as _$Unexpected));
-
-  @override
-  _$Unexpected get _value => super._value as _$Unexpected;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -554,12 +543,12 @@ class _$Unexpected implements Unexpected {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? serverError,
-    TResult Function()? noTransactions,
-    TResult Function()? insufficientPermission,
-    TResult Function()? unexpected,
-    TResult Function()? walletNotFound,
-    TResult Function()? invalidMnemonicAndPasswordCombination,
+    TResult? Function()? serverError,
+    TResult? Function()? noTransactions,
+    TResult? Function()? insufficientPermission,
+    TResult? Function()? unexpected,
+    TResult? Function()? walletNotFound,
+    TResult? Function()? invalidMnemonicAndPasswordCombination,
   }) {
     return unexpected?.call();
   }
@@ -599,12 +588,12 @@ class _$Unexpected implements Unexpected {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ServerError value)? serverError,
-    TResult Function(NoTransactions value)? noTransactions,
-    TResult Function(InsufficientPermission value)? insufficientPermission,
-    TResult Function(Unexpected value)? unexpected,
-    TResult Function(WalletNotFound value)? walletNotFound,
-    TResult Function(InvalidMnemonicAndPasswordCombination value)?
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(NoTransactions value)? noTransactions,
+    TResult? Function(InsufficientPermission value)? insufficientPermission,
+    TResult? Function(Unexpected value)? unexpected,
+    TResult? Function(WalletNotFound value)? walletNotFound,
+    TResult? Function(InvalidMnemonicAndPasswordCombination value)?
         invalidMnemonicAndPasswordCombination,
   }) {
     return unexpected?.call(this);
@@ -642,14 +631,11 @@ abstract class _$$WalletNotFoundCopyWith<$Res> {
 
 /// @nodoc
 class __$$WalletNotFoundCopyWithImpl<$Res>
-    extends _$WalletFailureCopyWithImpl<$Res>
+    extends _$WalletFailureCopyWithImpl<$Res, _$WalletNotFound>
     implements _$$WalletNotFoundCopyWith<$Res> {
   __$$WalletNotFoundCopyWithImpl(
       _$WalletNotFound _value, $Res Function(_$WalletNotFound) _then)
-      : super(_value, (v) => _then(v as _$WalletNotFound));
-
-  @override
-  _$WalletNotFound get _value => super._value as _$WalletNotFound;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -687,12 +673,12 @@ class _$WalletNotFound implements WalletNotFound {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? serverError,
-    TResult Function()? noTransactions,
-    TResult Function()? insufficientPermission,
-    TResult Function()? unexpected,
-    TResult Function()? walletNotFound,
-    TResult Function()? invalidMnemonicAndPasswordCombination,
+    TResult? Function()? serverError,
+    TResult? Function()? noTransactions,
+    TResult? Function()? insufficientPermission,
+    TResult? Function()? unexpected,
+    TResult? Function()? walletNotFound,
+    TResult? Function()? invalidMnemonicAndPasswordCombination,
   }) {
     return walletNotFound?.call();
   }
@@ -732,12 +718,12 @@ class _$WalletNotFound implements WalletNotFound {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ServerError value)? serverError,
-    TResult Function(NoTransactions value)? noTransactions,
-    TResult Function(InsufficientPermission value)? insufficientPermission,
-    TResult Function(Unexpected value)? unexpected,
-    TResult Function(WalletNotFound value)? walletNotFound,
-    TResult Function(InvalidMnemonicAndPasswordCombination value)?
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(NoTransactions value)? noTransactions,
+    TResult? Function(InsufficientPermission value)? insufficientPermission,
+    TResult? Function(Unexpected value)? unexpected,
+    TResult? Function(WalletNotFound value)? walletNotFound,
+    TResult? Function(InvalidMnemonicAndPasswordCombination value)?
         invalidMnemonicAndPasswordCombination,
   }) {
     return walletNotFound?.call(this);
@@ -776,17 +762,13 @@ abstract class _$$InvalidMnemonicAndPasswordCombinationCopyWith<$Res> {
 
 /// @nodoc
 class __$$InvalidMnemonicAndPasswordCombinationCopyWithImpl<$Res>
-    extends _$WalletFailureCopyWithImpl<$Res>
+    extends _$WalletFailureCopyWithImpl<$Res,
+        _$InvalidMnemonicAndPasswordCombination>
     implements _$$InvalidMnemonicAndPasswordCombinationCopyWith<$Res> {
   __$$InvalidMnemonicAndPasswordCombinationCopyWithImpl(
       _$InvalidMnemonicAndPasswordCombination _value,
       $Res Function(_$InvalidMnemonicAndPasswordCombination) _then)
-      : super(
-            _value, (v) => _then(v as _$InvalidMnemonicAndPasswordCombination));
-
-  @override
-  _$InvalidMnemonicAndPasswordCombination get _value =>
-      super._value as _$InvalidMnemonicAndPasswordCombination;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -826,12 +808,12 @@ class _$InvalidMnemonicAndPasswordCombination
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? serverError,
-    TResult Function()? noTransactions,
-    TResult Function()? insufficientPermission,
-    TResult Function()? unexpected,
-    TResult Function()? walletNotFound,
-    TResult Function()? invalidMnemonicAndPasswordCombination,
+    TResult? Function()? serverError,
+    TResult? Function()? noTransactions,
+    TResult? Function()? insufficientPermission,
+    TResult? Function()? unexpected,
+    TResult? Function()? walletNotFound,
+    TResult? Function()? invalidMnemonicAndPasswordCombination,
   }) {
     return invalidMnemonicAndPasswordCombination?.call();
   }
@@ -871,12 +853,12 @@ class _$InvalidMnemonicAndPasswordCombination
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ServerError value)? serverError,
-    TResult Function(NoTransactions value)? noTransactions,
-    TResult Function(InsufficientPermission value)? insufficientPermission,
-    TResult Function(Unexpected value)? unexpected,
-    TResult Function(WalletNotFound value)? walletNotFound,
-    TResult Function(InvalidMnemonicAndPasswordCombination value)?
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(NoTransactions value)? noTransactions,
+    TResult? Function(InsufficientPermission value)? insufficientPermission,
+    TResult? Function(Unexpected value)? unexpected,
+    TResult? Function(WalletNotFound value)? walletNotFound,
+    TResult? Function(InvalidMnemonicAndPasswordCombination value)?
         invalidMnemonicAndPasswordCombination,
   }) {
     return invalidMnemonicAndPasswordCombination?.call(this);

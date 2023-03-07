@@ -22,50 +22,47 @@ class _ReceiveState extends State<Receive> {
     context.read<WalletBloc>().add(const WalletEvent.getNewAddress());
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     final walletBloc = context.read<WalletBloc>();
-    final size = MediaQuery
-        .of(context)
-        .size;
-     qrFutureBuilder(String? address) => FutureBuilder<ui.Image>(
-      future: _loadOverlayImage(),
-      builder: (ctx, snapshot) {
-        if (!snapshot.hasData) {
-          return SizedBox(width: size.width * .8, height: size.width * .8);
-        }
-        return CustomPaint(
-          size: Size.square(size.width * .8),
-          painter: QrPainter(
-            data: address?? "",
-            version: QrVersions.auto,
-            eyeStyle: const QrEyeStyle(
-              eyeShape: QrEyeShape.square,
-              color: Colors.blue,
-            ),
-            dataModuleStyle: const QrDataModuleStyle(
-              dataModuleShape: QrDataModuleShape.circle,
-              color: Colors.black,
-            ),
-            // size: 320.0,
-            embeddedImage: snapshot.data,
-            embeddedImageStyle: QrEmbeddedImageStyle(
-              size: const Size.square(60),
-            ),
-          ),
+    final size = MediaQuery.of(context).size;
+    qrFutureBuilder(String? address) => FutureBuilder<ui.Image>(
+          future: _loadOverlayImage(),
+          builder: (ctx, snapshot) {
+            if (!snapshot.hasData) {
+              return SizedBox(width: size.width * .8, height: size.width * .8);
+            }
+            return CustomPaint(
+              size: Size.square(size.width * .8),
+              painter: QrPainter(
+                data: address ?? "",
+                version: QrVersions.auto,
+                eyeStyle: const QrEyeStyle(
+                  eyeShape: QrEyeShape.square,
+                  color: Colors.blue,
+                ),
+                dataModuleStyle: const QrDataModuleStyle(
+                  dataModuleShape: QrDataModuleShape.circle,
+                  color: Colors.black,
+                ),
+                // size: 320.0,
+                embeddedImage: snapshot.data,
+                embeddedImageStyle: QrEmbeddedImageStyle(
+                  size: const Size.square(60),
+                ),
+              ),
+            );
+          },
         );
-      },
-    );
     return BlocBuilder<WalletBloc, WalletState>(
-      buildWhen: (p,q)=> p.isSubmitting!= q.isSubmitting,
+      buildWhen: (p, q) => p.isSubmitting != q.isSubmitting,
       builder: (context, state) {
         return Scaffold(
           backgroundColor: Colors.white,
           appBar: appBar() as PreferredSizeWidget?,
           body: Padding(
-            padding: const EdgeInsets.symmetric(
-                vertical: 20,
-                horizontal: 30),
+            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
             child: Column(
               children: [
                 Expanded(
@@ -73,7 +70,8 @@ class _ReceiveState extends State<Receive> {
                   child: Center(
                     child: SizedBox(
                       width: size.width * .8,
-                      child: qrFutureBuilder(state.walletEntity!.address?? "default"),
+                      child: qrFutureBuilder(
+                          state.walletEntity!.address ?? "default"),
                     ),
                   ),
                 ),
@@ -81,20 +79,18 @@ class _ReceiveState extends State<Receive> {
                   flex: 1,
                   child: GestureDetector(
                     onLongPress: () {},
-                    child: Text(state.walletEntity!.address ?? "",
+                    child: SelectableText(state.walletEntity!.address ?? "",
                         textAlign: TextAlign.center,
                         style: GoogleFonts.montserrat(
                             decoration: TextDecoration.none,
                             fontSize: 14,
                             fontWeight: FontWeight.w700,
-                            color: Colors.black.withOpacity(.9)
-                        )),
+                            color: Colors.black.withOpacity(.9))),
                   ),
                 ),
                 GestureDetector(
                   onTap: () {
-                    walletBloc.add(
-                        const WalletEvent.getNewAddress());
+                    walletBloc.add(const WalletEvent.getNewAddress());
                   },
                   child: Container(
                     alignment: Alignment.center,
@@ -109,20 +105,21 @@ class _ReceiveState extends State<Receive> {
                     ),
                     child: walletBloc.state.isSubmitting
                         ? const CircularProgressIndicator(
-                      value: null,
-                    )
+                            value: null,
+                          )
                         : Text("Create New Address",
-                        style: GoogleFonts.montserrat(
-                            color: Colors.white,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w700)),
+                            style: GoogleFonts.montserrat(
+                                color: Colors.white,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w700)),
                   ),
                 ),
-                const SizedBox(height: 5,),
+                const SizedBox(
+                  height: 5,
+                ),
                 GestureDetector(
                   onTap: () {
-                    walletBloc.add(
-                        const WalletEvent.getLastUsedAddress());
+                    walletBloc.add(const WalletEvent.getLastUsedAddress());
                   },
                   child: Container(
                     alignment: Alignment.center,
@@ -137,19 +134,18 @@ class _ReceiveState extends State<Receive> {
                     ),
                     child: walletBloc.state.isSubmitting
                         ? const CircularProgressIndicator(
-                      value: null,
-                    )
-                        :  Text("Create Last Used Address",
-                        style: GoogleFonts.montserrat(
-                            color: Colors.white,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w700)),
+                            value: null,
+                          )
+                        : Text("Create Last Used Address",
+                            style: GoogleFonts.montserrat(
+                                color: Colors.white,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w700)),
                   ),
                 ),
               ],
             ),
           ),
-
         );
       },
     );
@@ -162,8 +158,7 @@ class _ReceiveState extends State<Receive> {
     return completer.future;
   }
 
-  Widget appBar() =>
-      AppBar(
+  Widget appBar() => AppBar(
         automaticallyImplyLeading: true,
         centerTitle: true,
         elevation: 0,
@@ -174,7 +169,6 @@ class _ReceiveState extends State<Receive> {
                 decoration: TextDecoration.none,
                 fontSize: 14,
                 fontWeight: FontWeight.w700,
-                color: Colors.black.withOpacity(.8)
-            )),
+                color: Colors.black.withOpacity(.8))),
       );
 }

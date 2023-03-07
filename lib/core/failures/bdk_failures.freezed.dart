@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'bdk_failures.dart';
 
@@ -18,69 +18,51 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$BdkFailure<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() serverError,
-    required TResult Function() unexpected,
     required TResult Function() invalidMnemonic,
     required TResult Function() invalidString,
     required TResult Function() invalidPassword,
-    required TResult Function() invalidEmail,
     required TResult Function() invalidBlockchainUrl,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? serverError,
-    TResult Function()? unexpected,
-    TResult Function()? invalidMnemonic,
-    TResult Function()? invalidString,
-    TResult Function()? invalidPassword,
-    TResult Function()? invalidEmail,
-    TResult Function()? invalidBlockchainUrl,
+    TResult? Function()? invalidMnemonic,
+    TResult? Function()? invalidString,
+    TResult? Function()? invalidPassword,
+    TResult? Function()? invalidBlockchainUrl,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? serverError,
-    TResult Function()? unexpected,
     TResult Function()? invalidMnemonic,
     TResult Function()? invalidString,
     TResult Function()? invalidPassword,
-    TResult Function()? invalidEmail,
     TResult Function()? invalidBlockchainUrl,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ServerError<T> value) serverError,
-    required TResult Function(Unexpected<T> value) unexpected,
     required TResult Function(InvalidMnemonic<T> value) invalidMnemonic,
     required TResult Function(InvalidString<T> value) invalidString,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
-    required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(InvalidBlockchainUrl<T> value)
         invalidBlockchainUrl,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ServerError<T> value)? serverError,
-    TResult Function(Unexpected<T> value)? unexpected,
-    TResult Function(InvalidMnemonic<T> value)? invalidMnemonic,
-    TResult Function(InvalidString<T> value)? invalidString,
-    TResult Function(InvalidPassword<T> value)? invalidPassword,
-    TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(InvalidBlockchainUrl<T> value)? invalidBlockchainUrl,
+    TResult? Function(InvalidMnemonic<T> value)? invalidMnemonic,
+    TResult? Function(InvalidString<T> value)? invalidString,
+    TResult? Function(InvalidPassword<T> value)? invalidPassword,
+    TResult? Function(InvalidBlockchainUrl<T> value)? invalidBlockchainUrl,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ServerError<T> value)? serverError,
-    TResult Function(Unexpected<T> value)? unexpected,
     TResult Function(InvalidMnemonic<T> value)? invalidMnemonic,
     TResult Function(InvalidString<T> value)? invalidString,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
-    TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(InvalidBlockchainUrl<T> value)? invalidBlockchainUrl,
     required TResult orElse(),
   }) =>
@@ -91,289 +73,18 @@ mixin _$BdkFailure<T> {
 abstract class $BdkFailureCopyWith<T, $Res> {
   factory $BdkFailureCopyWith(
           BdkFailure<T> value, $Res Function(BdkFailure<T>) then) =
-      _$BdkFailureCopyWithImpl<T, $Res>;
+      _$BdkFailureCopyWithImpl<T, $Res, BdkFailure<T>>;
 }
 
 /// @nodoc
-class _$BdkFailureCopyWithImpl<T, $Res>
+class _$BdkFailureCopyWithImpl<T, $Res, $Val extends BdkFailure<T>>
     implements $BdkFailureCopyWith<T, $Res> {
   _$BdkFailureCopyWithImpl(this._value, this._then);
 
-  final BdkFailure<T> _value;
   // ignore: unused_field
-  final $Res Function(BdkFailure<T>) _then;
-}
-
-/// @nodoc
-abstract class _$$ServerErrorCopyWith<T, $Res> {
-  factory _$$ServerErrorCopyWith(
-          _$ServerError<T> value, $Res Function(_$ServerError<T>) then) =
-      __$$ServerErrorCopyWithImpl<T, $Res>;
-}
-
-/// @nodoc
-class __$$ServerErrorCopyWithImpl<T, $Res>
-    extends _$BdkFailureCopyWithImpl<T, $Res>
-    implements _$$ServerErrorCopyWith<T, $Res> {
-  __$$ServerErrorCopyWithImpl(
-      _$ServerError<T> _value, $Res Function(_$ServerError<T>) _then)
-      : super(_value, (v) => _then(v as _$ServerError<T>));
-
-  @override
-  _$ServerError<T> get _value => super._value as _$ServerError<T>;
-}
-
-/// @nodoc
-
-class _$ServerError<T> implements ServerError<T> {
-  const _$ServerError();
-
-  @override
-  String toString() {
-    return 'BdkFailure<$T>.serverError()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ServerError<T>);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() serverError,
-    required TResult Function() unexpected,
-    required TResult Function() invalidMnemonic,
-    required TResult Function() invalidString,
-    required TResult Function() invalidPassword,
-    required TResult Function() invalidEmail,
-    required TResult Function() invalidBlockchainUrl,
-  }) {
-    return serverError();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? serverError,
-    TResult Function()? unexpected,
-    TResult Function()? invalidMnemonic,
-    TResult Function()? invalidString,
-    TResult Function()? invalidPassword,
-    TResult Function()? invalidEmail,
-    TResult Function()? invalidBlockchainUrl,
-  }) {
-    return serverError?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? serverError,
-    TResult Function()? unexpected,
-    TResult Function()? invalidMnemonic,
-    TResult Function()? invalidString,
-    TResult Function()? invalidPassword,
-    TResult Function()? invalidEmail,
-    TResult Function()? invalidBlockchainUrl,
-    required TResult orElse(),
-  }) {
-    if (serverError != null) {
-      return serverError();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ServerError<T> value) serverError,
-    required TResult Function(Unexpected<T> value) unexpected,
-    required TResult Function(InvalidMnemonic<T> value) invalidMnemonic,
-    required TResult Function(InvalidString<T> value) invalidString,
-    required TResult Function(InvalidPassword<T> value) invalidPassword,
-    required TResult Function(InvalidEmail<T> value) invalidEmail,
-    required TResult Function(InvalidBlockchainUrl<T> value)
-        invalidBlockchainUrl,
-  }) {
-    return serverError(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ServerError<T> value)? serverError,
-    TResult Function(Unexpected<T> value)? unexpected,
-    TResult Function(InvalidMnemonic<T> value)? invalidMnemonic,
-    TResult Function(InvalidString<T> value)? invalidString,
-    TResult Function(InvalidPassword<T> value)? invalidPassword,
-    TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(InvalidBlockchainUrl<T> value)? invalidBlockchainUrl,
-  }) {
-    return serverError?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ServerError<T> value)? serverError,
-    TResult Function(Unexpected<T> value)? unexpected,
-    TResult Function(InvalidMnemonic<T> value)? invalidMnemonic,
-    TResult Function(InvalidString<T> value)? invalidString,
-    TResult Function(InvalidPassword<T> value)? invalidPassword,
-    TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(InvalidBlockchainUrl<T> value)? invalidBlockchainUrl,
-    required TResult orElse(),
-  }) {
-    if (serverError != null) {
-      return serverError(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class ServerError<T> implements BdkFailure<T> {
-  const factory ServerError() = _$ServerError<T>;
-}
-
-/// @nodoc
-abstract class _$$UnexpectedCopyWith<T, $Res> {
-  factory _$$UnexpectedCopyWith(
-          _$Unexpected<T> value, $Res Function(_$Unexpected<T>) then) =
-      __$$UnexpectedCopyWithImpl<T, $Res>;
-}
-
-/// @nodoc
-class __$$UnexpectedCopyWithImpl<T, $Res>
-    extends _$BdkFailureCopyWithImpl<T, $Res>
-    implements _$$UnexpectedCopyWith<T, $Res> {
-  __$$UnexpectedCopyWithImpl(
-      _$Unexpected<T> _value, $Res Function(_$Unexpected<T>) _then)
-      : super(_value, (v) => _then(v as _$Unexpected<T>));
-
-  @override
-  _$Unexpected<T> get _value => super._value as _$Unexpected<T>;
-}
-
-/// @nodoc
-
-class _$Unexpected<T> implements Unexpected<T> {
-  const _$Unexpected();
-
-  @override
-  String toString() {
-    return 'BdkFailure<$T>.unexpected()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$Unexpected<T>);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() serverError,
-    required TResult Function() unexpected,
-    required TResult Function() invalidMnemonic,
-    required TResult Function() invalidString,
-    required TResult Function() invalidPassword,
-    required TResult Function() invalidEmail,
-    required TResult Function() invalidBlockchainUrl,
-  }) {
-    return unexpected();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? serverError,
-    TResult Function()? unexpected,
-    TResult Function()? invalidMnemonic,
-    TResult Function()? invalidString,
-    TResult Function()? invalidPassword,
-    TResult Function()? invalidEmail,
-    TResult Function()? invalidBlockchainUrl,
-  }) {
-    return unexpected?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? serverError,
-    TResult Function()? unexpected,
-    TResult Function()? invalidMnemonic,
-    TResult Function()? invalidString,
-    TResult Function()? invalidPassword,
-    TResult Function()? invalidEmail,
-    TResult Function()? invalidBlockchainUrl,
-    required TResult orElse(),
-  }) {
-    if (unexpected != null) {
-      return unexpected();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ServerError<T> value) serverError,
-    required TResult Function(Unexpected<T> value) unexpected,
-    required TResult Function(InvalidMnemonic<T> value) invalidMnemonic,
-    required TResult Function(InvalidString<T> value) invalidString,
-    required TResult Function(InvalidPassword<T> value) invalidPassword,
-    required TResult Function(InvalidEmail<T> value) invalidEmail,
-    required TResult Function(InvalidBlockchainUrl<T> value)
-        invalidBlockchainUrl,
-  }) {
-    return unexpected(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ServerError<T> value)? serverError,
-    TResult Function(Unexpected<T> value)? unexpected,
-    TResult Function(InvalidMnemonic<T> value)? invalidMnemonic,
-    TResult Function(InvalidString<T> value)? invalidString,
-    TResult Function(InvalidPassword<T> value)? invalidPassword,
-    TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(InvalidBlockchainUrl<T> value)? invalidBlockchainUrl,
-  }) {
-    return unexpected?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ServerError<T> value)? serverError,
-    TResult Function(Unexpected<T> value)? unexpected,
-    TResult Function(InvalidMnemonic<T> value)? invalidMnemonic,
-    TResult Function(InvalidString<T> value)? invalidString,
-    TResult Function(InvalidPassword<T> value)? invalidPassword,
-    TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(InvalidBlockchainUrl<T> value)? invalidBlockchainUrl,
-    required TResult orElse(),
-  }) {
-    if (unexpected != null) {
-      return unexpected(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class Unexpected<T> implements BdkFailure<T> {
-  const factory Unexpected() = _$Unexpected<T>;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -385,14 +96,11 @@ abstract class _$$InvalidMnemonicCopyWith<T, $Res> {
 
 /// @nodoc
 class __$$InvalidMnemonicCopyWithImpl<T, $Res>
-    extends _$BdkFailureCopyWithImpl<T, $Res>
+    extends _$BdkFailureCopyWithImpl<T, $Res, _$InvalidMnemonic<T>>
     implements _$$InvalidMnemonicCopyWith<T, $Res> {
   __$$InvalidMnemonicCopyWithImpl(
       _$InvalidMnemonic<T> _value, $Res Function(_$InvalidMnemonic<T>) _then)
-      : super(_value, (v) => _then(v as _$InvalidMnemonic<T>));
-
-  @override
-  _$InvalidMnemonic<T> get _value => super._value as _$InvalidMnemonic<T>;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -417,12 +125,9 @@ class _$InvalidMnemonic<T> implements InvalidMnemonic<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() serverError,
-    required TResult Function() unexpected,
     required TResult Function() invalidMnemonic,
     required TResult Function() invalidString,
     required TResult Function() invalidPassword,
-    required TResult Function() invalidEmail,
     required TResult Function() invalidBlockchainUrl,
   }) {
     return invalidMnemonic();
@@ -431,13 +136,10 @@ class _$InvalidMnemonic<T> implements InvalidMnemonic<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? serverError,
-    TResult Function()? unexpected,
-    TResult Function()? invalidMnemonic,
-    TResult Function()? invalidString,
-    TResult Function()? invalidPassword,
-    TResult Function()? invalidEmail,
-    TResult Function()? invalidBlockchainUrl,
+    TResult? Function()? invalidMnemonic,
+    TResult? Function()? invalidString,
+    TResult? Function()? invalidPassword,
+    TResult? Function()? invalidBlockchainUrl,
   }) {
     return invalidMnemonic?.call();
   }
@@ -445,12 +147,9 @@ class _$InvalidMnemonic<T> implements InvalidMnemonic<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? serverError,
-    TResult Function()? unexpected,
     TResult Function()? invalidMnemonic,
     TResult Function()? invalidString,
     TResult Function()? invalidPassword,
-    TResult Function()? invalidEmail,
     TResult Function()? invalidBlockchainUrl,
     required TResult orElse(),
   }) {
@@ -463,12 +162,9 @@ class _$InvalidMnemonic<T> implements InvalidMnemonic<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ServerError<T> value) serverError,
-    required TResult Function(Unexpected<T> value) unexpected,
     required TResult Function(InvalidMnemonic<T> value) invalidMnemonic,
     required TResult Function(InvalidString<T> value) invalidString,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
-    required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(InvalidBlockchainUrl<T> value)
         invalidBlockchainUrl,
   }) {
@@ -478,13 +174,10 @@ class _$InvalidMnemonic<T> implements InvalidMnemonic<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ServerError<T> value)? serverError,
-    TResult Function(Unexpected<T> value)? unexpected,
-    TResult Function(InvalidMnemonic<T> value)? invalidMnemonic,
-    TResult Function(InvalidString<T> value)? invalidString,
-    TResult Function(InvalidPassword<T> value)? invalidPassword,
-    TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(InvalidBlockchainUrl<T> value)? invalidBlockchainUrl,
+    TResult? Function(InvalidMnemonic<T> value)? invalidMnemonic,
+    TResult? Function(InvalidString<T> value)? invalidString,
+    TResult? Function(InvalidPassword<T> value)? invalidPassword,
+    TResult? Function(InvalidBlockchainUrl<T> value)? invalidBlockchainUrl,
   }) {
     return invalidMnemonic?.call(this);
   }
@@ -492,12 +185,9 @@ class _$InvalidMnemonic<T> implements InvalidMnemonic<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ServerError<T> value)? serverError,
-    TResult Function(Unexpected<T> value)? unexpected,
     TResult Function(InvalidMnemonic<T> value)? invalidMnemonic,
     TResult Function(InvalidString<T> value)? invalidString,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
-    TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(InvalidBlockchainUrl<T> value)? invalidBlockchainUrl,
     required TResult orElse(),
   }) {
@@ -521,14 +211,11 @@ abstract class _$$InvalidStringCopyWith<T, $Res> {
 
 /// @nodoc
 class __$$InvalidStringCopyWithImpl<T, $Res>
-    extends _$BdkFailureCopyWithImpl<T, $Res>
+    extends _$BdkFailureCopyWithImpl<T, $Res, _$InvalidString<T>>
     implements _$$InvalidStringCopyWith<T, $Res> {
   __$$InvalidStringCopyWithImpl(
       _$InvalidString<T> _value, $Res Function(_$InvalidString<T>) _then)
-      : super(_value, (v) => _then(v as _$InvalidString<T>));
-
-  @override
-  _$InvalidString<T> get _value => super._value as _$InvalidString<T>;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -553,12 +240,9 @@ class _$InvalidString<T> implements InvalidString<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() serverError,
-    required TResult Function() unexpected,
     required TResult Function() invalidMnemonic,
     required TResult Function() invalidString,
     required TResult Function() invalidPassword,
-    required TResult Function() invalidEmail,
     required TResult Function() invalidBlockchainUrl,
   }) {
     return invalidString();
@@ -567,13 +251,10 @@ class _$InvalidString<T> implements InvalidString<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? serverError,
-    TResult Function()? unexpected,
-    TResult Function()? invalidMnemonic,
-    TResult Function()? invalidString,
-    TResult Function()? invalidPassword,
-    TResult Function()? invalidEmail,
-    TResult Function()? invalidBlockchainUrl,
+    TResult? Function()? invalidMnemonic,
+    TResult? Function()? invalidString,
+    TResult? Function()? invalidPassword,
+    TResult? Function()? invalidBlockchainUrl,
   }) {
     return invalidString?.call();
   }
@@ -581,12 +262,9 @@ class _$InvalidString<T> implements InvalidString<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? serverError,
-    TResult Function()? unexpected,
     TResult Function()? invalidMnemonic,
     TResult Function()? invalidString,
     TResult Function()? invalidPassword,
-    TResult Function()? invalidEmail,
     TResult Function()? invalidBlockchainUrl,
     required TResult orElse(),
   }) {
@@ -599,12 +277,9 @@ class _$InvalidString<T> implements InvalidString<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ServerError<T> value) serverError,
-    required TResult Function(Unexpected<T> value) unexpected,
     required TResult Function(InvalidMnemonic<T> value) invalidMnemonic,
     required TResult Function(InvalidString<T> value) invalidString,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
-    required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(InvalidBlockchainUrl<T> value)
         invalidBlockchainUrl,
   }) {
@@ -614,13 +289,10 @@ class _$InvalidString<T> implements InvalidString<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ServerError<T> value)? serverError,
-    TResult Function(Unexpected<T> value)? unexpected,
-    TResult Function(InvalidMnemonic<T> value)? invalidMnemonic,
-    TResult Function(InvalidString<T> value)? invalidString,
-    TResult Function(InvalidPassword<T> value)? invalidPassword,
-    TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(InvalidBlockchainUrl<T> value)? invalidBlockchainUrl,
+    TResult? Function(InvalidMnemonic<T> value)? invalidMnemonic,
+    TResult? Function(InvalidString<T> value)? invalidString,
+    TResult? Function(InvalidPassword<T> value)? invalidPassword,
+    TResult? Function(InvalidBlockchainUrl<T> value)? invalidBlockchainUrl,
   }) {
     return invalidString?.call(this);
   }
@@ -628,12 +300,9 @@ class _$InvalidString<T> implements InvalidString<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ServerError<T> value)? serverError,
-    TResult Function(Unexpected<T> value)? unexpected,
     TResult Function(InvalidMnemonic<T> value)? invalidMnemonic,
     TResult Function(InvalidString<T> value)? invalidString,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
-    TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(InvalidBlockchainUrl<T> value)? invalidBlockchainUrl,
     required TResult orElse(),
   }) {
@@ -657,14 +326,11 @@ abstract class _$$InvalidPasswordCopyWith<T, $Res> {
 
 /// @nodoc
 class __$$InvalidPasswordCopyWithImpl<T, $Res>
-    extends _$BdkFailureCopyWithImpl<T, $Res>
+    extends _$BdkFailureCopyWithImpl<T, $Res, _$InvalidPassword<T>>
     implements _$$InvalidPasswordCopyWith<T, $Res> {
   __$$InvalidPasswordCopyWithImpl(
       _$InvalidPassword<T> _value, $Res Function(_$InvalidPassword<T>) _then)
-      : super(_value, (v) => _then(v as _$InvalidPassword<T>));
-
-  @override
-  _$InvalidPassword<T> get _value => super._value as _$InvalidPassword<T>;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -689,12 +355,9 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() serverError,
-    required TResult Function() unexpected,
     required TResult Function() invalidMnemonic,
     required TResult Function() invalidString,
     required TResult Function() invalidPassword,
-    required TResult Function() invalidEmail,
     required TResult Function() invalidBlockchainUrl,
   }) {
     return invalidPassword();
@@ -703,13 +366,10 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? serverError,
-    TResult Function()? unexpected,
-    TResult Function()? invalidMnemonic,
-    TResult Function()? invalidString,
-    TResult Function()? invalidPassword,
-    TResult Function()? invalidEmail,
-    TResult Function()? invalidBlockchainUrl,
+    TResult? Function()? invalidMnemonic,
+    TResult? Function()? invalidString,
+    TResult? Function()? invalidPassword,
+    TResult? Function()? invalidBlockchainUrl,
   }) {
     return invalidPassword?.call();
   }
@@ -717,12 +377,9 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? serverError,
-    TResult Function()? unexpected,
     TResult Function()? invalidMnemonic,
     TResult Function()? invalidString,
     TResult Function()? invalidPassword,
-    TResult Function()? invalidEmail,
     TResult Function()? invalidBlockchainUrl,
     required TResult orElse(),
   }) {
@@ -735,12 +392,9 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ServerError<T> value) serverError,
-    required TResult Function(Unexpected<T> value) unexpected,
     required TResult Function(InvalidMnemonic<T> value) invalidMnemonic,
     required TResult Function(InvalidString<T> value) invalidString,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
-    required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(InvalidBlockchainUrl<T> value)
         invalidBlockchainUrl,
   }) {
@@ -750,13 +404,10 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ServerError<T> value)? serverError,
-    TResult Function(Unexpected<T> value)? unexpected,
-    TResult Function(InvalidMnemonic<T> value)? invalidMnemonic,
-    TResult Function(InvalidString<T> value)? invalidString,
-    TResult Function(InvalidPassword<T> value)? invalidPassword,
-    TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(InvalidBlockchainUrl<T> value)? invalidBlockchainUrl,
+    TResult? Function(InvalidMnemonic<T> value)? invalidMnemonic,
+    TResult? Function(InvalidString<T> value)? invalidString,
+    TResult? Function(InvalidPassword<T> value)? invalidPassword,
+    TResult? Function(InvalidBlockchainUrl<T> value)? invalidBlockchainUrl,
   }) {
     return invalidPassword?.call(this);
   }
@@ -764,12 +415,9 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ServerError<T> value)? serverError,
-    TResult Function(Unexpected<T> value)? unexpected,
     TResult Function(InvalidMnemonic<T> value)? invalidMnemonic,
     TResult Function(InvalidString<T> value)? invalidString,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
-    TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(InvalidBlockchainUrl<T> value)? invalidBlockchainUrl,
     required TResult orElse(),
   }) {
@@ -785,142 +433,6 @@ abstract class InvalidPassword<T> implements BdkFailure<T> {
 }
 
 /// @nodoc
-abstract class _$$InvalidEmailCopyWith<T, $Res> {
-  factory _$$InvalidEmailCopyWith(
-          _$InvalidEmail<T> value, $Res Function(_$InvalidEmail<T>) then) =
-      __$$InvalidEmailCopyWithImpl<T, $Res>;
-}
-
-/// @nodoc
-class __$$InvalidEmailCopyWithImpl<T, $Res>
-    extends _$BdkFailureCopyWithImpl<T, $Res>
-    implements _$$InvalidEmailCopyWith<T, $Res> {
-  __$$InvalidEmailCopyWithImpl(
-      _$InvalidEmail<T> _value, $Res Function(_$InvalidEmail<T>) _then)
-      : super(_value, (v) => _then(v as _$InvalidEmail<T>));
-
-  @override
-  _$InvalidEmail<T> get _value => super._value as _$InvalidEmail<T>;
-}
-
-/// @nodoc
-
-class _$InvalidEmail<T> implements InvalidEmail<T> {
-  const _$InvalidEmail();
-
-  @override
-  String toString() {
-    return 'BdkFailure<$T>.invalidEmail()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$InvalidEmail<T>);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() serverError,
-    required TResult Function() unexpected,
-    required TResult Function() invalidMnemonic,
-    required TResult Function() invalidString,
-    required TResult Function() invalidPassword,
-    required TResult Function() invalidEmail,
-    required TResult Function() invalidBlockchainUrl,
-  }) {
-    return invalidEmail();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? serverError,
-    TResult Function()? unexpected,
-    TResult Function()? invalidMnemonic,
-    TResult Function()? invalidString,
-    TResult Function()? invalidPassword,
-    TResult Function()? invalidEmail,
-    TResult Function()? invalidBlockchainUrl,
-  }) {
-    return invalidEmail?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? serverError,
-    TResult Function()? unexpected,
-    TResult Function()? invalidMnemonic,
-    TResult Function()? invalidString,
-    TResult Function()? invalidPassword,
-    TResult Function()? invalidEmail,
-    TResult Function()? invalidBlockchainUrl,
-    required TResult orElse(),
-  }) {
-    if (invalidEmail != null) {
-      return invalidEmail();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ServerError<T> value) serverError,
-    required TResult Function(Unexpected<T> value) unexpected,
-    required TResult Function(InvalidMnemonic<T> value) invalidMnemonic,
-    required TResult Function(InvalidString<T> value) invalidString,
-    required TResult Function(InvalidPassword<T> value) invalidPassword,
-    required TResult Function(InvalidEmail<T> value) invalidEmail,
-    required TResult Function(InvalidBlockchainUrl<T> value)
-        invalidBlockchainUrl,
-  }) {
-    return invalidEmail(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ServerError<T> value)? serverError,
-    TResult Function(Unexpected<T> value)? unexpected,
-    TResult Function(InvalidMnemonic<T> value)? invalidMnemonic,
-    TResult Function(InvalidString<T> value)? invalidString,
-    TResult Function(InvalidPassword<T> value)? invalidPassword,
-    TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(InvalidBlockchainUrl<T> value)? invalidBlockchainUrl,
-  }) {
-    return invalidEmail?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ServerError<T> value)? serverError,
-    TResult Function(Unexpected<T> value)? unexpected,
-    TResult Function(InvalidMnemonic<T> value)? invalidMnemonic,
-    TResult Function(InvalidString<T> value)? invalidString,
-    TResult Function(InvalidPassword<T> value)? invalidPassword,
-    TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(InvalidBlockchainUrl<T> value)? invalidBlockchainUrl,
-    required TResult orElse(),
-  }) {
-    if (invalidEmail != null) {
-      return invalidEmail(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class InvalidEmail<T> implements BdkFailure<T> {
-  const factory InvalidEmail() = _$InvalidEmail<T>;
-}
-
-/// @nodoc
 abstract class _$$InvalidBlockchainUrlCopyWith<T, $Res> {
   factory _$$InvalidBlockchainUrlCopyWith(_$InvalidBlockchainUrl<T> value,
           $Res Function(_$InvalidBlockchainUrl<T>) then) =
@@ -929,15 +441,11 @@ abstract class _$$InvalidBlockchainUrlCopyWith<T, $Res> {
 
 /// @nodoc
 class __$$InvalidBlockchainUrlCopyWithImpl<T, $Res>
-    extends _$BdkFailureCopyWithImpl<T, $Res>
+    extends _$BdkFailureCopyWithImpl<T, $Res, _$InvalidBlockchainUrl<T>>
     implements _$$InvalidBlockchainUrlCopyWith<T, $Res> {
   __$$InvalidBlockchainUrlCopyWithImpl(_$InvalidBlockchainUrl<T> _value,
       $Res Function(_$InvalidBlockchainUrl<T>) _then)
-      : super(_value, (v) => _then(v as _$InvalidBlockchainUrl<T>));
-
-  @override
-  _$InvalidBlockchainUrl<T> get _value =>
-      super._value as _$InvalidBlockchainUrl<T>;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -963,12 +471,9 @@ class _$InvalidBlockchainUrl<T> implements InvalidBlockchainUrl<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() serverError,
-    required TResult Function() unexpected,
     required TResult Function() invalidMnemonic,
     required TResult Function() invalidString,
     required TResult Function() invalidPassword,
-    required TResult Function() invalidEmail,
     required TResult Function() invalidBlockchainUrl,
   }) {
     return invalidBlockchainUrl();
@@ -977,13 +482,10 @@ class _$InvalidBlockchainUrl<T> implements InvalidBlockchainUrl<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? serverError,
-    TResult Function()? unexpected,
-    TResult Function()? invalidMnemonic,
-    TResult Function()? invalidString,
-    TResult Function()? invalidPassword,
-    TResult Function()? invalidEmail,
-    TResult Function()? invalidBlockchainUrl,
+    TResult? Function()? invalidMnemonic,
+    TResult? Function()? invalidString,
+    TResult? Function()? invalidPassword,
+    TResult? Function()? invalidBlockchainUrl,
   }) {
     return invalidBlockchainUrl?.call();
   }
@@ -991,12 +493,9 @@ class _$InvalidBlockchainUrl<T> implements InvalidBlockchainUrl<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? serverError,
-    TResult Function()? unexpected,
     TResult Function()? invalidMnemonic,
     TResult Function()? invalidString,
     TResult Function()? invalidPassword,
-    TResult Function()? invalidEmail,
     TResult Function()? invalidBlockchainUrl,
     required TResult orElse(),
   }) {
@@ -1009,12 +508,9 @@ class _$InvalidBlockchainUrl<T> implements InvalidBlockchainUrl<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ServerError<T> value) serverError,
-    required TResult Function(Unexpected<T> value) unexpected,
     required TResult Function(InvalidMnemonic<T> value) invalidMnemonic,
     required TResult Function(InvalidString<T> value) invalidString,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
-    required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(InvalidBlockchainUrl<T> value)
         invalidBlockchainUrl,
   }) {
@@ -1024,13 +520,10 @@ class _$InvalidBlockchainUrl<T> implements InvalidBlockchainUrl<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ServerError<T> value)? serverError,
-    TResult Function(Unexpected<T> value)? unexpected,
-    TResult Function(InvalidMnemonic<T> value)? invalidMnemonic,
-    TResult Function(InvalidString<T> value)? invalidString,
-    TResult Function(InvalidPassword<T> value)? invalidPassword,
-    TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(InvalidBlockchainUrl<T> value)? invalidBlockchainUrl,
+    TResult? Function(InvalidMnemonic<T> value)? invalidMnemonic,
+    TResult? Function(InvalidString<T> value)? invalidString,
+    TResult? Function(InvalidPassword<T> value)? invalidPassword,
+    TResult? Function(InvalidBlockchainUrl<T> value)? invalidBlockchainUrl,
   }) {
     return invalidBlockchainUrl?.call(this);
   }
@@ -1038,12 +531,9 @@ class _$InvalidBlockchainUrl<T> implements InvalidBlockchainUrl<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ServerError<T> value)? serverError,
-    TResult Function(Unexpected<T> value)? unexpected,
     TResult Function(InvalidMnemonic<T> value)? invalidMnemonic,
     TResult Function(InvalidString<T> value)? invalidString,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
-    TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(InvalidBlockchainUrl<T> value)? invalidBlockchainUrl,
     required TResult orElse(),
   }) {

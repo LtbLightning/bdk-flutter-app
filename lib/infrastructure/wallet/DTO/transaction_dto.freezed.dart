@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'transaction_dto.dart';
 
@@ -36,7 +36,8 @@ mixin _$TransactionDTO {
 abstract class $TransactionDTOCopyWith<$Res> {
   factory $TransactionDTOCopyWith(
           TransactionDTO value, $Res Function(TransactionDTO) then) =
-      _$TransactionDTOCopyWithImpl<$Res>;
+      _$TransactionDTOCopyWithImpl<$Res, TransactionDTO>;
+  @useResult
   $Res call(
       {String txid,
       String? fees,
@@ -46,44 +47,46 @@ abstract class $TransactionDTOCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TransactionDTOCopyWithImpl<$Res>
+class _$TransactionDTOCopyWithImpl<$Res, $Val extends TransactionDTO>
     implements $TransactionDTOCopyWith<$Res> {
   _$TransactionDTOCopyWithImpl(this._value, this._then);
 
-  final TransactionDTO _value;
   // ignore: unused_field
-  final $Res Function(TransactionDTO) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? txid = freezed,
+    Object? txid = null,
     Object? fees = freezed,
     Object? sent = freezed,
     Object? received = freezed,
     Object? confirmation_time = freezed,
   }) {
     return _then(_value.copyWith(
-      txid: txid == freezed
+      txid: null == txid
           ? _value.txid
           : txid // ignore: cast_nullable_to_non_nullable
               as String,
-      fees: fees == freezed
+      fees: freezed == fees
           ? _value.fees
           : fees // ignore: cast_nullable_to_non_nullable
               as String?,
-      sent: sent == freezed
+      sent: freezed == sent
           ? _value.sent
           : sent // ignore: cast_nullable_to_non_nullable
               as String?,
-      received: received == freezed
+      received: freezed == received
           ? _value.received
           : received // ignore: cast_nullable_to_non_nullable
               as String?,
-      confirmation_time: confirmation_time == freezed
+      confirmation_time: freezed == confirmation_time
           ? _value.confirmation_time
           : confirmation_time // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -94,6 +97,7 @@ abstract class _$$_TransactionDTOCopyWith<$Res>
           _$_TransactionDTO value, $Res Function(_$_TransactionDTO) then) =
       __$$_TransactionDTOCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String txid,
       String? fees,
@@ -104,41 +108,39 @@ abstract class _$$_TransactionDTOCopyWith<$Res>
 
 /// @nodoc
 class __$$_TransactionDTOCopyWithImpl<$Res>
-    extends _$TransactionDTOCopyWithImpl<$Res>
+    extends _$TransactionDTOCopyWithImpl<$Res, _$_TransactionDTO>
     implements _$$_TransactionDTOCopyWith<$Res> {
   __$$_TransactionDTOCopyWithImpl(
       _$_TransactionDTO _value, $Res Function(_$_TransactionDTO) _then)
-      : super(_value, (v) => _then(v as _$_TransactionDTO));
+      : super(_value, _then);
 
-  @override
-  _$_TransactionDTO get _value => super._value as _$_TransactionDTO;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? txid = freezed,
+    Object? txid = null,
     Object? fees = freezed,
     Object? sent = freezed,
     Object? received = freezed,
     Object? confirmation_time = freezed,
   }) {
     return _then(_$_TransactionDTO(
-      txid: txid == freezed
+      txid: null == txid
           ? _value.txid
           : txid // ignore: cast_nullable_to_non_nullable
               as String,
-      fees: fees == freezed
+      fees: freezed == fees
           ? _value.fees
           : fees // ignore: cast_nullable_to_non_nullable
               as String?,
-      sent: sent == freezed
+      sent: freezed == sent
           ? _value.sent
           : sent // ignore: cast_nullable_to_non_nullable
               as String?,
-      received: received == freezed
+      received: freezed == received
           ? _value.received
           : received // ignore: cast_nullable_to_non_nullable
               as String?,
-      confirmation_time: confirmation_time == freezed
+      confirmation_time: freezed == confirmation_time
           ? _value.confirmation_time
           : confirmation_time // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -181,32 +183,31 @@ class _$_TransactionDTO extends _TransactionDTO {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_TransactionDTO &&
-            const DeepCollectionEquality().equals(other.txid, txid) &&
-            const DeepCollectionEquality().equals(other.fees, fees) &&
-            const DeepCollectionEquality().equals(other.sent, sent) &&
-            const DeepCollectionEquality().equals(other.received, received) &&
-            const DeepCollectionEquality()
-                .equals(other.confirmation_time, confirmation_time));
+            (identical(other.txid, txid) || other.txid == txid) &&
+            (identical(other.fees, fees) || other.fees == fees) &&
+            (identical(other.sent, sent) || other.sent == sent) &&
+            (identical(other.received, received) ||
+                other.received == received) &&
+            (identical(other.confirmation_time, confirmation_time) ||
+                other.confirmation_time == confirmation_time));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(txid),
-      const DeepCollectionEquality().hash(fees),
-      const DeepCollectionEquality().hash(sent),
-      const DeepCollectionEquality().hash(received),
-      const DeepCollectionEquality().hash(confirmation_time));
+  int get hashCode =>
+      Object.hash(runtimeType, txid, fees, sent, received, confirmation_time);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_TransactionDTOCopyWith<_$_TransactionDTO> get copyWith =>
       __$$_TransactionDTOCopyWithImpl<_$_TransactionDTO>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TransactionDTOToJson(this);
+    return _$$_TransactionDTOToJson(
+      this,
+    );
   }
 }
 
@@ -223,15 +224,15 @@ abstract class _TransactionDTO extends TransactionDTO {
       _$_TransactionDTO.fromJson;
 
   @override
-  String get txid => throw _privateConstructorUsedError;
+  String get txid;
   @override
-  String? get fees => throw _privateConstructorUsedError;
+  String? get fees;
   @override
-  String? get sent => throw _privateConstructorUsedError;
+  String? get sent;
   @override
-  String? get received => throw _privateConstructorUsedError;
+  String? get received;
   @override
-  String? get confirmation_time => throw _privateConstructorUsedError;
+  String? get confirmation_time;
   @override
   @JsonKey(ignore: true)
   _$$_TransactionDTOCopyWith<_$_TransactionDTO> get copyWith =>

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'wallet.dart';
 
@@ -17,11 +17,14 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$WalletEntity {
   String? get address => throw _privateConstructorUsedError;
-  String? get balance => throw _privateConstructorUsedError;
-  Mnemonic? get mnemonic => throw _privateConstructorUsedError;
-  Blockchain? get blockChain => throw _privateConstructorUsedError;
-  BlockchainUrl? get blockChainUrl => throw _privateConstructorUsedError;
-  Password? get password => throw _privateConstructorUsedError;
+  Balance? get balance => throw _privateConstructorUsedError;
+  MnemonicStr? get mnemonic => throw _privateConstructorUsedError;
+  List<TransactionDetails>? get transactions =>
+      throw _privateConstructorUsedError;
+  List<LocalUtxo>? get uxtos => throw _privateConstructorUsedError;
+  Network? get network => throw _privateConstructorUsedError;
+  String? get password => throw _privateConstructorUsedError;
+  Wallet? get wallet => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $WalletEntityCopyWith<WalletEntity> get copyWith =>
@@ -32,59 +35,75 @@ mixin _$WalletEntity {
 abstract class $WalletEntityCopyWith<$Res> {
   factory $WalletEntityCopyWith(
           WalletEntity value, $Res Function(WalletEntity) then) =
-      _$WalletEntityCopyWithImpl<$Res>;
+      _$WalletEntityCopyWithImpl<$Res, WalletEntity>;
+  @useResult
   $Res call(
       {String? address,
-      String? balance,
-      Mnemonic? mnemonic,
-      Blockchain? blockChain,
-      BlockchainUrl? blockChainUrl,
-      Password? password});
+      Balance? balance,
+      MnemonicStr? mnemonic,
+      List<TransactionDetails>? transactions,
+      List<LocalUtxo>? uxtos,
+      Network? network,
+      String? password,
+      Wallet? wallet});
 }
 
 /// @nodoc
-class _$WalletEntityCopyWithImpl<$Res> implements $WalletEntityCopyWith<$Res> {
+class _$WalletEntityCopyWithImpl<$Res, $Val extends WalletEntity>
+    implements $WalletEntityCopyWith<$Res> {
   _$WalletEntityCopyWithImpl(this._value, this._then);
 
-  final WalletEntity _value;
   // ignore: unused_field
-  final $Res Function(WalletEntity) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? address = freezed,
     Object? balance = freezed,
     Object? mnemonic = freezed,
-    Object? blockChain = freezed,
-    Object? blockChainUrl = freezed,
+    Object? transactions = freezed,
+    Object? uxtos = freezed,
+    Object? network = freezed,
     Object? password = freezed,
+    Object? wallet = freezed,
   }) {
     return _then(_value.copyWith(
-      address: address == freezed
+      address: freezed == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
               as String?,
-      balance: balance == freezed
+      balance: freezed == balance
           ? _value.balance
           : balance // ignore: cast_nullable_to_non_nullable
-              as String?,
-      mnemonic: mnemonic == freezed
+              as Balance?,
+      mnemonic: freezed == mnemonic
           ? _value.mnemonic
           : mnemonic // ignore: cast_nullable_to_non_nullable
-              as Mnemonic?,
-      blockChain: blockChain == freezed
-          ? _value.blockChain
-          : blockChain // ignore: cast_nullable_to_non_nullable
-              as Blockchain?,
-      blockChainUrl: blockChainUrl == freezed
-          ? _value.blockChainUrl
-          : blockChainUrl // ignore: cast_nullable_to_non_nullable
-              as BlockchainUrl?,
-      password: password == freezed
+              as MnemonicStr?,
+      transactions: freezed == transactions
+          ? _value.transactions
+          : transactions // ignore: cast_nullable_to_non_nullable
+              as List<TransactionDetails>?,
+      uxtos: freezed == uxtos
+          ? _value.uxtos
+          : uxtos // ignore: cast_nullable_to_non_nullable
+              as List<LocalUtxo>?,
+      network: freezed == network
+          ? _value.network
+          : network // ignore: cast_nullable_to_non_nullable
+              as Network?,
+      password: freezed == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
-              as Password?,
-    ));
+              as String?,
+      wallet: freezed == wallet
+          ? _value.wallet
+          : wallet // ignore: cast_nullable_to_non_nullable
+              as Wallet?,
+    ) as $Val);
   }
 }
 
@@ -95,60 +114,71 @@ abstract class _$$_WalletEntityCopyWith<$Res>
           _$_WalletEntity value, $Res Function(_$_WalletEntity) then) =
       __$$_WalletEntityCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String? address,
-      String? balance,
-      Mnemonic? mnemonic,
-      Blockchain? blockChain,
-      BlockchainUrl? blockChainUrl,
-      Password? password});
+      Balance? balance,
+      MnemonicStr? mnemonic,
+      List<TransactionDetails>? transactions,
+      List<LocalUtxo>? uxtos,
+      Network? network,
+      String? password,
+      Wallet? wallet});
 }
 
 /// @nodoc
 class __$$_WalletEntityCopyWithImpl<$Res>
-    extends _$WalletEntityCopyWithImpl<$Res>
+    extends _$WalletEntityCopyWithImpl<$Res, _$_WalletEntity>
     implements _$$_WalletEntityCopyWith<$Res> {
   __$$_WalletEntityCopyWithImpl(
       _$_WalletEntity _value, $Res Function(_$_WalletEntity) _then)
-      : super(_value, (v) => _then(v as _$_WalletEntity));
+      : super(_value, _then);
 
-  @override
-  _$_WalletEntity get _value => super._value as _$_WalletEntity;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? address = freezed,
     Object? balance = freezed,
     Object? mnemonic = freezed,
-    Object? blockChain = freezed,
-    Object? blockChainUrl = freezed,
+    Object? transactions = freezed,
+    Object? uxtos = freezed,
+    Object? network = freezed,
     Object? password = freezed,
+    Object? wallet = freezed,
   }) {
     return _then(_$_WalletEntity(
-      address: address == freezed
+      address: freezed == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
               as String?,
-      balance: balance == freezed
+      balance: freezed == balance
           ? _value.balance
           : balance // ignore: cast_nullable_to_non_nullable
-              as String?,
-      mnemonic: mnemonic == freezed
+              as Balance?,
+      mnemonic: freezed == mnemonic
           ? _value.mnemonic
           : mnemonic // ignore: cast_nullable_to_non_nullable
-              as Mnemonic?,
-      blockChain: blockChain == freezed
-          ? _value.blockChain
-          : blockChain // ignore: cast_nullable_to_non_nullable
-              as Blockchain?,
-      blockChainUrl: blockChainUrl == freezed
-          ? _value.blockChainUrl
-          : blockChainUrl // ignore: cast_nullable_to_non_nullable
-              as BlockchainUrl?,
-      password: password == freezed
+              as MnemonicStr?,
+      transactions: freezed == transactions
+          ? _value._transactions
+          : transactions // ignore: cast_nullable_to_non_nullable
+              as List<TransactionDetails>?,
+      uxtos: freezed == uxtos
+          ? _value._uxtos
+          : uxtos // ignore: cast_nullable_to_non_nullable
+              as List<LocalUtxo>?,
+      network: freezed == network
+          ? _value.network
+          : network // ignore: cast_nullable_to_non_nullable
+              as Network?,
+      password: freezed == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
-              as Password?,
+              as String?,
+      wallet: freezed == wallet
+          ? _value.wallet
+          : wallet // ignore: cast_nullable_to_non_nullable
+              as Wallet?,
     ));
   }
 }
@@ -160,27 +190,51 @@ class _$_WalletEntity extends _WalletEntity {
       {this.address,
       this.balance,
       this.mnemonic,
-      this.blockChain,
-      this.blockChainUrl,
-      this.password})
-      : super._();
+      final List<TransactionDetails>? transactions,
+      final List<LocalUtxo>? uxtos,
+      this.network,
+      this.password,
+      this.wallet})
+      : _transactions = transactions,
+        _uxtos = uxtos,
+        super._();
 
   @override
   final String? address;
   @override
-  final String? balance;
+  final Balance? balance;
   @override
-  final Mnemonic? mnemonic;
+  final MnemonicStr? mnemonic;
+  final List<TransactionDetails>? _transactions;
   @override
-  final Blockchain? blockChain;
+  List<TransactionDetails>? get transactions {
+    final value = _transactions;
+    if (value == null) return null;
+    if (_transactions is EqualUnmodifiableListView) return _transactions;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<LocalUtxo>? _uxtos;
   @override
-  final BlockchainUrl? blockChainUrl;
+  List<LocalUtxo>? get uxtos {
+    final value = _uxtos;
+    if (value == null) return null;
+    if (_uxtos is EqualUnmodifiableListView) return _uxtos;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
-  final Password? password;
+  final Network? network;
+  @override
+  final String? password;
+  @override
+  final Wallet? wallet;
 
   @override
   String toString() {
-    return 'WalletEntity(address: $address, balance: $balance, mnemonic: $mnemonic, blockChain: $blockChain, blockChainUrl: $blockChainUrl, password: $password)';
+    return 'WalletEntity(address: $address, balance: $balance, mnemonic: $mnemonic, transactions: $transactions, uxtos: $uxtos, network: $network, password: $password, wallet: $wallet)';
   }
 
   @override
@@ -188,28 +242,34 @@ class _$_WalletEntity extends _WalletEntity {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_WalletEntity &&
-            const DeepCollectionEquality().equals(other.address, address) &&
-            const DeepCollectionEquality().equals(other.balance, balance) &&
-            const DeepCollectionEquality().equals(other.mnemonic, mnemonic) &&
+            (identical(other.address, address) || other.address == address) &&
+            (identical(other.balance, balance) || other.balance == balance) &&
+            (identical(other.mnemonic, mnemonic) ||
+                other.mnemonic == mnemonic) &&
             const DeepCollectionEquality()
-                .equals(other.blockChain, blockChain) &&
-            const DeepCollectionEquality()
-                .equals(other.blockChainUrl, blockChainUrl) &&
-            const DeepCollectionEquality().equals(other.password, password));
+                .equals(other._transactions, _transactions) &&
+            const DeepCollectionEquality().equals(other._uxtos, _uxtos) &&
+            (identical(other.network, network) || other.network == network) &&
+            (identical(other.password, password) ||
+                other.password == password) &&
+            (identical(other.wallet, wallet) || other.wallet == wallet));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(address),
-      const DeepCollectionEquality().hash(balance),
-      const DeepCollectionEquality().hash(mnemonic),
-      const DeepCollectionEquality().hash(blockChain),
-      const DeepCollectionEquality().hash(blockChainUrl),
-      const DeepCollectionEquality().hash(password));
+      address,
+      balance,
+      mnemonic,
+      const DeepCollectionEquality().hash(_transactions),
+      const DeepCollectionEquality().hash(_uxtos),
+      network,
+      password,
+      wallet);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_WalletEntityCopyWith<_$_WalletEntity> get copyWith =>
       __$$_WalletEntityCopyWithImpl<_$_WalletEntity>(this, _$identity);
 }
@@ -217,25 +277,31 @@ class _$_WalletEntity extends _WalletEntity {
 abstract class _WalletEntity extends WalletEntity {
   const factory _WalletEntity(
       {final String? address,
-      final String? balance,
-      final Mnemonic? mnemonic,
-      final Blockchain? blockChain,
-      final BlockchainUrl? blockChainUrl,
-      final Password? password}) = _$_WalletEntity;
+      final Balance? balance,
+      final MnemonicStr? mnemonic,
+      final List<TransactionDetails>? transactions,
+      final List<LocalUtxo>? uxtos,
+      final Network? network,
+      final String? password,
+      final Wallet? wallet}) = _$_WalletEntity;
   const _WalletEntity._() : super._();
 
   @override
-  String? get address => throw _privateConstructorUsedError;
+  String? get address;
   @override
-  String? get balance => throw _privateConstructorUsedError;
+  Balance? get balance;
   @override
-  Mnemonic? get mnemonic => throw _privateConstructorUsedError;
+  MnemonicStr? get mnemonic;
   @override
-  Blockchain? get blockChain => throw _privateConstructorUsedError;
+  List<TransactionDetails>? get transactions;
   @override
-  BlockchainUrl? get blockChainUrl => throw _privateConstructorUsedError;
+  List<LocalUtxo>? get uxtos;
   @override
-  Password? get password => throw _privateConstructorUsedError;
+  Network? get network;
+  @override
+  String? get password;
+  @override
+  Wallet? get wallet;
   @override
   @JsonKey(ignore: true)
   _$$_WalletEntityCopyWith<_$_WalletEntity> get copyWith =>

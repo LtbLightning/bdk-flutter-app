@@ -1,12 +1,10 @@
 import 'package:bdk_wallet/application/connectivity/connectivity_cubit.dart';
-import 'package:bdk_wallet/presentaition/dashboard/home.dart';
 import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../wallet/init_wallet.dart';
 import 'not_connected.dart';
-
 
 class Splash extends StatefulWidget {
   const Splash({Key? key}) : super(key: key);
@@ -20,6 +18,7 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
   late Animation<double> scaleAnimation;
   bool isConnected = false;
   bool isCleaning = false;
+
   @override
   void initState() {
     _controller = AnimationController(
@@ -47,19 +46,18 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
     super.dispose();
   }
 
-
-
   @override
   Widget build(BuildContext context) {
-
     return BlocListener<ConnectivityCubit, ConnectivityState>(
       listener: (context, state) {
         if (state is Connected) {
           Future.delayed(const Duration(milliseconds: 800), () {
-       Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const InitWallet()));
+            Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => const InitWallet()));
           });
         } else {
-          Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const NotConnected()));
+          Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => const NotConnected()));
         }
       },
       child: Scaffold(

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'wallet_bloc.dart';
 
@@ -18,57 +18,53 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$WalletEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Mnemonic mnemonic) mnemonicChanged,
-    required TResult Function(Password password) passwordChanged,
-    required TResult Function(BlockchainUrl url) blockChainUrlChanged,
+    required TResult Function(MnemonicStr mnemonic) mnemonicChanged,
+    required TResult Function(String password) passwordChanged,
     required TResult Function() createWallet,
-    required TResult Function() loadWallet,
+    required TResult Function(WalletDto walletDto) restoreWallet,
+    required TResult Function() getWallets,
     required TResult Function() genSeed,
+    required TResult Function() getBalance,
     required TResult Function() getNewAddress,
     required TResult Function() getLastUsedAddress,
-    required TResult Function() sync,
+    required TResult Function(Blockchain blockchain) sync,
     required TResult Function() getConfirmedTransaction,
     required TResult Function() getPendingTransaction,
-    required TResult Function(String recipient, double amount)
-        broadcastTransaction,
-    required TResult Function() walletExists,
-    required TResult Function() getWallet,
+    required TResult Function(String address, int amount) createAndSign,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Mnemonic mnemonic)? mnemonicChanged,
-    TResult Function(Password password)? passwordChanged,
-    TResult Function(BlockchainUrl url)? blockChainUrlChanged,
-    TResult Function()? createWallet,
-    TResult Function()? loadWallet,
-    TResult Function()? genSeed,
-    TResult Function()? getNewAddress,
-    TResult Function()? getLastUsedAddress,
-    TResult Function()? sync,
-    TResult Function()? getConfirmedTransaction,
-    TResult Function()? getPendingTransaction,
-    TResult Function(String recipient, double amount)? broadcastTransaction,
-    TResult Function()? walletExists,
-    TResult Function()? getWallet,
+    TResult? Function(MnemonicStr mnemonic)? mnemonicChanged,
+    TResult? Function(String password)? passwordChanged,
+    TResult? Function()? createWallet,
+    TResult? Function(WalletDto walletDto)? restoreWallet,
+    TResult? Function()? getWallets,
+    TResult? Function()? genSeed,
+    TResult? Function()? getBalance,
+    TResult? Function()? getNewAddress,
+    TResult? Function()? getLastUsedAddress,
+    TResult? Function(Blockchain blockchain)? sync,
+    TResult? Function()? getConfirmedTransaction,
+    TResult? Function()? getPendingTransaction,
+    TResult? Function(String address, int amount)? createAndSign,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Mnemonic mnemonic)? mnemonicChanged,
-    TResult Function(Password password)? passwordChanged,
-    TResult Function(BlockchainUrl url)? blockChainUrlChanged,
+    TResult Function(MnemonicStr mnemonic)? mnemonicChanged,
+    TResult Function(String password)? passwordChanged,
     TResult Function()? createWallet,
-    TResult Function()? loadWallet,
+    TResult Function(WalletDto walletDto)? restoreWallet,
+    TResult Function()? getWallets,
     TResult Function()? genSeed,
+    TResult Function()? getBalance,
     TResult Function()? getNewAddress,
     TResult Function()? getLastUsedAddress,
-    TResult Function()? sync,
+    TResult Function(Blockchain blockchain)? sync,
     TResult Function()? getConfirmedTransaction,
     TResult Function()? getPendingTransaction,
-    TResult Function(String recipient, double amount)? broadcastTransaction,
-    TResult Function()? walletExists,
-    TResult Function()? getWallet,
+    TResult Function(String address, int amount)? createAndSign,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -76,10 +72,11 @@ mixin _$WalletEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(MnemonicChanged value) mnemonicChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(BlockChainUrlChanged value) blockChainUrlChanged,
     required TResult Function(CreateWallet value) createWallet,
-    required TResult Function(LoadWallet value) loadWallet,
+    required TResult Function(RestoreWallet value) restoreWallet,
+    required TResult Function(GetWallets value) getWallets,
     required TResult Function(GenSeed value) genSeed,
+    required TResult Function(GetBalance value) getBalance,
     required TResult Function(GetNewAddress value) getNewAddress,
     required TResult Function(GetLastUsedAddress value) getLastUsedAddress,
     required TResult Function(Sync value) sync,
@@ -87,45 +84,41 @@ mixin _$WalletEvent {
         getConfirmedTransaction,
     required TResult Function(GetPendingTransaction value)
         getPendingTransaction,
-    required TResult Function(BroadcastTransaction value) broadcastTransaction,
-    required TResult Function(WalletExists value) walletExists,
-    required TResult Function(GetWallet value) getWallet,
+    required TResult Function(CreateAndSign value) createAndSign,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(MnemonicChanged value)? mnemonicChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
-    TResult Function(CreateWallet value)? createWallet,
-    TResult Function(LoadWallet value)? loadWallet,
-    TResult Function(GenSeed value)? genSeed,
-    TResult Function(GetNewAddress value)? getNewAddress,
-    TResult Function(GetLastUsedAddress value)? getLastUsedAddress,
-    TResult Function(Sync value)? sync,
-    TResult Function(GetConfirmedTransaction value)? getConfirmedTransaction,
-    TResult Function(GetPendingTransaction value)? getPendingTransaction,
-    TResult Function(BroadcastTransaction value)? broadcastTransaction,
-    TResult Function(WalletExists value)? walletExists,
-    TResult Function(GetWallet value)? getWallet,
+    TResult? Function(MnemonicChanged value)? mnemonicChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(CreateWallet value)? createWallet,
+    TResult? Function(RestoreWallet value)? restoreWallet,
+    TResult? Function(GetWallets value)? getWallets,
+    TResult? Function(GenSeed value)? genSeed,
+    TResult? Function(GetBalance value)? getBalance,
+    TResult? Function(GetNewAddress value)? getNewAddress,
+    TResult? Function(GetLastUsedAddress value)? getLastUsedAddress,
+    TResult? Function(Sync value)? sync,
+    TResult? Function(GetConfirmedTransaction value)? getConfirmedTransaction,
+    TResult? Function(GetPendingTransaction value)? getPendingTransaction,
+    TResult? Function(CreateAndSign value)? createAndSign,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MnemonicChanged value)? mnemonicChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
     TResult Function(CreateWallet value)? createWallet,
-    TResult Function(LoadWallet value)? loadWallet,
+    TResult Function(RestoreWallet value)? restoreWallet,
+    TResult Function(GetWallets value)? getWallets,
     TResult Function(GenSeed value)? genSeed,
+    TResult Function(GetBalance value)? getBalance,
     TResult Function(GetNewAddress value)? getNewAddress,
     TResult Function(GetLastUsedAddress value)? getLastUsedAddress,
     TResult Function(Sync value)? sync,
     TResult Function(GetConfirmedTransaction value)? getConfirmedTransaction,
     TResult Function(GetPendingTransaction value)? getPendingTransaction,
-    TResult Function(BroadcastTransaction value)? broadcastTransaction,
-    TResult Function(WalletExists value)? walletExists,
-    TResult Function(GetWallet value)? getWallet,
+    TResult Function(CreateAndSign value)? createAndSign,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -135,16 +128,18 @@ mixin _$WalletEvent {
 abstract class $WalletEventCopyWith<$Res> {
   factory $WalletEventCopyWith(
           WalletEvent value, $Res Function(WalletEvent) then) =
-      _$WalletEventCopyWithImpl<$Res>;
+      _$WalletEventCopyWithImpl<$Res, WalletEvent>;
 }
 
 /// @nodoc
-class _$WalletEventCopyWithImpl<$Res> implements $WalletEventCopyWith<$Res> {
+class _$WalletEventCopyWithImpl<$Res, $Val extends WalletEvent>
+    implements $WalletEventCopyWith<$Res> {
   _$WalletEventCopyWithImpl(this._value, this._then);
 
-  final WalletEvent _value;
   // ignore: unused_field
-  final $Res Function(WalletEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -152,29 +147,28 @@ abstract class _$$MnemonicChangedCopyWith<$Res> {
   factory _$$MnemonicChangedCopyWith(
           _$MnemonicChanged value, $Res Function(_$MnemonicChanged) then) =
       __$$MnemonicChangedCopyWithImpl<$Res>;
-  $Res call({Mnemonic mnemonic});
+  @useResult
+  $Res call({MnemonicStr mnemonic});
 }
 
 /// @nodoc
 class __$$MnemonicChangedCopyWithImpl<$Res>
-    extends _$WalletEventCopyWithImpl<$Res>
+    extends _$WalletEventCopyWithImpl<$Res, _$MnemonicChanged>
     implements _$$MnemonicChangedCopyWith<$Res> {
   __$$MnemonicChangedCopyWithImpl(
       _$MnemonicChanged _value, $Res Function(_$MnemonicChanged) _then)
-      : super(_value, (v) => _then(v as _$MnemonicChanged));
+      : super(_value, _then);
 
-  @override
-  _$MnemonicChanged get _value => super._value as _$MnemonicChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? mnemonic = freezed,
+    Object? mnemonic = null,
   }) {
     return _then(_$MnemonicChanged(
-      mnemonic == freezed
+      null == mnemonic
           ? _value.mnemonic
           : mnemonic // ignore: cast_nullable_to_non_nullable
-              as Mnemonic,
+              as MnemonicStr,
     ));
   }
 }
@@ -185,7 +179,7 @@ class _$MnemonicChanged implements MnemonicChanged {
   const _$MnemonicChanged(this.mnemonic);
 
   @override
-  final Mnemonic mnemonic;
+  final MnemonicStr mnemonic;
 
   @override
   String toString() {
@@ -197,36 +191,35 @@ class _$MnemonicChanged implements MnemonicChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MnemonicChanged &&
-            const DeepCollectionEquality().equals(other.mnemonic, mnemonic));
+            (identical(other.mnemonic, mnemonic) ||
+                other.mnemonic == mnemonic));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(mnemonic));
+  int get hashCode => Object.hash(runtimeType, mnemonic);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$MnemonicChangedCopyWith<_$MnemonicChanged> get copyWith =>
       __$$MnemonicChangedCopyWithImpl<_$MnemonicChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Mnemonic mnemonic) mnemonicChanged,
-    required TResult Function(Password password) passwordChanged,
-    required TResult Function(BlockchainUrl url) blockChainUrlChanged,
+    required TResult Function(MnemonicStr mnemonic) mnemonicChanged,
+    required TResult Function(String password) passwordChanged,
     required TResult Function() createWallet,
-    required TResult Function() loadWallet,
+    required TResult Function(WalletDto walletDto) restoreWallet,
+    required TResult Function() getWallets,
     required TResult Function() genSeed,
+    required TResult Function() getBalance,
     required TResult Function() getNewAddress,
     required TResult Function() getLastUsedAddress,
-    required TResult Function() sync,
+    required TResult Function(Blockchain blockchain) sync,
     required TResult Function() getConfirmedTransaction,
     required TResult Function() getPendingTransaction,
-    required TResult Function(String recipient, double amount)
-        broadcastTransaction,
-    required TResult Function() walletExists,
-    required TResult Function() getWallet,
+    required TResult Function(String address, int amount) createAndSign,
   }) {
     return mnemonicChanged(mnemonic);
   }
@@ -234,20 +227,19 @@ class _$MnemonicChanged implements MnemonicChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Mnemonic mnemonic)? mnemonicChanged,
-    TResult Function(Password password)? passwordChanged,
-    TResult Function(BlockchainUrl url)? blockChainUrlChanged,
-    TResult Function()? createWallet,
-    TResult Function()? loadWallet,
-    TResult Function()? genSeed,
-    TResult Function()? getNewAddress,
-    TResult Function()? getLastUsedAddress,
-    TResult Function()? sync,
-    TResult Function()? getConfirmedTransaction,
-    TResult Function()? getPendingTransaction,
-    TResult Function(String recipient, double amount)? broadcastTransaction,
-    TResult Function()? walletExists,
-    TResult Function()? getWallet,
+    TResult? Function(MnemonicStr mnemonic)? mnemonicChanged,
+    TResult? Function(String password)? passwordChanged,
+    TResult? Function()? createWallet,
+    TResult? Function(WalletDto walletDto)? restoreWallet,
+    TResult? Function()? getWallets,
+    TResult? Function()? genSeed,
+    TResult? Function()? getBalance,
+    TResult? Function()? getNewAddress,
+    TResult? Function()? getLastUsedAddress,
+    TResult? Function(Blockchain blockchain)? sync,
+    TResult? Function()? getConfirmedTransaction,
+    TResult? Function()? getPendingTransaction,
+    TResult? Function(String address, int amount)? createAndSign,
   }) {
     return mnemonicChanged?.call(mnemonic);
   }
@@ -255,20 +247,19 @@ class _$MnemonicChanged implements MnemonicChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Mnemonic mnemonic)? mnemonicChanged,
-    TResult Function(Password password)? passwordChanged,
-    TResult Function(BlockchainUrl url)? blockChainUrlChanged,
+    TResult Function(MnemonicStr mnemonic)? mnemonicChanged,
+    TResult Function(String password)? passwordChanged,
     TResult Function()? createWallet,
-    TResult Function()? loadWallet,
+    TResult Function(WalletDto walletDto)? restoreWallet,
+    TResult Function()? getWallets,
     TResult Function()? genSeed,
+    TResult Function()? getBalance,
     TResult Function()? getNewAddress,
     TResult Function()? getLastUsedAddress,
-    TResult Function()? sync,
+    TResult Function(Blockchain blockchain)? sync,
     TResult Function()? getConfirmedTransaction,
     TResult Function()? getPendingTransaction,
-    TResult Function(String recipient, double amount)? broadcastTransaction,
-    TResult Function()? walletExists,
-    TResult Function()? getWallet,
+    TResult Function(String address, int amount)? createAndSign,
     required TResult orElse(),
   }) {
     if (mnemonicChanged != null) {
@@ -282,10 +273,11 @@ class _$MnemonicChanged implements MnemonicChanged {
   TResult map<TResult extends Object?>({
     required TResult Function(MnemonicChanged value) mnemonicChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(BlockChainUrlChanged value) blockChainUrlChanged,
     required TResult Function(CreateWallet value) createWallet,
-    required TResult Function(LoadWallet value) loadWallet,
+    required TResult Function(RestoreWallet value) restoreWallet,
+    required TResult Function(GetWallets value) getWallets,
     required TResult Function(GenSeed value) genSeed,
+    required TResult Function(GetBalance value) getBalance,
     required TResult Function(GetNewAddress value) getNewAddress,
     required TResult Function(GetLastUsedAddress value) getLastUsedAddress,
     required TResult Function(Sync value) sync,
@@ -293,9 +285,7 @@ class _$MnemonicChanged implements MnemonicChanged {
         getConfirmedTransaction,
     required TResult Function(GetPendingTransaction value)
         getPendingTransaction,
-    required TResult Function(BroadcastTransaction value) broadcastTransaction,
-    required TResult Function(WalletExists value) walletExists,
-    required TResult Function(GetWallet value) getWallet,
+    required TResult Function(CreateAndSign value) createAndSign,
   }) {
     return mnemonicChanged(this);
   }
@@ -303,20 +293,19 @@ class _$MnemonicChanged implements MnemonicChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(MnemonicChanged value)? mnemonicChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
-    TResult Function(CreateWallet value)? createWallet,
-    TResult Function(LoadWallet value)? loadWallet,
-    TResult Function(GenSeed value)? genSeed,
-    TResult Function(GetNewAddress value)? getNewAddress,
-    TResult Function(GetLastUsedAddress value)? getLastUsedAddress,
-    TResult Function(Sync value)? sync,
-    TResult Function(GetConfirmedTransaction value)? getConfirmedTransaction,
-    TResult Function(GetPendingTransaction value)? getPendingTransaction,
-    TResult Function(BroadcastTransaction value)? broadcastTransaction,
-    TResult Function(WalletExists value)? walletExists,
-    TResult Function(GetWallet value)? getWallet,
+    TResult? Function(MnemonicChanged value)? mnemonicChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(CreateWallet value)? createWallet,
+    TResult? Function(RestoreWallet value)? restoreWallet,
+    TResult? Function(GetWallets value)? getWallets,
+    TResult? Function(GenSeed value)? genSeed,
+    TResult? Function(GetBalance value)? getBalance,
+    TResult? Function(GetNewAddress value)? getNewAddress,
+    TResult? Function(GetLastUsedAddress value)? getLastUsedAddress,
+    TResult? Function(Sync value)? sync,
+    TResult? Function(GetConfirmedTransaction value)? getConfirmedTransaction,
+    TResult? Function(GetPendingTransaction value)? getPendingTransaction,
+    TResult? Function(CreateAndSign value)? createAndSign,
   }) {
     return mnemonicChanged?.call(this);
   }
@@ -326,18 +315,17 @@ class _$MnemonicChanged implements MnemonicChanged {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MnemonicChanged value)? mnemonicChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
     TResult Function(CreateWallet value)? createWallet,
-    TResult Function(LoadWallet value)? loadWallet,
+    TResult Function(RestoreWallet value)? restoreWallet,
+    TResult Function(GetWallets value)? getWallets,
     TResult Function(GenSeed value)? genSeed,
+    TResult Function(GetBalance value)? getBalance,
     TResult Function(GetNewAddress value)? getNewAddress,
     TResult Function(GetLastUsedAddress value)? getLastUsedAddress,
     TResult Function(Sync value)? sync,
     TResult Function(GetConfirmedTransaction value)? getConfirmedTransaction,
     TResult Function(GetPendingTransaction value)? getPendingTransaction,
-    TResult Function(BroadcastTransaction value)? broadcastTransaction,
-    TResult Function(WalletExists value)? walletExists,
-    TResult Function(GetWallet value)? getWallet,
+    TResult Function(CreateAndSign value)? createAndSign,
     required TResult orElse(),
   }) {
     if (mnemonicChanged != null) {
@@ -348,9 +336,9 @@ class _$MnemonicChanged implements MnemonicChanged {
 }
 
 abstract class MnemonicChanged implements WalletEvent {
-  const factory MnemonicChanged(final Mnemonic mnemonic) = _$MnemonicChanged;
+  const factory MnemonicChanged(final MnemonicStr mnemonic) = _$MnemonicChanged;
 
-  Mnemonic get mnemonic => throw _privateConstructorUsedError;
+  MnemonicStr get mnemonic;
   @JsonKey(ignore: true)
   _$$MnemonicChangedCopyWith<_$MnemonicChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -361,29 +349,28 @@ abstract class _$$PasswordChangedCopyWith<$Res> {
   factory _$$PasswordChangedCopyWith(
           _$PasswordChanged value, $Res Function(_$PasswordChanged) then) =
       __$$PasswordChangedCopyWithImpl<$Res>;
-  $Res call({Password password});
+  @useResult
+  $Res call({String password});
 }
 
 /// @nodoc
 class __$$PasswordChangedCopyWithImpl<$Res>
-    extends _$WalletEventCopyWithImpl<$Res>
+    extends _$WalletEventCopyWithImpl<$Res, _$PasswordChanged>
     implements _$$PasswordChangedCopyWith<$Res> {
   __$$PasswordChangedCopyWithImpl(
       _$PasswordChanged _value, $Res Function(_$PasswordChanged) _then)
-      : super(_value, (v) => _then(v as _$PasswordChanged));
+      : super(_value, _then);
 
-  @override
-  _$PasswordChanged get _value => super._value as _$PasswordChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? password = freezed,
+    Object? password = null,
   }) {
     return _then(_$PasswordChanged(
-      password == freezed
+      null == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
-              as Password,
+              as String,
     ));
   }
 }
@@ -394,7 +381,7 @@ class _$PasswordChanged implements PasswordChanged {
   const _$PasswordChanged(this.password);
 
   @override
-  final Password password;
+  final String password;
 
   @override
   String toString() {
@@ -406,36 +393,35 @@ class _$PasswordChanged implements PasswordChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PasswordChanged &&
-            const DeepCollectionEquality().equals(other.password, password));
+            (identical(other.password, password) ||
+                other.password == password));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(password));
+  int get hashCode => Object.hash(runtimeType, password);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$PasswordChangedCopyWith<_$PasswordChanged> get copyWith =>
       __$$PasswordChangedCopyWithImpl<_$PasswordChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Mnemonic mnemonic) mnemonicChanged,
-    required TResult Function(Password password) passwordChanged,
-    required TResult Function(BlockchainUrl url) blockChainUrlChanged,
+    required TResult Function(MnemonicStr mnemonic) mnemonicChanged,
+    required TResult Function(String password) passwordChanged,
     required TResult Function() createWallet,
-    required TResult Function() loadWallet,
+    required TResult Function(WalletDto walletDto) restoreWallet,
+    required TResult Function() getWallets,
     required TResult Function() genSeed,
+    required TResult Function() getBalance,
     required TResult Function() getNewAddress,
     required TResult Function() getLastUsedAddress,
-    required TResult Function() sync,
+    required TResult Function(Blockchain blockchain) sync,
     required TResult Function() getConfirmedTransaction,
     required TResult Function() getPendingTransaction,
-    required TResult Function(String recipient, double amount)
-        broadcastTransaction,
-    required TResult Function() walletExists,
-    required TResult Function() getWallet,
+    required TResult Function(String address, int amount) createAndSign,
   }) {
     return passwordChanged(password);
   }
@@ -443,20 +429,19 @@ class _$PasswordChanged implements PasswordChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Mnemonic mnemonic)? mnemonicChanged,
-    TResult Function(Password password)? passwordChanged,
-    TResult Function(BlockchainUrl url)? blockChainUrlChanged,
-    TResult Function()? createWallet,
-    TResult Function()? loadWallet,
-    TResult Function()? genSeed,
-    TResult Function()? getNewAddress,
-    TResult Function()? getLastUsedAddress,
-    TResult Function()? sync,
-    TResult Function()? getConfirmedTransaction,
-    TResult Function()? getPendingTransaction,
-    TResult Function(String recipient, double amount)? broadcastTransaction,
-    TResult Function()? walletExists,
-    TResult Function()? getWallet,
+    TResult? Function(MnemonicStr mnemonic)? mnemonicChanged,
+    TResult? Function(String password)? passwordChanged,
+    TResult? Function()? createWallet,
+    TResult? Function(WalletDto walletDto)? restoreWallet,
+    TResult? Function()? getWallets,
+    TResult? Function()? genSeed,
+    TResult? Function()? getBalance,
+    TResult? Function()? getNewAddress,
+    TResult? Function()? getLastUsedAddress,
+    TResult? Function(Blockchain blockchain)? sync,
+    TResult? Function()? getConfirmedTransaction,
+    TResult? Function()? getPendingTransaction,
+    TResult? Function(String address, int amount)? createAndSign,
   }) {
     return passwordChanged?.call(password);
   }
@@ -464,20 +449,19 @@ class _$PasswordChanged implements PasswordChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Mnemonic mnemonic)? mnemonicChanged,
-    TResult Function(Password password)? passwordChanged,
-    TResult Function(BlockchainUrl url)? blockChainUrlChanged,
+    TResult Function(MnemonicStr mnemonic)? mnemonicChanged,
+    TResult Function(String password)? passwordChanged,
     TResult Function()? createWallet,
-    TResult Function()? loadWallet,
+    TResult Function(WalletDto walletDto)? restoreWallet,
+    TResult Function()? getWallets,
     TResult Function()? genSeed,
+    TResult Function()? getBalance,
     TResult Function()? getNewAddress,
     TResult Function()? getLastUsedAddress,
-    TResult Function()? sync,
+    TResult Function(Blockchain blockchain)? sync,
     TResult Function()? getConfirmedTransaction,
     TResult Function()? getPendingTransaction,
-    TResult Function(String recipient, double amount)? broadcastTransaction,
-    TResult Function()? walletExists,
-    TResult Function()? getWallet,
+    TResult Function(String address, int amount)? createAndSign,
     required TResult orElse(),
   }) {
     if (passwordChanged != null) {
@@ -491,10 +475,11 @@ class _$PasswordChanged implements PasswordChanged {
   TResult map<TResult extends Object?>({
     required TResult Function(MnemonicChanged value) mnemonicChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(BlockChainUrlChanged value) blockChainUrlChanged,
     required TResult Function(CreateWallet value) createWallet,
-    required TResult Function(LoadWallet value) loadWallet,
+    required TResult Function(RestoreWallet value) restoreWallet,
+    required TResult Function(GetWallets value) getWallets,
     required TResult Function(GenSeed value) genSeed,
+    required TResult Function(GetBalance value) getBalance,
     required TResult Function(GetNewAddress value) getNewAddress,
     required TResult Function(GetLastUsedAddress value) getLastUsedAddress,
     required TResult Function(Sync value) sync,
@@ -502,9 +487,7 @@ class _$PasswordChanged implements PasswordChanged {
         getConfirmedTransaction,
     required TResult Function(GetPendingTransaction value)
         getPendingTransaction,
-    required TResult Function(BroadcastTransaction value) broadcastTransaction,
-    required TResult Function(WalletExists value) walletExists,
-    required TResult Function(GetWallet value) getWallet,
+    required TResult Function(CreateAndSign value) createAndSign,
   }) {
     return passwordChanged(this);
   }
@@ -512,20 +495,19 @@ class _$PasswordChanged implements PasswordChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(MnemonicChanged value)? mnemonicChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
-    TResult Function(CreateWallet value)? createWallet,
-    TResult Function(LoadWallet value)? loadWallet,
-    TResult Function(GenSeed value)? genSeed,
-    TResult Function(GetNewAddress value)? getNewAddress,
-    TResult Function(GetLastUsedAddress value)? getLastUsedAddress,
-    TResult Function(Sync value)? sync,
-    TResult Function(GetConfirmedTransaction value)? getConfirmedTransaction,
-    TResult Function(GetPendingTransaction value)? getPendingTransaction,
-    TResult Function(BroadcastTransaction value)? broadcastTransaction,
-    TResult Function(WalletExists value)? walletExists,
-    TResult Function(GetWallet value)? getWallet,
+    TResult? Function(MnemonicChanged value)? mnemonicChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(CreateWallet value)? createWallet,
+    TResult? Function(RestoreWallet value)? restoreWallet,
+    TResult? Function(GetWallets value)? getWallets,
+    TResult? Function(GenSeed value)? genSeed,
+    TResult? Function(GetBalance value)? getBalance,
+    TResult? Function(GetNewAddress value)? getNewAddress,
+    TResult? Function(GetLastUsedAddress value)? getLastUsedAddress,
+    TResult? Function(Sync value)? sync,
+    TResult? Function(GetConfirmedTransaction value)? getConfirmedTransaction,
+    TResult? Function(GetPendingTransaction value)? getPendingTransaction,
+    TResult? Function(CreateAndSign value)? createAndSign,
   }) {
     return passwordChanged?.call(this);
   }
@@ -535,18 +517,17 @@ class _$PasswordChanged implements PasswordChanged {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MnemonicChanged value)? mnemonicChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
     TResult Function(CreateWallet value)? createWallet,
-    TResult Function(LoadWallet value)? loadWallet,
+    TResult Function(RestoreWallet value)? restoreWallet,
+    TResult Function(GetWallets value)? getWallets,
     TResult Function(GenSeed value)? genSeed,
+    TResult Function(GetBalance value)? getBalance,
     TResult Function(GetNewAddress value)? getNewAddress,
     TResult Function(GetLastUsedAddress value)? getLastUsedAddress,
     TResult Function(Sync value)? sync,
     TResult Function(GetConfirmedTransaction value)? getConfirmedTransaction,
     TResult Function(GetPendingTransaction value)? getPendingTransaction,
-    TResult Function(BroadcastTransaction value)? broadcastTransaction,
-    TResult Function(WalletExists value)? walletExists,
-    TResult Function(GetWallet value)? getWallet,
+    TResult Function(CreateAndSign value)? createAndSign,
     required TResult orElse(),
   }) {
     if (passwordChanged != null) {
@@ -557,222 +538,11 @@ class _$PasswordChanged implements PasswordChanged {
 }
 
 abstract class PasswordChanged implements WalletEvent {
-  const factory PasswordChanged(final Password password) = _$PasswordChanged;
+  const factory PasswordChanged(final String password) = _$PasswordChanged;
 
-  Password get password => throw _privateConstructorUsedError;
+  String get password;
   @JsonKey(ignore: true)
   _$$PasswordChangedCopyWith<_$PasswordChanged> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$BlockChainUrlChangedCopyWith<$Res> {
-  factory _$$BlockChainUrlChangedCopyWith(_$BlockChainUrlChanged value,
-          $Res Function(_$BlockChainUrlChanged) then) =
-      __$$BlockChainUrlChangedCopyWithImpl<$Res>;
-  $Res call({BlockchainUrl url});
-}
-
-/// @nodoc
-class __$$BlockChainUrlChangedCopyWithImpl<$Res>
-    extends _$WalletEventCopyWithImpl<$Res>
-    implements _$$BlockChainUrlChangedCopyWith<$Res> {
-  __$$BlockChainUrlChangedCopyWithImpl(_$BlockChainUrlChanged _value,
-      $Res Function(_$BlockChainUrlChanged) _then)
-      : super(_value, (v) => _then(v as _$BlockChainUrlChanged));
-
-  @override
-  _$BlockChainUrlChanged get _value => super._value as _$BlockChainUrlChanged;
-
-  @override
-  $Res call({
-    Object? url = freezed,
-  }) {
-    return _then(_$BlockChainUrlChanged(
-      url == freezed
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as BlockchainUrl,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$BlockChainUrlChanged implements BlockChainUrlChanged {
-  const _$BlockChainUrlChanged(this.url);
-
-  @override
-  final BlockchainUrl url;
-
-  @override
-  String toString() {
-    return 'WalletEvent.blockChainUrlChanged(url: $url)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$BlockChainUrlChanged &&
-            const DeepCollectionEquality().equals(other.url, url));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(url));
-
-  @JsonKey(ignore: true)
-  @override
-  _$$BlockChainUrlChangedCopyWith<_$BlockChainUrlChanged> get copyWith =>
-      __$$BlockChainUrlChangedCopyWithImpl<_$BlockChainUrlChanged>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(Mnemonic mnemonic) mnemonicChanged,
-    required TResult Function(Password password) passwordChanged,
-    required TResult Function(BlockchainUrl url) blockChainUrlChanged,
-    required TResult Function() createWallet,
-    required TResult Function() loadWallet,
-    required TResult Function() genSeed,
-    required TResult Function() getNewAddress,
-    required TResult Function() getLastUsedAddress,
-    required TResult Function() sync,
-    required TResult Function() getConfirmedTransaction,
-    required TResult Function() getPendingTransaction,
-    required TResult Function(String recipient, double amount)
-        broadcastTransaction,
-    required TResult Function() walletExists,
-    required TResult Function() getWallet,
-  }) {
-    return blockChainUrlChanged(url);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Mnemonic mnemonic)? mnemonicChanged,
-    TResult Function(Password password)? passwordChanged,
-    TResult Function(BlockchainUrl url)? blockChainUrlChanged,
-    TResult Function()? createWallet,
-    TResult Function()? loadWallet,
-    TResult Function()? genSeed,
-    TResult Function()? getNewAddress,
-    TResult Function()? getLastUsedAddress,
-    TResult Function()? sync,
-    TResult Function()? getConfirmedTransaction,
-    TResult Function()? getPendingTransaction,
-    TResult Function(String recipient, double amount)? broadcastTransaction,
-    TResult Function()? walletExists,
-    TResult Function()? getWallet,
-  }) {
-    return blockChainUrlChanged?.call(url);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Mnemonic mnemonic)? mnemonicChanged,
-    TResult Function(Password password)? passwordChanged,
-    TResult Function(BlockchainUrl url)? blockChainUrlChanged,
-    TResult Function()? createWallet,
-    TResult Function()? loadWallet,
-    TResult Function()? genSeed,
-    TResult Function()? getNewAddress,
-    TResult Function()? getLastUsedAddress,
-    TResult Function()? sync,
-    TResult Function()? getConfirmedTransaction,
-    TResult Function()? getPendingTransaction,
-    TResult Function(String recipient, double amount)? broadcastTransaction,
-    TResult Function()? walletExists,
-    TResult Function()? getWallet,
-    required TResult orElse(),
-  }) {
-    if (blockChainUrlChanged != null) {
-      return blockChainUrlChanged(url);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(MnemonicChanged value) mnemonicChanged,
-    required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(BlockChainUrlChanged value) blockChainUrlChanged,
-    required TResult Function(CreateWallet value) createWallet,
-    required TResult Function(LoadWallet value) loadWallet,
-    required TResult Function(GenSeed value) genSeed,
-    required TResult Function(GetNewAddress value) getNewAddress,
-    required TResult Function(GetLastUsedAddress value) getLastUsedAddress,
-    required TResult Function(Sync value) sync,
-    required TResult Function(GetConfirmedTransaction value)
-        getConfirmedTransaction,
-    required TResult Function(GetPendingTransaction value)
-        getPendingTransaction,
-    required TResult Function(BroadcastTransaction value) broadcastTransaction,
-    required TResult Function(WalletExists value) walletExists,
-    required TResult Function(GetWallet value) getWallet,
-  }) {
-    return blockChainUrlChanged(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(MnemonicChanged value)? mnemonicChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
-    TResult Function(CreateWallet value)? createWallet,
-    TResult Function(LoadWallet value)? loadWallet,
-    TResult Function(GenSeed value)? genSeed,
-    TResult Function(GetNewAddress value)? getNewAddress,
-    TResult Function(GetLastUsedAddress value)? getLastUsedAddress,
-    TResult Function(Sync value)? sync,
-    TResult Function(GetConfirmedTransaction value)? getConfirmedTransaction,
-    TResult Function(GetPendingTransaction value)? getPendingTransaction,
-    TResult Function(BroadcastTransaction value)? broadcastTransaction,
-    TResult Function(WalletExists value)? walletExists,
-    TResult Function(GetWallet value)? getWallet,
-  }) {
-    return blockChainUrlChanged?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(MnemonicChanged value)? mnemonicChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
-    TResult Function(CreateWallet value)? createWallet,
-    TResult Function(LoadWallet value)? loadWallet,
-    TResult Function(GenSeed value)? genSeed,
-    TResult Function(GetNewAddress value)? getNewAddress,
-    TResult Function(GetLastUsedAddress value)? getLastUsedAddress,
-    TResult Function(Sync value)? sync,
-    TResult Function(GetConfirmedTransaction value)? getConfirmedTransaction,
-    TResult Function(GetPendingTransaction value)? getPendingTransaction,
-    TResult Function(BroadcastTransaction value)? broadcastTransaction,
-    TResult Function(WalletExists value)? walletExists,
-    TResult Function(GetWallet value)? getWallet,
-    required TResult orElse(),
-  }) {
-    if (blockChainUrlChanged != null) {
-      return blockChainUrlChanged(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class BlockChainUrlChanged implements WalletEvent {
-  const factory BlockChainUrlChanged(final BlockchainUrl url) =
-      _$BlockChainUrlChanged;
-
-  BlockchainUrl get url => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  _$$BlockChainUrlChangedCopyWith<_$BlockChainUrlChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -784,14 +554,12 @@ abstract class _$$CreateWalletCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$CreateWalletCopyWithImpl<$Res> extends _$WalletEventCopyWithImpl<$Res>
+class __$$CreateWalletCopyWithImpl<$Res>
+    extends _$WalletEventCopyWithImpl<$Res, _$CreateWallet>
     implements _$$CreateWalletCopyWith<$Res> {
   __$$CreateWalletCopyWithImpl(
       _$CreateWallet _value, $Res Function(_$CreateWallet) _then)
-      : super(_value, (v) => _then(v as _$CreateWallet));
-
-  @override
-  _$CreateWallet get _value => super._value as _$CreateWallet;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -816,21 +584,19 @@ class _$CreateWallet implements CreateWallet {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Mnemonic mnemonic) mnemonicChanged,
-    required TResult Function(Password password) passwordChanged,
-    required TResult Function(BlockchainUrl url) blockChainUrlChanged,
+    required TResult Function(MnemonicStr mnemonic) mnemonicChanged,
+    required TResult Function(String password) passwordChanged,
     required TResult Function() createWallet,
-    required TResult Function() loadWallet,
+    required TResult Function(WalletDto walletDto) restoreWallet,
+    required TResult Function() getWallets,
     required TResult Function() genSeed,
+    required TResult Function() getBalance,
     required TResult Function() getNewAddress,
     required TResult Function() getLastUsedAddress,
-    required TResult Function() sync,
+    required TResult Function(Blockchain blockchain) sync,
     required TResult Function() getConfirmedTransaction,
     required TResult Function() getPendingTransaction,
-    required TResult Function(String recipient, double amount)
-        broadcastTransaction,
-    required TResult Function() walletExists,
-    required TResult Function() getWallet,
+    required TResult Function(String address, int amount) createAndSign,
   }) {
     return createWallet();
   }
@@ -838,20 +604,19 @@ class _$CreateWallet implements CreateWallet {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Mnemonic mnemonic)? mnemonicChanged,
-    TResult Function(Password password)? passwordChanged,
-    TResult Function(BlockchainUrl url)? blockChainUrlChanged,
-    TResult Function()? createWallet,
-    TResult Function()? loadWallet,
-    TResult Function()? genSeed,
-    TResult Function()? getNewAddress,
-    TResult Function()? getLastUsedAddress,
-    TResult Function()? sync,
-    TResult Function()? getConfirmedTransaction,
-    TResult Function()? getPendingTransaction,
-    TResult Function(String recipient, double amount)? broadcastTransaction,
-    TResult Function()? walletExists,
-    TResult Function()? getWallet,
+    TResult? Function(MnemonicStr mnemonic)? mnemonicChanged,
+    TResult? Function(String password)? passwordChanged,
+    TResult? Function()? createWallet,
+    TResult? Function(WalletDto walletDto)? restoreWallet,
+    TResult? Function()? getWallets,
+    TResult? Function()? genSeed,
+    TResult? Function()? getBalance,
+    TResult? Function()? getNewAddress,
+    TResult? Function()? getLastUsedAddress,
+    TResult? Function(Blockchain blockchain)? sync,
+    TResult? Function()? getConfirmedTransaction,
+    TResult? Function()? getPendingTransaction,
+    TResult? Function(String address, int amount)? createAndSign,
   }) {
     return createWallet?.call();
   }
@@ -859,20 +624,19 @@ class _$CreateWallet implements CreateWallet {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Mnemonic mnemonic)? mnemonicChanged,
-    TResult Function(Password password)? passwordChanged,
-    TResult Function(BlockchainUrl url)? blockChainUrlChanged,
+    TResult Function(MnemonicStr mnemonic)? mnemonicChanged,
+    TResult Function(String password)? passwordChanged,
     TResult Function()? createWallet,
-    TResult Function()? loadWallet,
+    TResult Function(WalletDto walletDto)? restoreWallet,
+    TResult Function()? getWallets,
     TResult Function()? genSeed,
+    TResult Function()? getBalance,
     TResult Function()? getNewAddress,
     TResult Function()? getLastUsedAddress,
-    TResult Function()? sync,
+    TResult Function(Blockchain blockchain)? sync,
     TResult Function()? getConfirmedTransaction,
     TResult Function()? getPendingTransaction,
-    TResult Function(String recipient, double amount)? broadcastTransaction,
-    TResult Function()? walletExists,
-    TResult Function()? getWallet,
+    TResult Function(String address, int amount)? createAndSign,
     required TResult orElse(),
   }) {
     if (createWallet != null) {
@@ -886,10 +650,11 @@ class _$CreateWallet implements CreateWallet {
   TResult map<TResult extends Object?>({
     required TResult Function(MnemonicChanged value) mnemonicChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(BlockChainUrlChanged value) blockChainUrlChanged,
     required TResult Function(CreateWallet value) createWallet,
-    required TResult Function(LoadWallet value) loadWallet,
+    required TResult Function(RestoreWallet value) restoreWallet,
+    required TResult Function(GetWallets value) getWallets,
     required TResult Function(GenSeed value) genSeed,
+    required TResult Function(GetBalance value) getBalance,
     required TResult Function(GetNewAddress value) getNewAddress,
     required TResult Function(GetLastUsedAddress value) getLastUsedAddress,
     required TResult Function(Sync value) sync,
@@ -897,9 +662,7 @@ class _$CreateWallet implements CreateWallet {
         getConfirmedTransaction,
     required TResult Function(GetPendingTransaction value)
         getPendingTransaction,
-    required TResult Function(BroadcastTransaction value) broadcastTransaction,
-    required TResult Function(WalletExists value) walletExists,
-    required TResult Function(GetWallet value) getWallet,
+    required TResult Function(CreateAndSign value) createAndSign,
   }) {
     return createWallet(this);
   }
@@ -907,20 +670,19 @@ class _$CreateWallet implements CreateWallet {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(MnemonicChanged value)? mnemonicChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
-    TResult Function(CreateWallet value)? createWallet,
-    TResult Function(LoadWallet value)? loadWallet,
-    TResult Function(GenSeed value)? genSeed,
-    TResult Function(GetNewAddress value)? getNewAddress,
-    TResult Function(GetLastUsedAddress value)? getLastUsedAddress,
-    TResult Function(Sync value)? sync,
-    TResult Function(GetConfirmedTransaction value)? getConfirmedTransaction,
-    TResult Function(GetPendingTransaction value)? getPendingTransaction,
-    TResult Function(BroadcastTransaction value)? broadcastTransaction,
-    TResult Function(WalletExists value)? walletExists,
-    TResult Function(GetWallet value)? getWallet,
+    TResult? Function(MnemonicChanged value)? mnemonicChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(CreateWallet value)? createWallet,
+    TResult? Function(RestoreWallet value)? restoreWallet,
+    TResult? Function(GetWallets value)? getWallets,
+    TResult? Function(GenSeed value)? genSeed,
+    TResult? Function(GetBalance value)? getBalance,
+    TResult? Function(GetNewAddress value)? getNewAddress,
+    TResult? Function(GetLastUsedAddress value)? getLastUsedAddress,
+    TResult? Function(Sync value)? sync,
+    TResult? Function(GetConfirmedTransaction value)? getConfirmedTransaction,
+    TResult? Function(GetPendingTransaction value)? getPendingTransaction,
+    TResult? Function(CreateAndSign value)? createAndSign,
   }) {
     return createWallet?.call(this);
   }
@@ -930,18 +692,17 @@ class _$CreateWallet implements CreateWallet {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MnemonicChanged value)? mnemonicChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
     TResult Function(CreateWallet value)? createWallet,
-    TResult Function(LoadWallet value)? loadWallet,
+    TResult Function(RestoreWallet value)? restoreWallet,
+    TResult Function(GetWallets value)? getWallets,
     TResult Function(GenSeed value)? genSeed,
+    TResult Function(GetBalance value)? getBalance,
     TResult Function(GetNewAddress value)? getNewAddress,
     TResult Function(GetLastUsedAddress value)? getLastUsedAddress,
     TResult Function(Sync value)? sync,
     TResult Function(GetConfirmedTransaction value)? getConfirmedTransaction,
     TResult Function(GetPendingTransaction value)? getPendingTransaction,
-    TResult Function(BroadcastTransaction value)? broadcastTransaction,
-    TResult Function(WalletExists value)? walletExists,
-    TResult Function(GetWallet value)? getWallet,
+    TResult Function(CreateAndSign value)? createAndSign,
     required TResult orElse(),
   }) {
     if (createWallet != null) {
@@ -956,106 +717,127 @@ abstract class CreateWallet implements WalletEvent {
 }
 
 /// @nodoc
-abstract class _$$LoadWalletCopyWith<$Res> {
-  factory _$$LoadWalletCopyWith(
-          _$LoadWallet value, $Res Function(_$LoadWallet) then) =
-      __$$LoadWalletCopyWithImpl<$Res>;
+abstract class _$$RestoreWalletCopyWith<$Res> {
+  factory _$$RestoreWalletCopyWith(
+          _$RestoreWallet value, $Res Function(_$RestoreWallet) then) =
+      __$$RestoreWalletCopyWithImpl<$Res>;
+  @useResult
+  $Res call({WalletDto walletDto});
 }
 
 /// @nodoc
-class __$$LoadWalletCopyWithImpl<$Res> extends _$WalletEventCopyWithImpl<$Res>
-    implements _$$LoadWalletCopyWith<$Res> {
-  __$$LoadWalletCopyWithImpl(
-      _$LoadWallet _value, $Res Function(_$LoadWallet) _then)
-      : super(_value, (v) => _then(v as _$LoadWallet));
+class __$$RestoreWalletCopyWithImpl<$Res>
+    extends _$WalletEventCopyWithImpl<$Res, _$RestoreWallet>
+    implements _$$RestoreWalletCopyWith<$Res> {
+  __$$RestoreWalletCopyWithImpl(
+      _$RestoreWallet _value, $Res Function(_$RestoreWallet) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? walletDto = null,
+  }) {
+    return _then(_$RestoreWallet(
+      null == walletDto
+          ? _value.walletDto
+          : walletDto // ignore: cast_nullable_to_non_nullable
+              as WalletDto,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RestoreWallet implements RestoreWallet {
+  const _$RestoreWallet(this.walletDto);
 
   @override
-  _$LoadWallet get _value => super._value as _$LoadWallet;
-}
-
-/// @nodoc
-
-class _$LoadWallet implements LoadWallet {
-  const _$LoadWallet();
+  final WalletDto walletDto;
 
   @override
   String toString() {
-    return 'WalletEvent.loadWallet()';
+    return 'WalletEvent.restoreWallet(walletDto: $walletDto)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LoadWallet);
+        (other.runtimeType == runtimeType &&
+            other is _$RestoreWallet &&
+            (identical(other.walletDto, walletDto) ||
+                other.walletDto == walletDto));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, walletDto);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RestoreWalletCopyWith<_$RestoreWallet> get copyWith =>
+      __$$RestoreWalletCopyWithImpl<_$RestoreWallet>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Mnemonic mnemonic) mnemonicChanged,
-    required TResult Function(Password password) passwordChanged,
-    required TResult Function(BlockchainUrl url) blockChainUrlChanged,
+    required TResult Function(MnemonicStr mnemonic) mnemonicChanged,
+    required TResult Function(String password) passwordChanged,
     required TResult Function() createWallet,
-    required TResult Function() loadWallet,
+    required TResult Function(WalletDto walletDto) restoreWallet,
+    required TResult Function() getWallets,
     required TResult Function() genSeed,
+    required TResult Function() getBalance,
     required TResult Function() getNewAddress,
     required TResult Function() getLastUsedAddress,
-    required TResult Function() sync,
+    required TResult Function(Blockchain blockchain) sync,
     required TResult Function() getConfirmedTransaction,
     required TResult Function() getPendingTransaction,
-    required TResult Function(String recipient, double amount)
-        broadcastTransaction,
-    required TResult Function() walletExists,
-    required TResult Function() getWallet,
+    required TResult Function(String address, int amount) createAndSign,
   }) {
-    return loadWallet();
+    return restoreWallet(walletDto);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Mnemonic mnemonic)? mnemonicChanged,
-    TResult Function(Password password)? passwordChanged,
-    TResult Function(BlockchainUrl url)? blockChainUrlChanged,
-    TResult Function()? createWallet,
-    TResult Function()? loadWallet,
-    TResult Function()? genSeed,
-    TResult Function()? getNewAddress,
-    TResult Function()? getLastUsedAddress,
-    TResult Function()? sync,
-    TResult Function()? getConfirmedTransaction,
-    TResult Function()? getPendingTransaction,
-    TResult Function(String recipient, double amount)? broadcastTransaction,
-    TResult Function()? walletExists,
-    TResult Function()? getWallet,
+    TResult? Function(MnemonicStr mnemonic)? mnemonicChanged,
+    TResult? Function(String password)? passwordChanged,
+    TResult? Function()? createWallet,
+    TResult? Function(WalletDto walletDto)? restoreWallet,
+    TResult? Function()? getWallets,
+    TResult? Function()? genSeed,
+    TResult? Function()? getBalance,
+    TResult? Function()? getNewAddress,
+    TResult? Function()? getLastUsedAddress,
+    TResult? Function(Blockchain blockchain)? sync,
+    TResult? Function()? getConfirmedTransaction,
+    TResult? Function()? getPendingTransaction,
+    TResult? Function(String address, int amount)? createAndSign,
   }) {
-    return loadWallet?.call();
+    return restoreWallet?.call(walletDto);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Mnemonic mnemonic)? mnemonicChanged,
-    TResult Function(Password password)? passwordChanged,
-    TResult Function(BlockchainUrl url)? blockChainUrlChanged,
+    TResult Function(MnemonicStr mnemonic)? mnemonicChanged,
+    TResult Function(String password)? passwordChanged,
     TResult Function()? createWallet,
-    TResult Function()? loadWallet,
+    TResult Function(WalletDto walletDto)? restoreWallet,
+    TResult Function()? getWallets,
     TResult Function()? genSeed,
+    TResult Function()? getBalance,
     TResult Function()? getNewAddress,
     TResult Function()? getLastUsedAddress,
-    TResult Function()? sync,
+    TResult Function(Blockchain blockchain)? sync,
     TResult Function()? getConfirmedTransaction,
     TResult Function()? getPendingTransaction,
-    TResult Function(String recipient, double amount)? broadcastTransaction,
-    TResult Function()? walletExists,
-    TResult Function()? getWallet,
+    TResult Function(String address, int amount)? createAndSign,
     required TResult orElse(),
   }) {
-    if (loadWallet != null) {
-      return loadWallet();
+    if (restoreWallet != null) {
+      return restoreWallet(walletDto);
     }
     return orElse();
   }
@@ -1065,10 +847,11 @@ class _$LoadWallet implements LoadWallet {
   TResult map<TResult extends Object?>({
     required TResult Function(MnemonicChanged value) mnemonicChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(BlockChainUrlChanged value) blockChainUrlChanged,
     required TResult Function(CreateWallet value) createWallet,
-    required TResult Function(LoadWallet value) loadWallet,
+    required TResult Function(RestoreWallet value) restoreWallet,
+    required TResult Function(GetWallets value) getWallets,
     required TResult Function(GenSeed value) genSeed,
+    required TResult Function(GetBalance value) getBalance,
     required TResult Function(GetNewAddress value) getNewAddress,
     required TResult Function(GetLastUsedAddress value) getLastUsedAddress,
     required TResult Function(Sync value) sync,
@@ -1076,32 +859,29 @@ class _$LoadWallet implements LoadWallet {
         getConfirmedTransaction,
     required TResult Function(GetPendingTransaction value)
         getPendingTransaction,
-    required TResult Function(BroadcastTransaction value) broadcastTransaction,
-    required TResult Function(WalletExists value) walletExists,
-    required TResult Function(GetWallet value) getWallet,
+    required TResult Function(CreateAndSign value) createAndSign,
   }) {
-    return loadWallet(this);
+    return restoreWallet(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(MnemonicChanged value)? mnemonicChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
-    TResult Function(CreateWallet value)? createWallet,
-    TResult Function(LoadWallet value)? loadWallet,
-    TResult Function(GenSeed value)? genSeed,
-    TResult Function(GetNewAddress value)? getNewAddress,
-    TResult Function(GetLastUsedAddress value)? getLastUsedAddress,
-    TResult Function(Sync value)? sync,
-    TResult Function(GetConfirmedTransaction value)? getConfirmedTransaction,
-    TResult Function(GetPendingTransaction value)? getPendingTransaction,
-    TResult Function(BroadcastTransaction value)? broadcastTransaction,
-    TResult Function(WalletExists value)? walletExists,
-    TResult Function(GetWallet value)? getWallet,
+    TResult? Function(MnemonicChanged value)? mnemonicChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(CreateWallet value)? createWallet,
+    TResult? Function(RestoreWallet value)? restoreWallet,
+    TResult? Function(GetWallets value)? getWallets,
+    TResult? Function(GenSeed value)? genSeed,
+    TResult? Function(GetBalance value)? getBalance,
+    TResult? Function(GetNewAddress value)? getNewAddress,
+    TResult? Function(GetLastUsedAddress value)? getLastUsedAddress,
+    TResult? Function(Sync value)? sync,
+    TResult? Function(GetConfirmedTransaction value)? getConfirmedTransaction,
+    TResult? Function(GetPendingTransaction value)? getPendingTransaction,
+    TResult? Function(CreateAndSign value)? createAndSign,
   }) {
-    return loadWallet?.call(this);
+    return restoreWallet?.call(this);
   }
 
   @override
@@ -1109,29 +889,203 @@ class _$LoadWallet implements LoadWallet {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MnemonicChanged value)? mnemonicChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
     TResult Function(CreateWallet value)? createWallet,
-    TResult Function(LoadWallet value)? loadWallet,
+    TResult Function(RestoreWallet value)? restoreWallet,
+    TResult Function(GetWallets value)? getWallets,
     TResult Function(GenSeed value)? genSeed,
+    TResult Function(GetBalance value)? getBalance,
     TResult Function(GetNewAddress value)? getNewAddress,
     TResult Function(GetLastUsedAddress value)? getLastUsedAddress,
     TResult Function(Sync value)? sync,
     TResult Function(GetConfirmedTransaction value)? getConfirmedTransaction,
     TResult Function(GetPendingTransaction value)? getPendingTransaction,
-    TResult Function(BroadcastTransaction value)? broadcastTransaction,
-    TResult Function(WalletExists value)? walletExists,
-    TResult Function(GetWallet value)? getWallet,
+    TResult Function(CreateAndSign value)? createAndSign,
     required TResult orElse(),
   }) {
-    if (loadWallet != null) {
-      return loadWallet(this);
+    if (restoreWallet != null) {
+      return restoreWallet(this);
     }
     return orElse();
   }
 }
 
-abstract class LoadWallet implements WalletEvent {
-  const factory LoadWallet() = _$LoadWallet;
+abstract class RestoreWallet implements WalletEvent {
+  const factory RestoreWallet(final WalletDto walletDto) = _$RestoreWallet;
+
+  WalletDto get walletDto;
+  @JsonKey(ignore: true)
+  _$$RestoreWalletCopyWith<_$RestoreWallet> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetWalletsCopyWith<$Res> {
+  factory _$$GetWalletsCopyWith(
+          _$GetWallets value, $Res Function(_$GetWallets) then) =
+      __$$GetWalletsCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetWalletsCopyWithImpl<$Res>
+    extends _$WalletEventCopyWithImpl<$Res, _$GetWallets>
+    implements _$$GetWalletsCopyWith<$Res> {
+  __$$GetWalletsCopyWithImpl(
+      _$GetWallets _value, $Res Function(_$GetWallets) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetWallets implements GetWallets {
+  const _$GetWallets();
+
+  @override
+  String toString() {
+    return 'WalletEvent.getWallets()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetWallets);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(MnemonicStr mnemonic) mnemonicChanged,
+    required TResult Function(String password) passwordChanged,
+    required TResult Function() createWallet,
+    required TResult Function(WalletDto walletDto) restoreWallet,
+    required TResult Function() getWallets,
+    required TResult Function() genSeed,
+    required TResult Function() getBalance,
+    required TResult Function() getNewAddress,
+    required TResult Function() getLastUsedAddress,
+    required TResult Function(Blockchain blockchain) sync,
+    required TResult Function() getConfirmedTransaction,
+    required TResult Function() getPendingTransaction,
+    required TResult Function(String address, int amount) createAndSign,
+  }) {
+    return getWallets();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(MnemonicStr mnemonic)? mnemonicChanged,
+    TResult? Function(String password)? passwordChanged,
+    TResult? Function()? createWallet,
+    TResult? Function(WalletDto walletDto)? restoreWallet,
+    TResult? Function()? getWallets,
+    TResult? Function()? genSeed,
+    TResult? Function()? getBalance,
+    TResult? Function()? getNewAddress,
+    TResult? Function()? getLastUsedAddress,
+    TResult? Function(Blockchain blockchain)? sync,
+    TResult? Function()? getConfirmedTransaction,
+    TResult? Function()? getPendingTransaction,
+    TResult? Function(String address, int amount)? createAndSign,
+  }) {
+    return getWallets?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(MnemonicStr mnemonic)? mnemonicChanged,
+    TResult Function(String password)? passwordChanged,
+    TResult Function()? createWallet,
+    TResult Function(WalletDto walletDto)? restoreWallet,
+    TResult Function()? getWallets,
+    TResult Function()? genSeed,
+    TResult Function()? getBalance,
+    TResult Function()? getNewAddress,
+    TResult Function()? getLastUsedAddress,
+    TResult Function(Blockchain blockchain)? sync,
+    TResult Function()? getConfirmedTransaction,
+    TResult Function()? getPendingTransaction,
+    TResult Function(String address, int amount)? createAndSign,
+    required TResult orElse(),
+  }) {
+    if (getWallets != null) {
+      return getWallets();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(MnemonicChanged value) mnemonicChanged,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(CreateWallet value) createWallet,
+    required TResult Function(RestoreWallet value) restoreWallet,
+    required TResult Function(GetWallets value) getWallets,
+    required TResult Function(GenSeed value) genSeed,
+    required TResult Function(GetBalance value) getBalance,
+    required TResult Function(GetNewAddress value) getNewAddress,
+    required TResult Function(GetLastUsedAddress value) getLastUsedAddress,
+    required TResult Function(Sync value) sync,
+    required TResult Function(GetConfirmedTransaction value)
+        getConfirmedTransaction,
+    required TResult Function(GetPendingTransaction value)
+        getPendingTransaction,
+    required TResult Function(CreateAndSign value) createAndSign,
+  }) {
+    return getWallets(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(MnemonicChanged value)? mnemonicChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(CreateWallet value)? createWallet,
+    TResult? Function(RestoreWallet value)? restoreWallet,
+    TResult? Function(GetWallets value)? getWallets,
+    TResult? Function(GenSeed value)? genSeed,
+    TResult? Function(GetBalance value)? getBalance,
+    TResult? Function(GetNewAddress value)? getNewAddress,
+    TResult? Function(GetLastUsedAddress value)? getLastUsedAddress,
+    TResult? Function(Sync value)? sync,
+    TResult? Function(GetConfirmedTransaction value)? getConfirmedTransaction,
+    TResult? Function(GetPendingTransaction value)? getPendingTransaction,
+    TResult? Function(CreateAndSign value)? createAndSign,
+  }) {
+    return getWallets?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(MnemonicChanged value)? mnemonicChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(CreateWallet value)? createWallet,
+    TResult Function(RestoreWallet value)? restoreWallet,
+    TResult Function(GetWallets value)? getWallets,
+    TResult Function(GenSeed value)? genSeed,
+    TResult Function(GetBalance value)? getBalance,
+    TResult Function(GetNewAddress value)? getNewAddress,
+    TResult Function(GetLastUsedAddress value)? getLastUsedAddress,
+    TResult Function(Sync value)? sync,
+    TResult Function(GetConfirmedTransaction value)? getConfirmedTransaction,
+    TResult Function(GetPendingTransaction value)? getPendingTransaction,
+    TResult Function(CreateAndSign value)? createAndSign,
+    required TResult orElse(),
+  }) {
+    if (getWallets != null) {
+      return getWallets(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetWallets implements WalletEvent {
+  const factory GetWallets() = _$GetWallets;
 }
 
 /// @nodoc
@@ -1141,13 +1095,11 @@ abstract class _$$GenSeedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$GenSeedCopyWithImpl<$Res> extends _$WalletEventCopyWithImpl<$Res>
+class __$$GenSeedCopyWithImpl<$Res>
+    extends _$WalletEventCopyWithImpl<$Res, _$GenSeed>
     implements _$$GenSeedCopyWith<$Res> {
   __$$GenSeedCopyWithImpl(_$GenSeed _value, $Res Function(_$GenSeed) _then)
-      : super(_value, (v) => _then(v as _$GenSeed));
-
-  @override
-  _$GenSeed get _value => super._value as _$GenSeed;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1172,21 +1124,19 @@ class _$GenSeed implements GenSeed {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Mnemonic mnemonic) mnemonicChanged,
-    required TResult Function(Password password) passwordChanged,
-    required TResult Function(BlockchainUrl url) blockChainUrlChanged,
+    required TResult Function(MnemonicStr mnemonic) mnemonicChanged,
+    required TResult Function(String password) passwordChanged,
     required TResult Function() createWallet,
-    required TResult Function() loadWallet,
+    required TResult Function(WalletDto walletDto) restoreWallet,
+    required TResult Function() getWallets,
     required TResult Function() genSeed,
+    required TResult Function() getBalance,
     required TResult Function() getNewAddress,
     required TResult Function() getLastUsedAddress,
-    required TResult Function() sync,
+    required TResult Function(Blockchain blockchain) sync,
     required TResult Function() getConfirmedTransaction,
     required TResult Function() getPendingTransaction,
-    required TResult Function(String recipient, double amount)
-        broadcastTransaction,
-    required TResult Function() walletExists,
-    required TResult Function() getWallet,
+    required TResult Function(String address, int amount) createAndSign,
   }) {
     return genSeed();
   }
@@ -1194,20 +1144,19 @@ class _$GenSeed implements GenSeed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Mnemonic mnemonic)? mnemonicChanged,
-    TResult Function(Password password)? passwordChanged,
-    TResult Function(BlockchainUrl url)? blockChainUrlChanged,
-    TResult Function()? createWallet,
-    TResult Function()? loadWallet,
-    TResult Function()? genSeed,
-    TResult Function()? getNewAddress,
-    TResult Function()? getLastUsedAddress,
-    TResult Function()? sync,
-    TResult Function()? getConfirmedTransaction,
-    TResult Function()? getPendingTransaction,
-    TResult Function(String recipient, double amount)? broadcastTransaction,
-    TResult Function()? walletExists,
-    TResult Function()? getWallet,
+    TResult? Function(MnemonicStr mnemonic)? mnemonicChanged,
+    TResult? Function(String password)? passwordChanged,
+    TResult? Function()? createWallet,
+    TResult? Function(WalletDto walletDto)? restoreWallet,
+    TResult? Function()? getWallets,
+    TResult? Function()? genSeed,
+    TResult? Function()? getBalance,
+    TResult? Function()? getNewAddress,
+    TResult? Function()? getLastUsedAddress,
+    TResult? Function(Blockchain blockchain)? sync,
+    TResult? Function()? getConfirmedTransaction,
+    TResult? Function()? getPendingTransaction,
+    TResult? Function(String address, int amount)? createAndSign,
   }) {
     return genSeed?.call();
   }
@@ -1215,20 +1164,19 @@ class _$GenSeed implements GenSeed {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Mnemonic mnemonic)? mnemonicChanged,
-    TResult Function(Password password)? passwordChanged,
-    TResult Function(BlockchainUrl url)? blockChainUrlChanged,
+    TResult Function(MnemonicStr mnemonic)? mnemonicChanged,
+    TResult Function(String password)? passwordChanged,
     TResult Function()? createWallet,
-    TResult Function()? loadWallet,
+    TResult Function(WalletDto walletDto)? restoreWallet,
+    TResult Function()? getWallets,
     TResult Function()? genSeed,
+    TResult Function()? getBalance,
     TResult Function()? getNewAddress,
     TResult Function()? getLastUsedAddress,
-    TResult Function()? sync,
+    TResult Function(Blockchain blockchain)? sync,
     TResult Function()? getConfirmedTransaction,
     TResult Function()? getPendingTransaction,
-    TResult Function(String recipient, double amount)? broadcastTransaction,
-    TResult Function()? walletExists,
-    TResult Function()? getWallet,
+    TResult Function(String address, int amount)? createAndSign,
     required TResult orElse(),
   }) {
     if (genSeed != null) {
@@ -1242,10 +1190,11 @@ class _$GenSeed implements GenSeed {
   TResult map<TResult extends Object?>({
     required TResult Function(MnemonicChanged value) mnemonicChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(BlockChainUrlChanged value) blockChainUrlChanged,
     required TResult Function(CreateWallet value) createWallet,
-    required TResult Function(LoadWallet value) loadWallet,
+    required TResult Function(RestoreWallet value) restoreWallet,
+    required TResult Function(GetWallets value) getWallets,
     required TResult Function(GenSeed value) genSeed,
+    required TResult Function(GetBalance value) getBalance,
     required TResult Function(GetNewAddress value) getNewAddress,
     required TResult Function(GetLastUsedAddress value) getLastUsedAddress,
     required TResult Function(Sync value) sync,
@@ -1253,9 +1202,7 @@ class _$GenSeed implements GenSeed {
         getConfirmedTransaction,
     required TResult Function(GetPendingTransaction value)
         getPendingTransaction,
-    required TResult Function(BroadcastTransaction value) broadcastTransaction,
-    required TResult Function(WalletExists value) walletExists,
-    required TResult Function(GetWallet value) getWallet,
+    required TResult Function(CreateAndSign value) createAndSign,
   }) {
     return genSeed(this);
   }
@@ -1263,20 +1210,19 @@ class _$GenSeed implements GenSeed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(MnemonicChanged value)? mnemonicChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
-    TResult Function(CreateWallet value)? createWallet,
-    TResult Function(LoadWallet value)? loadWallet,
-    TResult Function(GenSeed value)? genSeed,
-    TResult Function(GetNewAddress value)? getNewAddress,
-    TResult Function(GetLastUsedAddress value)? getLastUsedAddress,
-    TResult Function(Sync value)? sync,
-    TResult Function(GetConfirmedTransaction value)? getConfirmedTransaction,
-    TResult Function(GetPendingTransaction value)? getPendingTransaction,
-    TResult Function(BroadcastTransaction value)? broadcastTransaction,
-    TResult Function(WalletExists value)? walletExists,
-    TResult Function(GetWallet value)? getWallet,
+    TResult? Function(MnemonicChanged value)? mnemonicChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(CreateWallet value)? createWallet,
+    TResult? Function(RestoreWallet value)? restoreWallet,
+    TResult? Function(GetWallets value)? getWallets,
+    TResult? Function(GenSeed value)? genSeed,
+    TResult? Function(GetBalance value)? getBalance,
+    TResult? Function(GetNewAddress value)? getNewAddress,
+    TResult? Function(GetLastUsedAddress value)? getLastUsedAddress,
+    TResult? Function(Sync value)? sync,
+    TResult? Function(GetConfirmedTransaction value)? getConfirmedTransaction,
+    TResult? Function(GetPendingTransaction value)? getPendingTransaction,
+    TResult? Function(CreateAndSign value)? createAndSign,
   }) {
     return genSeed?.call(this);
   }
@@ -1286,18 +1232,17 @@ class _$GenSeed implements GenSeed {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MnemonicChanged value)? mnemonicChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
     TResult Function(CreateWallet value)? createWallet,
-    TResult Function(LoadWallet value)? loadWallet,
+    TResult Function(RestoreWallet value)? restoreWallet,
+    TResult Function(GetWallets value)? getWallets,
     TResult Function(GenSeed value)? genSeed,
+    TResult Function(GetBalance value)? getBalance,
     TResult Function(GetNewAddress value)? getNewAddress,
     TResult Function(GetLastUsedAddress value)? getLastUsedAddress,
     TResult Function(Sync value)? sync,
     TResult Function(GetConfirmedTransaction value)? getConfirmedTransaction,
     TResult Function(GetPendingTransaction value)? getPendingTransaction,
-    TResult Function(BroadcastTransaction value)? broadcastTransaction,
-    TResult Function(WalletExists value)? walletExists,
-    TResult Function(GetWallet value)? getWallet,
+    TResult Function(CreateAndSign value)? createAndSign,
     required TResult orElse(),
   }) {
     if (genSeed != null) {
@@ -1312,6 +1257,176 @@ abstract class GenSeed implements WalletEvent {
 }
 
 /// @nodoc
+abstract class _$$GetBalanceCopyWith<$Res> {
+  factory _$$GetBalanceCopyWith(
+          _$GetBalance value, $Res Function(_$GetBalance) then) =
+      __$$GetBalanceCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetBalanceCopyWithImpl<$Res>
+    extends _$WalletEventCopyWithImpl<$Res, _$GetBalance>
+    implements _$$GetBalanceCopyWith<$Res> {
+  __$$GetBalanceCopyWithImpl(
+      _$GetBalance _value, $Res Function(_$GetBalance) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetBalance implements GetBalance {
+  const _$GetBalance();
+
+  @override
+  String toString() {
+    return 'WalletEvent.getBalance()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetBalance);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(MnemonicStr mnemonic) mnemonicChanged,
+    required TResult Function(String password) passwordChanged,
+    required TResult Function() createWallet,
+    required TResult Function(WalletDto walletDto) restoreWallet,
+    required TResult Function() getWallets,
+    required TResult Function() genSeed,
+    required TResult Function() getBalance,
+    required TResult Function() getNewAddress,
+    required TResult Function() getLastUsedAddress,
+    required TResult Function(Blockchain blockchain) sync,
+    required TResult Function() getConfirmedTransaction,
+    required TResult Function() getPendingTransaction,
+    required TResult Function(String address, int amount) createAndSign,
+  }) {
+    return getBalance();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(MnemonicStr mnemonic)? mnemonicChanged,
+    TResult? Function(String password)? passwordChanged,
+    TResult? Function()? createWallet,
+    TResult? Function(WalletDto walletDto)? restoreWallet,
+    TResult? Function()? getWallets,
+    TResult? Function()? genSeed,
+    TResult? Function()? getBalance,
+    TResult? Function()? getNewAddress,
+    TResult? Function()? getLastUsedAddress,
+    TResult? Function(Blockchain blockchain)? sync,
+    TResult? Function()? getConfirmedTransaction,
+    TResult? Function()? getPendingTransaction,
+    TResult? Function(String address, int amount)? createAndSign,
+  }) {
+    return getBalance?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(MnemonicStr mnemonic)? mnemonicChanged,
+    TResult Function(String password)? passwordChanged,
+    TResult Function()? createWallet,
+    TResult Function(WalletDto walletDto)? restoreWallet,
+    TResult Function()? getWallets,
+    TResult Function()? genSeed,
+    TResult Function()? getBalance,
+    TResult Function()? getNewAddress,
+    TResult Function()? getLastUsedAddress,
+    TResult Function(Blockchain blockchain)? sync,
+    TResult Function()? getConfirmedTransaction,
+    TResult Function()? getPendingTransaction,
+    TResult Function(String address, int amount)? createAndSign,
+    required TResult orElse(),
+  }) {
+    if (getBalance != null) {
+      return getBalance();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(MnemonicChanged value) mnemonicChanged,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(CreateWallet value) createWallet,
+    required TResult Function(RestoreWallet value) restoreWallet,
+    required TResult Function(GetWallets value) getWallets,
+    required TResult Function(GenSeed value) genSeed,
+    required TResult Function(GetBalance value) getBalance,
+    required TResult Function(GetNewAddress value) getNewAddress,
+    required TResult Function(GetLastUsedAddress value) getLastUsedAddress,
+    required TResult Function(Sync value) sync,
+    required TResult Function(GetConfirmedTransaction value)
+        getConfirmedTransaction,
+    required TResult Function(GetPendingTransaction value)
+        getPendingTransaction,
+    required TResult Function(CreateAndSign value) createAndSign,
+  }) {
+    return getBalance(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(MnemonicChanged value)? mnemonicChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(CreateWallet value)? createWallet,
+    TResult? Function(RestoreWallet value)? restoreWallet,
+    TResult? Function(GetWallets value)? getWallets,
+    TResult? Function(GenSeed value)? genSeed,
+    TResult? Function(GetBalance value)? getBalance,
+    TResult? Function(GetNewAddress value)? getNewAddress,
+    TResult? Function(GetLastUsedAddress value)? getLastUsedAddress,
+    TResult? Function(Sync value)? sync,
+    TResult? Function(GetConfirmedTransaction value)? getConfirmedTransaction,
+    TResult? Function(GetPendingTransaction value)? getPendingTransaction,
+    TResult? Function(CreateAndSign value)? createAndSign,
+  }) {
+    return getBalance?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(MnemonicChanged value)? mnemonicChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(CreateWallet value)? createWallet,
+    TResult Function(RestoreWallet value)? restoreWallet,
+    TResult Function(GetWallets value)? getWallets,
+    TResult Function(GenSeed value)? genSeed,
+    TResult Function(GetBalance value)? getBalance,
+    TResult Function(GetNewAddress value)? getNewAddress,
+    TResult Function(GetLastUsedAddress value)? getLastUsedAddress,
+    TResult Function(Sync value)? sync,
+    TResult Function(GetConfirmedTransaction value)? getConfirmedTransaction,
+    TResult Function(GetPendingTransaction value)? getPendingTransaction,
+    TResult Function(CreateAndSign value)? createAndSign,
+    required TResult orElse(),
+  }) {
+    if (getBalance != null) {
+      return getBalance(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetBalance implements WalletEvent {
+  const factory GetBalance() = _$GetBalance;
+}
+
+/// @nodoc
 abstract class _$$GetNewAddressCopyWith<$Res> {
   factory _$$GetNewAddressCopyWith(
           _$GetNewAddress value, $Res Function(_$GetNewAddress) then) =
@@ -1320,14 +1435,11 @@ abstract class _$$GetNewAddressCopyWith<$Res> {
 
 /// @nodoc
 class __$$GetNewAddressCopyWithImpl<$Res>
-    extends _$WalletEventCopyWithImpl<$Res>
+    extends _$WalletEventCopyWithImpl<$Res, _$GetNewAddress>
     implements _$$GetNewAddressCopyWith<$Res> {
   __$$GetNewAddressCopyWithImpl(
       _$GetNewAddress _value, $Res Function(_$GetNewAddress) _then)
-      : super(_value, (v) => _then(v as _$GetNewAddress));
-
-  @override
-  _$GetNewAddress get _value => super._value as _$GetNewAddress;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1352,21 +1464,19 @@ class _$GetNewAddress implements GetNewAddress {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Mnemonic mnemonic) mnemonicChanged,
-    required TResult Function(Password password) passwordChanged,
-    required TResult Function(BlockchainUrl url) blockChainUrlChanged,
+    required TResult Function(MnemonicStr mnemonic) mnemonicChanged,
+    required TResult Function(String password) passwordChanged,
     required TResult Function() createWallet,
-    required TResult Function() loadWallet,
+    required TResult Function(WalletDto walletDto) restoreWallet,
+    required TResult Function() getWallets,
     required TResult Function() genSeed,
+    required TResult Function() getBalance,
     required TResult Function() getNewAddress,
     required TResult Function() getLastUsedAddress,
-    required TResult Function() sync,
+    required TResult Function(Blockchain blockchain) sync,
     required TResult Function() getConfirmedTransaction,
     required TResult Function() getPendingTransaction,
-    required TResult Function(String recipient, double amount)
-        broadcastTransaction,
-    required TResult Function() walletExists,
-    required TResult Function() getWallet,
+    required TResult Function(String address, int amount) createAndSign,
   }) {
     return getNewAddress();
   }
@@ -1374,20 +1484,19 @@ class _$GetNewAddress implements GetNewAddress {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Mnemonic mnemonic)? mnemonicChanged,
-    TResult Function(Password password)? passwordChanged,
-    TResult Function(BlockchainUrl url)? blockChainUrlChanged,
-    TResult Function()? createWallet,
-    TResult Function()? loadWallet,
-    TResult Function()? genSeed,
-    TResult Function()? getNewAddress,
-    TResult Function()? getLastUsedAddress,
-    TResult Function()? sync,
-    TResult Function()? getConfirmedTransaction,
-    TResult Function()? getPendingTransaction,
-    TResult Function(String recipient, double amount)? broadcastTransaction,
-    TResult Function()? walletExists,
-    TResult Function()? getWallet,
+    TResult? Function(MnemonicStr mnemonic)? mnemonicChanged,
+    TResult? Function(String password)? passwordChanged,
+    TResult? Function()? createWallet,
+    TResult? Function(WalletDto walletDto)? restoreWallet,
+    TResult? Function()? getWallets,
+    TResult? Function()? genSeed,
+    TResult? Function()? getBalance,
+    TResult? Function()? getNewAddress,
+    TResult? Function()? getLastUsedAddress,
+    TResult? Function(Blockchain blockchain)? sync,
+    TResult? Function()? getConfirmedTransaction,
+    TResult? Function()? getPendingTransaction,
+    TResult? Function(String address, int amount)? createAndSign,
   }) {
     return getNewAddress?.call();
   }
@@ -1395,20 +1504,19 @@ class _$GetNewAddress implements GetNewAddress {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Mnemonic mnemonic)? mnemonicChanged,
-    TResult Function(Password password)? passwordChanged,
-    TResult Function(BlockchainUrl url)? blockChainUrlChanged,
+    TResult Function(MnemonicStr mnemonic)? mnemonicChanged,
+    TResult Function(String password)? passwordChanged,
     TResult Function()? createWallet,
-    TResult Function()? loadWallet,
+    TResult Function(WalletDto walletDto)? restoreWallet,
+    TResult Function()? getWallets,
     TResult Function()? genSeed,
+    TResult Function()? getBalance,
     TResult Function()? getNewAddress,
     TResult Function()? getLastUsedAddress,
-    TResult Function()? sync,
+    TResult Function(Blockchain blockchain)? sync,
     TResult Function()? getConfirmedTransaction,
     TResult Function()? getPendingTransaction,
-    TResult Function(String recipient, double amount)? broadcastTransaction,
-    TResult Function()? walletExists,
-    TResult Function()? getWallet,
+    TResult Function(String address, int amount)? createAndSign,
     required TResult orElse(),
   }) {
     if (getNewAddress != null) {
@@ -1422,10 +1530,11 @@ class _$GetNewAddress implements GetNewAddress {
   TResult map<TResult extends Object?>({
     required TResult Function(MnemonicChanged value) mnemonicChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(BlockChainUrlChanged value) blockChainUrlChanged,
     required TResult Function(CreateWallet value) createWallet,
-    required TResult Function(LoadWallet value) loadWallet,
+    required TResult Function(RestoreWallet value) restoreWallet,
+    required TResult Function(GetWallets value) getWallets,
     required TResult Function(GenSeed value) genSeed,
+    required TResult Function(GetBalance value) getBalance,
     required TResult Function(GetNewAddress value) getNewAddress,
     required TResult Function(GetLastUsedAddress value) getLastUsedAddress,
     required TResult Function(Sync value) sync,
@@ -1433,9 +1542,7 @@ class _$GetNewAddress implements GetNewAddress {
         getConfirmedTransaction,
     required TResult Function(GetPendingTransaction value)
         getPendingTransaction,
-    required TResult Function(BroadcastTransaction value) broadcastTransaction,
-    required TResult Function(WalletExists value) walletExists,
-    required TResult Function(GetWallet value) getWallet,
+    required TResult Function(CreateAndSign value) createAndSign,
   }) {
     return getNewAddress(this);
   }
@@ -1443,20 +1550,19 @@ class _$GetNewAddress implements GetNewAddress {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(MnemonicChanged value)? mnemonicChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
-    TResult Function(CreateWallet value)? createWallet,
-    TResult Function(LoadWallet value)? loadWallet,
-    TResult Function(GenSeed value)? genSeed,
-    TResult Function(GetNewAddress value)? getNewAddress,
-    TResult Function(GetLastUsedAddress value)? getLastUsedAddress,
-    TResult Function(Sync value)? sync,
-    TResult Function(GetConfirmedTransaction value)? getConfirmedTransaction,
-    TResult Function(GetPendingTransaction value)? getPendingTransaction,
-    TResult Function(BroadcastTransaction value)? broadcastTransaction,
-    TResult Function(WalletExists value)? walletExists,
-    TResult Function(GetWallet value)? getWallet,
+    TResult? Function(MnemonicChanged value)? mnemonicChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(CreateWallet value)? createWallet,
+    TResult? Function(RestoreWallet value)? restoreWallet,
+    TResult? Function(GetWallets value)? getWallets,
+    TResult? Function(GenSeed value)? genSeed,
+    TResult? Function(GetBalance value)? getBalance,
+    TResult? Function(GetNewAddress value)? getNewAddress,
+    TResult? Function(GetLastUsedAddress value)? getLastUsedAddress,
+    TResult? Function(Sync value)? sync,
+    TResult? Function(GetConfirmedTransaction value)? getConfirmedTransaction,
+    TResult? Function(GetPendingTransaction value)? getPendingTransaction,
+    TResult? Function(CreateAndSign value)? createAndSign,
   }) {
     return getNewAddress?.call(this);
   }
@@ -1466,18 +1572,17 @@ class _$GetNewAddress implements GetNewAddress {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MnemonicChanged value)? mnemonicChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
     TResult Function(CreateWallet value)? createWallet,
-    TResult Function(LoadWallet value)? loadWallet,
+    TResult Function(RestoreWallet value)? restoreWallet,
+    TResult Function(GetWallets value)? getWallets,
     TResult Function(GenSeed value)? genSeed,
+    TResult Function(GetBalance value)? getBalance,
     TResult Function(GetNewAddress value)? getNewAddress,
     TResult Function(GetLastUsedAddress value)? getLastUsedAddress,
     TResult Function(Sync value)? sync,
     TResult Function(GetConfirmedTransaction value)? getConfirmedTransaction,
     TResult Function(GetPendingTransaction value)? getPendingTransaction,
-    TResult Function(BroadcastTransaction value)? broadcastTransaction,
-    TResult Function(WalletExists value)? walletExists,
-    TResult Function(GetWallet value)? getWallet,
+    TResult Function(CreateAndSign value)? createAndSign,
     required TResult orElse(),
   }) {
     if (getNewAddress != null) {
@@ -1500,14 +1605,11 @@ abstract class _$$GetLastUsedAddressCopyWith<$Res> {
 
 /// @nodoc
 class __$$GetLastUsedAddressCopyWithImpl<$Res>
-    extends _$WalletEventCopyWithImpl<$Res>
+    extends _$WalletEventCopyWithImpl<$Res, _$GetLastUsedAddress>
     implements _$$GetLastUsedAddressCopyWith<$Res> {
   __$$GetLastUsedAddressCopyWithImpl(
       _$GetLastUsedAddress _value, $Res Function(_$GetLastUsedAddress) _then)
-      : super(_value, (v) => _then(v as _$GetLastUsedAddress));
-
-  @override
-  _$GetLastUsedAddress get _value => super._value as _$GetLastUsedAddress;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1532,21 +1634,19 @@ class _$GetLastUsedAddress implements GetLastUsedAddress {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Mnemonic mnemonic) mnemonicChanged,
-    required TResult Function(Password password) passwordChanged,
-    required TResult Function(BlockchainUrl url) blockChainUrlChanged,
+    required TResult Function(MnemonicStr mnemonic) mnemonicChanged,
+    required TResult Function(String password) passwordChanged,
     required TResult Function() createWallet,
-    required TResult Function() loadWallet,
+    required TResult Function(WalletDto walletDto) restoreWallet,
+    required TResult Function() getWallets,
     required TResult Function() genSeed,
+    required TResult Function() getBalance,
     required TResult Function() getNewAddress,
     required TResult Function() getLastUsedAddress,
-    required TResult Function() sync,
+    required TResult Function(Blockchain blockchain) sync,
     required TResult Function() getConfirmedTransaction,
     required TResult Function() getPendingTransaction,
-    required TResult Function(String recipient, double amount)
-        broadcastTransaction,
-    required TResult Function() walletExists,
-    required TResult Function() getWallet,
+    required TResult Function(String address, int amount) createAndSign,
   }) {
     return getLastUsedAddress();
   }
@@ -1554,20 +1654,19 @@ class _$GetLastUsedAddress implements GetLastUsedAddress {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Mnemonic mnemonic)? mnemonicChanged,
-    TResult Function(Password password)? passwordChanged,
-    TResult Function(BlockchainUrl url)? blockChainUrlChanged,
-    TResult Function()? createWallet,
-    TResult Function()? loadWallet,
-    TResult Function()? genSeed,
-    TResult Function()? getNewAddress,
-    TResult Function()? getLastUsedAddress,
-    TResult Function()? sync,
-    TResult Function()? getConfirmedTransaction,
-    TResult Function()? getPendingTransaction,
-    TResult Function(String recipient, double amount)? broadcastTransaction,
-    TResult Function()? walletExists,
-    TResult Function()? getWallet,
+    TResult? Function(MnemonicStr mnemonic)? mnemonicChanged,
+    TResult? Function(String password)? passwordChanged,
+    TResult? Function()? createWallet,
+    TResult? Function(WalletDto walletDto)? restoreWallet,
+    TResult? Function()? getWallets,
+    TResult? Function()? genSeed,
+    TResult? Function()? getBalance,
+    TResult? Function()? getNewAddress,
+    TResult? Function()? getLastUsedAddress,
+    TResult? Function(Blockchain blockchain)? sync,
+    TResult? Function()? getConfirmedTransaction,
+    TResult? Function()? getPendingTransaction,
+    TResult? Function(String address, int amount)? createAndSign,
   }) {
     return getLastUsedAddress?.call();
   }
@@ -1575,20 +1674,19 @@ class _$GetLastUsedAddress implements GetLastUsedAddress {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Mnemonic mnemonic)? mnemonicChanged,
-    TResult Function(Password password)? passwordChanged,
-    TResult Function(BlockchainUrl url)? blockChainUrlChanged,
+    TResult Function(MnemonicStr mnemonic)? mnemonicChanged,
+    TResult Function(String password)? passwordChanged,
     TResult Function()? createWallet,
-    TResult Function()? loadWallet,
+    TResult Function(WalletDto walletDto)? restoreWallet,
+    TResult Function()? getWallets,
     TResult Function()? genSeed,
+    TResult Function()? getBalance,
     TResult Function()? getNewAddress,
     TResult Function()? getLastUsedAddress,
-    TResult Function()? sync,
+    TResult Function(Blockchain blockchain)? sync,
     TResult Function()? getConfirmedTransaction,
     TResult Function()? getPendingTransaction,
-    TResult Function(String recipient, double amount)? broadcastTransaction,
-    TResult Function()? walletExists,
-    TResult Function()? getWallet,
+    TResult Function(String address, int amount)? createAndSign,
     required TResult orElse(),
   }) {
     if (getLastUsedAddress != null) {
@@ -1602,10 +1700,11 @@ class _$GetLastUsedAddress implements GetLastUsedAddress {
   TResult map<TResult extends Object?>({
     required TResult Function(MnemonicChanged value) mnemonicChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(BlockChainUrlChanged value) blockChainUrlChanged,
     required TResult Function(CreateWallet value) createWallet,
-    required TResult Function(LoadWallet value) loadWallet,
+    required TResult Function(RestoreWallet value) restoreWallet,
+    required TResult Function(GetWallets value) getWallets,
     required TResult Function(GenSeed value) genSeed,
+    required TResult Function(GetBalance value) getBalance,
     required TResult Function(GetNewAddress value) getNewAddress,
     required TResult Function(GetLastUsedAddress value) getLastUsedAddress,
     required TResult Function(Sync value) sync,
@@ -1613,9 +1712,7 @@ class _$GetLastUsedAddress implements GetLastUsedAddress {
         getConfirmedTransaction,
     required TResult Function(GetPendingTransaction value)
         getPendingTransaction,
-    required TResult Function(BroadcastTransaction value) broadcastTransaction,
-    required TResult Function(WalletExists value) walletExists,
-    required TResult Function(GetWallet value) getWallet,
+    required TResult Function(CreateAndSign value) createAndSign,
   }) {
     return getLastUsedAddress(this);
   }
@@ -1623,20 +1720,19 @@ class _$GetLastUsedAddress implements GetLastUsedAddress {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(MnemonicChanged value)? mnemonicChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
-    TResult Function(CreateWallet value)? createWallet,
-    TResult Function(LoadWallet value)? loadWallet,
-    TResult Function(GenSeed value)? genSeed,
-    TResult Function(GetNewAddress value)? getNewAddress,
-    TResult Function(GetLastUsedAddress value)? getLastUsedAddress,
-    TResult Function(Sync value)? sync,
-    TResult Function(GetConfirmedTransaction value)? getConfirmedTransaction,
-    TResult Function(GetPendingTransaction value)? getPendingTransaction,
-    TResult Function(BroadcastTransaction value)? broadcastTransaction,
-    TResult Function(WalletExists value)? walletExists,
-    TResult Function(GetWallet value)? getWallet,
+    TResult? Function(MnemonicChanged value)? mnemonicChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(CreateWallet value)? createWallet,
+    TResult? Function(RestoreWallet value)? restoreWallet,
+    TResult? Function(GetWallets value)? getWallets,
+    TResult? Function(GenSeed value)? genSeed,
+    TResult? Function(GetBalance value)? getBalance,
+    TResult? Function(GetNewAddress value)? getNewAddress,
+    TResult? Function(GetLastUsedAddress value)? getLastUsedAddress,
+    TResult? Function(Sync value)? sync,
+    TResult? Function(GetConfirmedTransaction value)? getConfirmedTransaction,
+    TResult? Function(GetPendingTransaction value)? getPendingTransaction,
+    TResult? Function(CreateAndSign value)? createAndSign,
   }) {
     return getLastUsedAddress?.call(this);
   }
@@ -1646,18 +1742,17 @@ class _$GetLastUsedAddress implements GetLastUsedAddress {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MnemonicChanged value)? mnemonicChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
     TResult Function(CreateWallet value)? createWallet,
-    TResult Function(LoadWallet value)? loadWallet,
+    TResult Function(RestoreWallet value)? restoreWallet,
+    TResult Function(GetWallets value)? getWallets,
     TResult Function(GenSeed value)? genSeed,
+    TResult Function(GetBalance value)? getBalance,
     TResult Function(GetNewAddress value)? getNewAddress,
     TResult Function(GetLastUsedAddress value)? getLastUsedAddress,
     TResult Function(Sync value)? sync,
     TResult Function(GetConfirmedTransaction value)? getConfirmedTransaction,
     TResult Function(GetPendingTransaction value)? getPendingTransaction,
-    TResult Function(BroadcastTransaction value)? broadcastTransaction,
-    TResult Function(WalletExists value)? walletExists,
-    TResult Function(GetWallet value)? getWallet,
+    TResult Function(CreateAndSign value)? createAndSign,
     required TResult orElse(),
   }) {
     if (getLastUsedAddress != null) {
@@ -1675,101 +1770,121 @@ abstract class GetLastUsedAddress implements WalletEvent {
 abstract class _$$SyncCopyWith<$Res> {
   factory _$$SyncCopyWith(_$Sync value, $Res Function(_$Sync) then) =
       __$$SyncCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Blockchain blockchain});
 }
 
 /// @nodoc
-class __$$SyncCopyWithImpl<$Res> extends _$WalletEventCopyWithImpl<$Res>
+class __$$SyncCopyWithImpl<$Res> extends _$WalletEventCopyWithImpl<$Res, _$Sync>
     implements _$$SyncCopyWith<$Res> {
   __$$SyncCopyWithImpl(_$Sync _value, $Res Function(_$Sync) _then)
-      : super(_value, (v) => _then(v as _$Sync));
+      : super(_value, _then);
 
+  @pragma('vm:prefer-inline')
   @override
-  _$Sync get _value => super._value as _$Sync;
+  $Res call({
+    Object? blockchain = null,
+  }) {
+    return _then(_$Sync(
+      null == blockchain
+          ? _value.blockchain
+          : blockchain // ignore: cast_nullable_to_non_nullable
+              as Blockchain,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$Sync implements Sync {
-  const _$Sync();
+  const _$Sync(this.blockchain);
+
+  @override
+  final Blockchain blockchain;
 
   @override
   String toString() {
-    return 'WalletEvent.sync()';
+    return 'WalletEvent.sync(blockchain: $blockchain)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$Sync);
+        (other.runtimeType == runtimeType &&
+            other is _$Sync &&
+            (identical(other.blockchain, blockchain) ||
+                other.blockchain == blockchain));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, blockchain);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SyncCopyWith<_$Sync> get copyWith =>
+      __$$SyncCopyWithImpl<_$Sync>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Mnemonic mnemonic) mnemonicChanged,
-    required TResult Function(Password password) passwordChanged,
-    required TResult Function(BlockchainUrl url) blockChainUrlChanged,
+    required TResult Function(MnemonicStr mnemonic) mnemonicChanged,
+    required TResult Function(String password) passwordChanged,
     required TResult Function() createWallet,
-    required TResult Function() loadWallet,
+    required TResult Function(WalletDto walletDto) restoreWallet,
+    required TResult Function() getWallets,
     required TResult Function() genSeed,
+    required TResult Function() getBalance,
     required TResult Function() getNewAddress,
     required TResult Function() getLastUsedAddress,
-    required TResult Function() sync,
+    required TResult Function(Blockchain blockchain) sync,
     required TResult Function() getConfirmedTransaction,
     required TResult Function() getPendingTransaction,
-    required TResult Function(String recipient, double amount)
-        broadcastTransaction,
-    required TResult Function() walletExists,
-    required TResult Function() getWallet,
+    required TResult Function(String address, int amount) createAndSign,
   }) {
-    return sync();
+    return sync(blockchain);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Mnemonic mnemonic)? mnemonicChanged,
-    TResult Function(Password password)? passwordChanged,
-    TResult Function(BlockchainUrl url)? blockChainUrlChanged,
-    TResult Function()? createWallet,
-    TResult Function()? loadWallet,
-    TResult Function()? genSeed,
-    TResult Function()? getNewAddress,
-    TResult Function()? getLastUsedAddress,
-    TResult Function()? sync,
-    TResult Function()? getConfirmedTransaction,
-    TResult Function()? getPendingTransaction,
-    TResult Function(String recipient, double amount)? broadcastTransaction,
-    TResult Function()? walletExists,
-    TResult Function()? getWallet,
+    TResult? Function(MnemonicStr mnemonic)? mnemonicChanged,
+    TResult? Function(String password)? passwordChanged,
+    TResult? Function()? createWallet,
+    TResult? Function(WalletDto walletDto)? restoreWallet,
+    TResult? Function()? getWallets,
+    TResult? Function()? genSeed,
+    TResult? Function()? getBalance,
+    TResult? Function()? getNewAddress,
+    TResult? Function()? getLastUsedAddress,
+    TResult? Function(Blockchain blockchain)? sync,
+    TResult? Function()? getConfirmedTransaction,
+    TResult? Function()? getPendingTransaction,
+    TResult? Function(String address, int amount)? createAndSign,
   }) {
-    return sync?.call();
+    return sync?.call(blockchain);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Mnemonic mnemonic)? mnemonicChanged,
-    TResult Function(Password password)? passwordChanged,
-    TResult Function(BlockchainUrl url)? blockChainUrlChanged,
+    TResult Function(MnemonicStr mnemonic)? mnemonicChanged,
+    TResult Function(String password)? passwordChanged,
     TResult Function()? createWallet,
-    TResult Function()? loadWallet,
+    TResult Function(WalletDto walletDto)? restoreWallet,
+    TResult Function()? getWallets,
     TResult Function()? genSeed,
+    TResult Function()? getBalance,
     TResult Function()? getNewAddress,
     TResult Function()? getLastUsedAddress,
-    TResult Function()? sync,
+    TResult Function(Blockchain blockchain)? sync,
     TResult Function()? getConfirmedTransaction,
     TResult Function()? getPendingTransaction,
-    TResult Function(String recipient, double amount)? broadcastTransaction,
-    TResult Function()? walletExists,
-    TResult Function()? getWallet,
+    TResult Function(String address, int amount)? createAndSign,
     required TResult orElse(),
   }) {
     if (sync != null) {
-      return sync();
+      return sync(blockchain);
     }
     return orElse();
   }
@@ -1779,10 +1894,11 @@ class _$Sync implements Sync {
   TResult map<TResult extends Object?>({
     required TResult Function(MnemonicChanged value) mnemonicChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(BlockChainUrlChanged value) blockChainUrlChanged,
     required TResult Function(CreateWallet value) createWallet,
-    required TResult Function(LoadWallet value) loadWallet,
+    required TResult Function(RestoreWallet value) restoreWallet,
+    required TResult Function(GetWallets value) getWallets,
     required TResult Function(GenSeed value) genSeed,
+    required TResult Function(GetBalance value) getBalance,
     required TResult Function(GetNewAddress value) getNewAddress,
     required TResult Function(GetLastUsedAddress value) getLastUsedAddress,
     required TResult Function(Sync value) sync,
@@ -1790,9 +1906,7 @@ class _$Sync implements Sync {
         getConfirmedTransaction,
     required TResult Function(GetPendingTransaction value)
         getPendingTransaction,
-    required TResult Function(BroadcastTransaction value) broadcastTransaction,
-    required TResult Function(WalletExists value) walletExists,
-    required TResult Function(GetWallet value) getWallet,
+    required TResult Function(CreateAndSign value) createAndSign,
   }) {
     return sync(this);
   }
@@ -1800,20 +1914,19 @@ class _$Sync implements Sync {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(MnemonicChanged value)? mnemonicChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
-    TResult Function(CreateWallet value)? createWallet,
-    TResult Function(LoadWallet value)? loadWallet,
-    TResult Function(GenSeed value)? genSeed,
-    TResult Function(GetNewAddress value)? getNewAddress,
-    TResult Function(GetLastUsedAddress value)? getLastUsedAddress,
-    TResult Function(Sync value)? sync,
-    TResult Function(GetConfirmedTransaction value)? getConfirmedTransaction,
-    TResult Function(GetPendingTransaction value)? getPendingTransaction,
-    TResult Function(BroadcastTransaction value)? broadcastTransaction,
-    TResult Function(WalletExists value)? walletExists,
-    TResult Function(GetWallet value)? getWallet,
+    TResult? Function(MnemonicChanged value)? mnemonicChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(CreateWallet value)? createWallet,
+    TResult? Function(RestoreWallet value)? restoreWallet,
+    TResult? Function(GetWallets value)? getWallets,
+    TResult? Function(GenSeed value)? genSeed,
+    TResult? Function(GetBalance value)? getBalance,
+    TResult? Function(GetNewAddress value)? getNewAddress,
+    TResult? Function(GetLastUsedAddress value)? getLastUsedAddress,
+    TResult? Function(Sync value)? sync,
+    TResult? Function(GetConfirmedTransaction value)? getConfirmedTransaction,
+    TResult? Function(GetPendingTransaction value)? getPendingTransaction,
+    TResult? Function(CreateAndSign value)? createAndSign,
   }) {
     return sync?.call(this);
   }
@@ -1823,18 +1936,17 @@ class _$Sync implements Sync {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MnemonicChanged value)? mnemonicChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
     TResult Function(CreateWallet value)? createWallet,
-    TResult Function(LoadWallet value)? loadWallet,
+    TResult Function(RestoreWallet value)? restoreWallet,
+    TResult Function(GetWallets value)? getWallets,
     TResult Function(GenSeed value)? genSeed,
+    TResult Function(GetBalance value)? getBalance,
     TResult Function(GetNewAddress value)? getNewAddress,
     TResult Function(GetLastUsedAddress value)? getLastUsedAddress,
     TResult Function(Sync value)? sync,
     TResult Function(GetConfirmedTransaction value)? getConfirmedTransaction,
     TResult Function(GetPendingTransaction value)? getPendingTransaction,
-    TResult Function(BroadcastTransaction value)? broadcastTransaction,
-    TResult Function(WalletExists value)? walletExists,
-    TResult Function(GetWallet value)? getWallet,
+    TResult Function(CreateAndSign value)? createAndSign,
     required TResult orElse(),
   }) {
     if (sync != null) {
@@ -1845,7 +1957,11 @@ class _$Sync implements Sync {
 }
 
 abstract class Sync implements WalletEvent {
-  const factory Sync() = _$Sync;
+  const factory Sync(final Blockchain blockchain) = _$Sync;
+
+  Blockchain get blockchain;
+  @JsonKey(ignore: true)
+  _$$SyncCopyWith<_$Sync> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1857,15 +1973,11 @@ abstract class _$$GetConfirmedTransactionCopyWith<$Res> {
 
 /// @nodoc
 class __$$GetConfirmedTransactionCopyWithImpl<$Res>
-    extends _$WalletEventCopyWithImpl<$Res>
+    extends _$WalletEventCopyWithImpl<$Res, _$GetConfirmedTransaction>
     implements _$$GetConfirmedTransactionCopyWith<$Res> {
   __$$GetConfirmedTransactionCopyWithImpl(_$GetConfirmedTransaction _value,
       $Res Function(_$GetConfirmedTransaction) _then)
-      : super(_value, (v) => _then(v as _$GetConfirmedTransaction));
-
-  @override
-  _$GetConfirmedTransaction get _value =>
-      super._value as _$GetConfirmedTransaction;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1891,21 +2003,19 @@ class _$GetConfirmedTransaction implements GetConfirmedTransaction {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Mnemonic mnemonic) mnemonicChanged,
-    required TResult Function(Password password) passwordChanged,
-    required TResult Function(BlockchainUrl url) blockChainUrlChanged,
+    required TResult Function(MnemonicStr mnemonic) mnemonicChanged,
+    required TResult Function(String password) passwordChanged,
     required TResult Function() createWallet,
-    required TResult Function() loadWallet,
+    required TResult Function(WalletDto walletDto) restoreWallet,
+    required TResult Function() getWallets,
     required TResult Function() genSeed,
+    required TResult Function() getBalance,
     required TResult Function() getNewAddress,
     required TResult Function() getLastUsedAddress,
-    required TResult Function() sync,
+    required TResult Function(Blockchain blockchain) sync,
     required TResult Function() getConfirmedTransaction,
     required TResult Function() getPendingTransaction,
-    required TResult Function(String recipient, double amount)
-        broadcastTransaction,
-    required TResult Function() walletExists,
-    required TResult Function() getWallet,
+    required TResult Function(String address, int amount) createAndSign,
   }) {
     return getConfirmedTransaction();
   }
@@ -1913,20 +2023,19 @@ class _$GetConfirmedTransaction implements GetConfirmedTransaction {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Mnemonic mnemonic)? mnemonicChanged,
-    TResult Function(Password password)? passwordChanged,
-    TResult Function(BlockchainUrl url)? blockChainUrlChanged,
-    TResult Function()? createWallet,
-    TResult Function()? loadWallet,
-    TResult Function()? genSeed,
-    TResult Function()? getNewAddress,
-    TResult Function()? getLastUsedAddress,
-    TResult Function()? sync,
-    TResult Function()? getConfirmedTransaction,
-    TResult Function()? getPendingTransaction,
-    TResult Function(String recipient, double amount)? broadcastTransaction,
-    TResult Function()? walletExists,
-    TResult Function()? getWallet,
+    TResult? Function(MnemonicStr mnemonic)? mnemonicChanged,
+    TResult? Function(String password)? passwordChanged,
+    TResult? Function()? createWallet,
+    TResult? Function(WalletDto walletDto)? restoreWallet,
+    TResult? Function()? getWallets,
+    TResult? Function()? genSeed,
+    TResult? Function()? getBalance,
+    TResult? Function()? getNewAddress,
+    TResult? Function()? getLastUsedAddress,
+    TResult? Function(Blockchain blockchain)? sync,
+    TResult? Function()? getConfirmedTransaction,
+    TResult? Function()? getPendingTransaction,
+    TResult? Function(String address, int amount)? createAndSign,
   }) {
     return getConfirmedTransaction?.call();
   }
@@ -1934,20 +2043,19 @@ class _$GetConfirmedTransaction implements GetConfirmedTransaction {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Mnemonic mnemonic)? mnemonicChanged,
-    TResult Function(Password password)? passwordChanged,
-    TResult Function(BlockchainUrl url)? blockChainUrlChanged,
+    TResult Function(MnemonicStr mnemonic)? mnemonicChanged,
+    TResult Function(String password)? passwordChanged,
     TResult Function()? createWallet,
-    TResult Function()? loadWallet,
+    TResult Function(WalletDto walletDto)? restoreWallet,
+    TResult Function()? getWallets,
     TResult Function()? genSeed,
+    TResult Function()? getBalance,
     TResult Function()? getNewAddress,
     TResult Function()? getLastUsedAddress,
-    TResult Function()? sync,
+    TResult Function(Blockchain blockchain)? sync,
     TResult Function()? getConfirmedTransaction,
     TResult Function()? getPendingTransaction,
-    TResult Function(String recipient, double amount)? broadcastTransaction,
-    TResult Function()? walletExists,
-    TResult Function()? getWallet,
+    TResult Function(String address, int amount)? createAndSign,
     required TResult orElse(),
   }) {
     if (getConfirmedTransaction != null) {
@@ -1961,10 +2069,11 @@ class _$GetConfirmedTransaction implements GetConfirmedTransaction {
   TResult map<TResult extends Object?>({
     required TResult Function(MnemonicChanged value) mnemonicChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(BlockChainUrlChanged value) blockChainUrlChanged,
     required TResult Function(CreateWallet value) createWallet,
-    required TResult Function(LoadWallet value) loadWallet,
+    required TResult Function(RestoreWallet value) restoreWallet,
+    required TResult Function(GetWallets value) getWallets,
     required TResult Function(GenSeed value) genSeed,
+    required TResult Function(GetBalance value) getBalance,
     required TResult Function(GetNewAddress value) getNewAddress,
     required TResult Function(GetLastUsedAddress value) getLastUsedAddress,
     required TResult Function(Sync value) sync,
@@ -1972,9 +2081,7 @@ class _$GetConfirmedTransaction implements GetConfirmedTransaction {
         getConfirmedTransaction,
     required TResult Function(GetPendingTransaction value)
         getPendingTransaction,
-    required TResult Function(BroadcastTransaction value) broadcastTransaction,
-    required TResult Function(WalletExists value) walletExists,
-    required TResult Function(GetWallet value) getWallet,
+    required TResult Function(CreateAndSign value) createAndSign,
   }) {
     return getConfirmedTransaction(this);
   }
@@ -1982,20 +2089,19 @@ class _$GetConfirmedTransaction implements GetConfirmedTransaction {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(MnemonicChanged value)? mnemonicChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
-    TResult Function(CreateWallet value)? createWallet,
-    TResult Function(LoadWallet value)? loadWallet,
-    TResult Function(GenSeed value)? genSeed,
-    TResult Function(GetNewAddress value)? getNewAddress,
-    TResult Function(GetLastUsedAddress value)? getLastUsedAddress,
-    TResult Function(Sync value)? sync,
-    TResult Function(GetConfirmedTransaction value)? getConfirmedTransaction,
-    TResult Function(GetPendingTransaction value)? getPendingTransaction,
-    TResult Function(BroadcastTransaction value)? broadcastTransaction,
-    TResult Function(WalletExists value)? walletExists,
-    TResult Function(GetWallet value)? getWallet,
+    TResult? Function(MnemonicChanged value)? mnemonicChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(CreateWallet value)? createWallet,
+    TResult? Function(RestoreWallet value)? restoreWallet,
+    TResult? Function(GetWallets value)? getWallets,
+    TResult? Function(GenSeed value)? genSeed,
+    TResult? Function(GetBalance value)? getBalance,
+    TResult? Function(GetNewAddress value)? getNewAddress,
+    TResult? Function(GetLastUsedAddress value)? getLastUsedAddress,
+    TResult? Function(Sync value)? sync,
+    TResult? Function(GetConfirmedTransaction value)? getConfirmedTransaction,
+    TResult? Function(GetPendingTransaction value)? getPendingTransaction,
+    TResult? Function(CreateAndSign value)? createAndSign,
   }) {
     return getConfirmedTransaction?.call(this);
   }
@@ -2005,18 +2111,17 @@ class _$GetConfirmedTransaction implements GetConfirmedTransaction {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MnemonicChanged value)? mnemonicChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
     TResult Function(CreateWallet value)? createWallet,
-    TResult Function(LoadWallet value)? loadWallet,
+    TResult Function(RestoreWallet value)? restoreWallet,
+    TResult Function(GetWallets value)? getWallets,
     TResult Function(GenSeed value)? genSeed,
+    TResult Function(GetBalance value)? getBalance,
     TResult Function(GetNewAddress value)? getNewAddress,
     TResult Function(GetLastUsedAddress value)? getLastUsedAddress,
     TResult Function(Sync value)? sync,
     TResult Function(GetConfirmedTransaction value)? getConfirmedTransaction,
     TResult Function(GetPendingTransaction value)? getPendingTransaction,
-    TResult Function(BroadcastTransaction value)? broadcastTransaction,
-    TResult Function(WalletExists value)? walletExists,
-    TResult Function(GetWallet value)? getWallet,
+    TResult Function(CreateAndSign value)? createAndSign,
     required TResult orElse(),
   }) {
     if (getConfirmedTransaction != null) {
@@ -2039,14 +2144,11 @@ abstract class _$$GetPendingTransactionCopyWith<$Res> {
 
 /// @nodoc
 class __$$GetPendingTransactionCopyWithImpl<$Res>
-    extends _$WalletEventCopyWithImpl<$Res>
+    extends _$WalletEventCopyWithImpl<$Res, _$GetPendingTransaction>
     implements _$$GetPendingTransactionCopyWith<$Res> {
   __$$GetPendingTransactionCopyWithImpl(_$GetPendingTransaction _value,
       $Res Function(_$GetPendingTransaction) _then)
-      : super(_value, (v) => _then(v as _$GetPendingTransaction));
-
-  @override
-  _$GetPendingTransaction get _value => super._value as _$GetPendingTransaction;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -2071,21 +2173,19 @@ class _$GetPendingTransaction implements GetPendingTransaction {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Mnemonic mnemonic) mnemonicChanged,
-    required TResult Function(Password password) passwordChanged,
-    required TResult Function(BlockchainUrl url) blockChainUrlChanged,
+    required TResult Function(MnemonicStr mnemonic) mnemonicChanged,
+    required TResult Function(String password) passwordChanged,
     required TResult Function() createWallet,
-    required TResult Function() loadWallet,
+    required TResult Function(WalletDto walletDto) restoreWallet,
+    required TResult Function() getWallets,
     required TResult Function() genSeed,
+    required TResult Function() getBalance,
     required TResult Function() getNewAddress,
     required TResult Function() getLastUsedAddress,
-    required TResult Function() sync,
+    required TResult Function(Blockchain blockchain) sync,
     required TResult Function() getConfirmedTransaction,
     required TResult Function() getPendingTransaction,
-    required TResult Function(String recipient, double amount)
-        broadcastTransaction,
-    required TResult Function() walletExists,
-    required TResult Function() getWallet,
+    required TResult Function(String address, int amount) createAndSign,
   }) {
     return getPendingTransaction();
   }
@@ -2093,20 +2193,19 @@ class _$GetPendingTransaction implements GetPendingTransaction {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Mnemonic mnemonic)? mnemonicChanged,
-    TResult Function(Password password)? passwordChanged,
-    TResult Function(BlockchainUrl url)? blockChainUrlChanged,
-    TResult Function()? createWallet,
-    TResult Function()? loadWallet,
-    TResult Function()? genSeed,
-    TResult Function()? getNewAddress,
-    TResult Function()? getLastUsedAddress,
-    TResult Function()? sync,
-    TResult Function()? getConfirmedTransaction,
-    TResult Function()? getPendingTransaction,
-    TResult Function(String recipient, double amount)? broadcastTransaction,
-    TResult Function()? walletExists,
-    TResult Function()? getWallet,
+    TResult? Function(MnemonicStr mnemonic)? mnemonicChanged,
+    TResult? Function(String password)? passwordChanged,
+    TResult? Function()? createWallet,
+    TResult? Function(WalletDto walletDto)? restoreWallet,
+    TResult? Function()? getWallets,
+    TResult? Function()? genSeed,
+    TResult? Function()? getBalance,
+    TResult? Function()? getNewAddress,
+    TResult? Function()? getLastUsedAddress,
+    TResult? Function(Blockchain blockchain)? sync,
+    TResult? Function()? getConfirmedTransaction,
+    TResult? Function()? getPendingTransaction,
+    TResult? Function(String address, int amount)? createAndSign,
   }) {
     return getPendingTransaction?.call();
   }
@@ -2114,20 +2213,19 @@ class _$GetPendingTransaction implements GetPendingTransaction {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Mnemonic mnemonic)? mnemonicChanged,
-    TResult Function(Password password)? passwordChanged,
-    TResult Function(BlockchainUrl url)? blockChainUrlChanged,
+    TResult Function(MnemonicStr mnemonic)? mnemonicChanged,
+    TResult Function(String password)? passwordChanged,
     TResult Function()? createWallet,
-    TResult Function()? loadWallet,
+    TResult Function(WalletDto walletDto)? restoreWallet,
+    TResult Function()? getWallets,
     TResult Function()? genSeed,
+    TResult Function()? getBalance,
     TResult Function()? getNewAddress,
     TResult Function()? getLastUsedAddress,
-    TResult Function()? sync,
+    TResult Function(Blockchain blockchain)? sync,
     TResult Function()? getConfirmedTransaction,
     TResult Function()? getPendingTransaction,
-    TResult Function(String recipient, double amount)? broadcastTransaction,
-    TResult Function()? walletExists,
-    TResult Function()? getWallet,
+    TResult Function(String address, int amount)? createAndSign,
     required TResult orElse(),
   }) {
     if (getPendingTransaction != null) {
@@ -2141,10 +2239,11 @@ class _$GetPendingTransaction implements GetPendingTransaction {
   TResult map<TResult extends Object?>({
     required TResult Function(MnemonicChanged value) mnemonicChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(BlockChainUrlChanged value) blockChainUrlChanged,
     required TResult Function(CreateWallet value) createWallet,
-    required TResult Function(LoadWallet value) loadWallet,
+    required TResult Function(RestoreWallet value) restoreWallet,
+    required TResult Function(GetWallets value) getWallets,
     required TResult Function(GenSeed value) genSeed,
+    required TResult Function(GetBalance value) getBalance,
     required TResult Function(GetNewAddress value) getNewAddress,
     required TResult Function(GetLastUsedAddress value) getLastUsedAddress,
     required TResult Function(Sync value) sync,
@@ -2152,9 +2251,7 @@ class _$GetPendingTransaction implements GetPendingTransaction {
         getConfirmedTransaction,
     required TResult Function(GetPendingTransaction value)
         getPendingTransaction,
-    required TResult Function(BroadcastTransaction value) broadcastTransaction,
-    required TResult Function(WalletExists value) walletExists,
-    required TResult Function(GetWallet value) getWallet,
+    required TResult Function(CreateAndSign value) createAndSign,
   }) {
     return getPendingTransaction(this);
   }
@@ -2162,20 +2259,19 @@ class _$GetPendingTransaction implements GetPendingTransaction {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(MnemonicChanged value)? mnemonicChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
-    TResult Function(CreateWallet value)? createWallet,
-    TResult Function(LoadWallet value)? loadWallet,
-    TResult Function(GenSeed value)? genSeed,
-    TResult Function(GetNewAddress value)? getNewAddress,
-    TResult Function(GetLastUsedAddress value)? getLastUsedAddress,
-    TResult Function(Sync value)? sync,
-    TResult Function(GetConfirmedTransaction value)? getConfirmedTransaction,
-    TResult Function(GetPendingTransaction value)? getPendingTransaction,
-    TResult Function(BroadcastTransaction value)? broadcastTransaction,
-    TResult Function(WalletExists value)? walletExists,
-    TResult Function(GetWallet value)? getWallet,
+    TResult? Function(MnemonicChanged value)? mnemonicChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(CreateWallet value)? createWallet,
+    TResult? Function(RestoreWallet value)? restoreWallet,
+    TResult? Function(GetWallets value)? getWallets,
+    TResult? Function(GenSeed value)? genSeed,
+    TResult? Function(GetBalance value)? getBalance,
+    TResult? Function(GetNewAddress value)? getNewAddress,
+    TResult? Function(GetLastUsedAddress value)? getLastUsedAddress,
+    TResult? Function(Sync value)? sync,
+    TResult? Function(GetConfirmedTransaction value)? getConfirmedTransaction,
+    TResult? Function(GetPendingTransaction value)? getPendingTransaction,
+    TResult? Function(CreateAndSign value)? createAndSign,
   }) {
     return getPendingTransaction?.call(this);
   }
@@ -2185,18 +2281,17 @@ class _$GetPendingTransaction implements GetPendingTransaction {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MnemonicChanged value)? mnemonicChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
     TResult Function(CreateWallet value)? createWallet,
-    TResult Function(LoadWallet value)? loadWallet,
+    TResult Function(RestoreWallet value)? restoreWallet,
+    TResult Function(GetWallets value)? getWallets,
     TResult Function(GenSeed value)? genSeed,
+    TResult Function(GetBalance value)? getBalance,
     TResult Function(GetNewAddress value)? getNewAddress,
     TResult Function(GetLastUsedAddress value)? getLastUsedAddress,
     TResult Function(Sync value)? sync,
     TResult Function(GetConfirmedTransaction value)? getConfirmedTransaction,
     TResult Function(GetPendingTransaction value)? getPendingTransaction,
-    TResult Function(BroadcastTransaction value)? broadcastTransaction,
-    TResult Function(WalletExists value)? walletExists,
-    TResult Function(GetWallet value)? getWallet,
+    TResult Function(CreateAndSign value)? createAndSign,
     required TResult orElse(),
   }) {
     if (getPendingTransaction != null) {
@@ -2211,142 +2306,134 @@ abstract class GetPendingTransaction implements WalletEvent {
 }
 
 /// @nodoc
-abstract class _$$BroadcastTransactionCopyWith<$Res> {
-  factory _$$BroadcastTransactionCopyWith(_$BroadcastTransaction value,
-          $Res Function(_$BroadcastTransaction) then) =
-      __$$BroadcastTransactionCopyWithImpl<$Res>;
-  $Res call({String recipient, double amount});
+abstract class _$$CreateAndSignCopyWith<$Res> {
+  factory _$$CreateAndSignCopyWith(
+          _$CreateAndSign value, $Res Function(_$CreateAndSign) then) =
+      __$$CreateAndSignCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String address, int amount});
 }
 
 /// @nodoc
-class __$$BroadcastTransactionCopyWithImpl<$Res>
-    extends _$WalletEventCopyWithImpl<$Res>
-    implements _$$BroadcastTransactionCopyWith<$Res> {
-  __$$BroadcastTransactionCopyWithImpl(_$BroadcastTransaction _value,
-      $Res Function(_$BroadcastTransaction) _then)
-      : super(_value, (v) => _then(v as _$BroadcastTransaction));
+class __$$CreateAndSignCopyWithImpl<$Res>
+    extends _$WalletEventCopyWithImpl<$Res, _$CreateAndSign>
+    implements _$$CreateAndSignCopyWith<$Res> {
+  __$$CreateAndSignCopyWithImpl(
+      _$CreateAndSign _value, $Res Function(_$CreateAndSign) _then)
+      : super(_value, _then);
 
-  @override
-  _$BroadcastTransaction get _value => super._value as _$BroadcastTransaction;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? recipient = freezed,
-    Object? amount = freezed,
+    Object? address = null,
+    Object? amount = null,
   }) {
-    return _then(_$BroadcastTransaction(
-      recipient: recipient == freezed
-          ? _value.recipient
-          : recipient // ignore: cast_nullable_to_non_nullable
+    return _then(_$CreateAndSign(
+      null == address
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
               as String,
-      amount: amount == freezed
+      null == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
-              as double,
+              as int,
     ));
   }
 }
 
 /// @nodoc
 
-class _$BroadcastTransaction implements BroadcastTransaction {
-  const _$BroadcastTransaction({required this.recipient, required this.amount});
+class _$CreateAndSign implements CreateAndSign {
+  const _$CreateAndSign(this.address, this.amount);
 
   @override
-  final String recipient;
+  final String address;
   @override
-  final double amount;
+  final int amount;
 
   @override
   String toString() {
-    return 'WalletEvent.broadcastTransaction(recipient: $recipient, amount: $amount)';
+    return 'WalletEvent.createAndSign(address: $address, amount: $amount)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$BroadcastTransaction &&
-            const DeepCollectionEquality().equals(other.recipient, recipient) &&
-            const DeepCollectionEquality().equals(other.amount, amount));
+            other is _$CreateAndSign &&
+            (identical(other.address, address) || other.address == address) &&
+            (identical(other.amount, amount) || other.amount == amount));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(recipient),
-      const DeepCollectionEquality().hash(amount));
+  int get hashCode => Object.hash(runtimeType, address, amount);
 
   @JsonKey(ignore: true)
   @override
-  _$$BroadcastTransactionCopyWith<_$BroadcastTransaction> get copyWith =>
-      __$$BroadcastTransactionCopyWithImpl<_$BroadcastTransaction>(
-          this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$CreateAndSignCopyWith<_$CreateAndSign> get copyWith =>
+      __$$CreateAndSignCopyWithImpl<_$CreateAndSign>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Mnemonic mnemonic) mnemonicChanged,
-    required TResult Function(Password password) passwordChanged,
-    required TResult Function(BlockchainUrl url) blockChainUrlChanged,
+    required TResult Function(MnemonicStr mnemonic) mnemonicChanged,
+    required TResult Function(String password) passwordChanged,
     required TResult Function() createWallet,
-    required TResult Function() loadWallet,
+    required TResult Function(WalletDto walletDto) restoreWallet,
+    required TResult Function() getWallets,
     required TResult Function() genSeed,
+    required TResult Function() getBalance,
     required TResult Function() getNewAddress,
     required TResult Function() getLastUsedAddress,
-    required TResult Function() sync,
+    required TResult Function(Blockchain blockchain) sync,
     required TResult Function() getConfirmedTransaction,
     required TResult Function() getPendingTransaction,
-    required TResult Function(String recipient, double amount)
-        broadcastTransaction,
-    required TResult Function() walletExists,
-    required TResult Function() getWallet,
+    required TResult Function(String address, int amount) createAndSign,
   }) {
-    return broadcastTransaction(recipient, amount);
+    return createAndSign(address, amount);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Mnemonic mnemonic)? mnemonicChanged,
-    TResult Function(Password password)? passwordChanged,
-    TResult Function(BlockchainUrl url)? blockChainUrlChanged,
-    TResult Function()? createWallet,
-    TResult Function()? loadWallet,
-    TResult Function()? genSeed,
-    TResult Function()? getNewAddress,
-    TResult Function()? getLastUsedAddress,
-    TResult Function()? sync,
-    TResult Function()? getConfirmedTransaction,
-    TResult Function()? getPendingTransaction,
-    TResult Function(String recipient, double amount)? broadcastTransaction,
-    TResult Function()? walletExists,
-    TResult Function()? getWallet,
+    TResult? Function(MnemonicStr mnemonic)? mnemonicChanged,
+    TResult? Function(String password)? passwordChanged,
+    TResult? Function()? createWallet,
+    TResult? Function(WalletDto walletDto)? restoreWallet,
+    TResult? Function()? getWallets,
+    TResult? Function()? genSeed,
+    TResult? Function()? getBalance,
+    TResult? Function()? getNewAddress,
+    TResult? Function()? getLastUsedAddress,
+    TResult? Function(Blockchain blockchain)? sync,
+    TResult? Function()? getConfirmedTransaction,
+    TResult? Function()? getPendingTransaction,
+    TResult? Function(String address, int amount)? createAndSign,
   }) {
-    return broadcastTransaction?.call(recipient, amount);
+    return createAndSign?.call(address, amount);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Mnemonic mnemonic)? mnemonicChanged,
-    TResult Function(Password password)? passwordChanged,
-    TResult Function(BlockchainUrl url)? blockChainUrlChanged,
+    TResult Function(MnemonicStr mnemonic)? mnemonicChanged,
+    TResult Function(String password)? passwordChanged,
     TResult Function()? createWallet,
-    TResult Function()? loadWallet,
+    TResult Function(WalletDto walletDto)? restoreWallet,
+    TResult Function()? getWallets,
     TResult Function()? genSeed,
+    TResult Function()? getBalance,
     TResult Function()? getNewAddress,
     TResult Function()? getLastUsedAddress,
-    TResult Function()? sync,
+    TResult Function(Blockchain blockchain)? sync,
     TResult Function()? getConfirmedTransaction,
     TResult Function()? getPendingTransaction,
-    TResult Function(String recipient, double amount)? broadcastTransaction,
-    TResult Function()? walletExists,
-    TResult Function()? getWallet,
+    TResult Function(String address, int amount)? createAndSign,
     required TResult orElse(),
   }) {
-    if (broadcastTransaction != null) {
-      return broadcastTransaction(recipient, amount);
+    if (createAndSign != null) {
+      return createAndSign(address, amount);
     }
     return orElse();
   }
@@ -2356,10 +2443,11 @@ class _$BroadcastTransaction implements BroadcastTransaction {
   TResult map<TResult extends Object?>({
     required TResult Function(MnemonicChanged value) mnemonicChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(BlockChainUrlChanged value) blockChainUrlChanged,
     required TResult Function(CreateWallet value) createWallet,
-    required TResult Function(LoadWallet value) loadWallet,
+    required TResult Function(RestoreWallet value) restoreWallet,
+    required TResult Function(GetWallets value) getWallets,
     required TResult Function(GenSeed value) genSeed,
+    required TResult Function(GetBalance value) getBalance,
     required TResult Function(GetNewAddress value) getNewAddress,
     required TResult Function(GetLastUsedAddress value) getLastUsedAddress,
     required TResult Function(Sync value) sync,
@@ -2367,32 +2455,29 @@ class _$BroadcastTransaction implements BroadcastTransaction {
         getConfirmedTransaction,
     required TResult Function(GetPendingTransaction value)
         getPendingTransaction,
-    required TResult Function(BroadcastTransaction value) broadcastTransaction,
-    required TResult Function(WalletExists value) walletExists,
-    required TResult Function(GetWallet value) getWallet,
+    required TResult Function(CreateAndSign value) createAndSign,
   }) {
-    return broadcastTransaction(this);
+    return createAndSign(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(MnemonicChanged value)? mnemonicChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
-    TResult Function(CreateWallet value)? createWallet,
-    TResult Function(LoadWallet value)? loadWallet,
-    TResult Function(GenSeed value)? genSeed,
-    TResult Function(GetNewAddress value)? getNewAddress,
-    TResult Function(GetLastUsedAddress value)? getLastUsedAddress,
-    TResult Function(Sync value)? sync,
-    TResult Function(GetConfirmedTransaction value)? getConfirmedTransaction,
-    TResult Function(GetPendingTransaction value)? getPendingTransaction,
-    TResult Function(BroadcastTransaction value)? broadcastTransaction,
-    TResult Function(WalletExists value)? walletExists,
-    TResult Function(GetWallet value)? getWallet,
+    TResult? Function(MnemonicChanged value)? mnemonicChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(CreateWallet value)? createWallet,
+    TResult? Function(RestoreWallet value)? restoreWallet,
+    TResult? Function(GetWallets value)? getWallets,
+    TResult? Function(GenSeed value)? genSeed,
+    TResult? Function(GetBalance value)? getBalance,
+    TResult? Function(GetNewAddress value)? getNewAddress,
+    TResult? Function(GetLastUsedAddress value)? getLastUsedAddress,
+    TResult? Function(Sync value)? sync,
+    TResult? Function(GetConfirmedTransaction value)? getConfirmedTransaction,
+    TResult? Function(GetPendingTransaction value)? getPendingTransaction,
+    TResult? Function(CreateAndSign value)? createAndSign,
   }) {
-    return broadcastTransaction?.call(this);
+    return createAndSign?.call(this);
   }
 
   @override
@@ -2400,405 +2485,43 @@ class _$BroadcastTransaction implements BroadcastTransaction {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MnemonicChanged value)? mnemonicChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
     TResult Function(CreateWallet value)? createWallet,
-    TResult Function(LoadWallet value)? loadWallet,
+    TResult Function(RestoreWallet value)? restoreWallet,
+    TResult Function(GetWallets value)? getWallets,
     TResult Function(GenSeed value)? genSeed,
+    TResult Function(GetBalance value)? getBalance,
     TResult Function(GetNewAddress value)? getNewAddress,
     TResult Function(GetLastUsedAddress value)? getLastUsedAddress,
     TResult Function(Sync value)? sync,
     TResult Function(GetConfirmedTransaction value)? getConfirmedTransaction,
     TResult Function(GetPendingTransaction value)? getPendingTransaction,
-    TResult Function(BroadcastTransaction value)? broadcastTransaction,
-    TResult Function(WalletExists value)? walletExists,
-    TResult Function(GetWallet value)? getWallet,
+    TResult Function(CreateAndSign value)? createAndSign,
     required TResult orElse(),
   }) {
-    if (broadcastTransaction != null) {
-      return broadcastTransaction(this);
+    if (createAndSign != null) {
+      return createAndSign(this);
     }
     return orElse();
   }
 }
 
-abstract class BroadcastTransaction implements WalletEvent {
-  const factory BroadcastTransaction(
-      {required final String recipient,
-      required final double amount}) = _$BroadcastTransaction;
+abstract class CreateAndSign implements WalletEvent {
+  const factory CreateAndSign(final String address, final int amount) =
+      _$CreateAndSign;
 
-  String get recipient => throw _privateConstructorUsedError;
-  double get amount => throw _privateConstructorUsedError;
+  String get address;
+  int get amount;
   @JsonKey(ignore: true)
-  _$$BroadcastTransactionCopyWith<_$BroadcastTransaction> get copyWith =>
+  _$$CreateAndSignCopyWith<_$CreateAndSign> get copyWith =>
       throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$WalletExistsCopyWith<$Res> {
-  factory _$$WalletExistsCopyWith(
-          _$WalletExists value, $Res Function(_$WalletExists) then) =
-      __$$WalletExistsCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$WalletExistsCopyWithImpl<$Res> extends _$WalletEventCopyWithImpl<$Res>
-    implements _$$WalletExistsCopyWith<$Res> {
-  __$$WalletExistsCopyWithImpl(
-      _$WalletExists _value, $Res Function(_$WalletExists) _then)
-      : super(_value, (v) => _then(v as _$WalletExists));
-
-  @override
-  _$WalletExists get _value => super._value as _$WalletExists;
-}
-
-/// @nodoc
-
-class _$WalletExists implements WalletExists {
-  const _$WalletExists();
-
-  @override
-  String toString() {
-    return 'WalletEvent.walletExists()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$WalletExists);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(Mnemonic mnemonic) mnemonicChanged,
-    required TResult Function(Password password) passwordChanged,
-    required TResult Function(BlockchainUrl url) blockChainUrlChanged,
-    required TResult Function() createWallet,
-    required TResult Function() loadWallet,
-    required TResult Function() genSeed,
-    required TResult Function() getNewAddress,
-    required TResult Function() getLastUsedAddress,
-    required TResult Function() sync,
-    required TResult Function() getConfirmedTransaction,
-    required TResult Function() getPendingTransaction,
-    required TResult Function(String recipient, double amount)
-        broadcastTransaction,
-    required TResult Function() walletExists,
-    required TResult Function() getWallet,
-  }) {
-    return walletExists();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Mnemonic mnemonic)? mnemonicChanged,
-    TResult Function(Password password)? passwordChanged,
-    TResult Function(BlockchainUrl url)? blockChainUrlChanged,
-    TResult Function()? createWallet,
-    TResult Function()? loadWallet,
-    TResult Function()? genSeed,
-    TResult Function()? getNewAddress,
-    TResult Function()? getLastUsedAddress,
-    TResult Function()? sync,
-    TResult Function()? getConfirmedTransaction,
-    TResult Function()? getPendingTransaction,
-    TResult Function(String recipient, double amount)? broadcastTransaction,
-    TResult Function()? walletExists,
-    TResult Function()? getWallet,
-  }) {
-    return walletExists?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Mnemonic mnemonic)? mnemonicChanged,
-    TResult Function(Password password)? passwordChanged,
-    TResult Function(BlockchainUrl url)? blockChainUrlChanged,
-    TResult Function()? createWallet,
-    TResult Function()? loadWallet,
-    TResult Function()? genSeed,
-    TResult Function()? getNewAddress,
-    TResult Function()? getLastUsedAddress,
-    TResult Function()? sync,
-    TResult Function()? getConfirmedTransaction,
-    TResult Function()? getPendingTransaction,
-    TResult Function(String recipient, double amount)? broadcastTransaction,
-    TResult Function()? walletExists,
-    TResult Function()? getWallet,
-    required TResult orElse(),
-  }) {
-    if (walletExists != null) {
-      return walletExists();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(MnemonicChanged value) mnemonicChanged,
-    required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(BlockChainUrlChanged value) blockChainUrlChanged,
-    required TResult Function(CreateWallet value) createWallet,
-    required TResult Function(LoadWallet value) loadWallet,
-    required TResult Function(GenSeed value) genSeed,
-    required TResult Function(GetNewAddress value) getNewAddress,
-    required TResult Function(GetLastUsedAddress value) getLastUsedAddress,
-    required TResult Function(Sync value) sync,
-    required TResult Function(GetConfirmedTransaction value)
-        getConfirmedTransaction,
-    required TResult Function(GetPendingTransaction value)
-        getPendingTransaction,
-    required TResult Function(BroadcastTransaction value) broadcastTransaction,
-    required TResult Function(WalletExists value) walletExists,
-    required TResult Function(GetWallet value) getWallet,
-  }) {
-    return walletExists(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(MnemonicChanged value)? mnemonicChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
-    TResult Function(CreateWallet value)? createWallet,
-    TResult Function(LoadWallet value)? loadWallet,
-    TResult Function(GenSeed value)? genSeed,
-    TResult Function(GetNewAddress value)? getNewAddress,
-    TResult Function(GetLastUsedAddress value)? getLastUsedAddress,
-    TResult Function(Sync value)? sync,
-    TResult Function(GetConfirmedTransaction value)? getConfirmedTransaction,
-    TResult Function(GetPendingTransaction value)? getPendingTransaction,
-    TResult Function(BroadcastTransaction value)? broadcastTransaction,
-    TResult Function(WalletExists value)? walletExists,
-    TResult Function(GetWallet value)? getWallet,
-  }) {
-    return walletExists?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(MnemonicChanged value)? mnemonicChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
-    TResult Function(CreateWallet value)? createWallet,
-    TResult Function(LoadWallet value)? loadWallet,
-    TResult Function(GenSeed value)? genSeed,
-    TResult Function(GetNewAddress value)? getNewAddress,
-    TResult Function(GetLastUsedAddress value)? getLastUsedAddress,
-    TResult Function(Sync value)? sync,
-    TResult Function(GetConfirmedTransaction value)? getConfirmedTransaction,
-    TResult Function(GetPendingTransaction value)? getPendingTransaction,
-    TResult Function(BroadcastTransaction value)? broadcastTransaction,
-    TResult Function(WalletExists value)? walletExists,
-    TResult Function(GetWallet value)? getWallet,
-    required TResult orElse(),
-  }) {
-    if (walletExists != null) {
-      return walletExists(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class WalletExists implements WalletEvent {
-  const factory WalletExists() = _$WalletExists;
-}
-
-/// @nodoc
-abstract class _$$GetWalletCopyWith<$Res> {
-  factory _$$GetWalletCopyWith(
-          _$GetWallet value, $Res Function(_$GetWallet) then) =
-      __$$GetWalletCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$GetWalletCopyWithImpl<$Res> extends _$WalletEventCopyWithImpl<$Res>
-    implements _$$GetWalletCopyWith<$Res> {
-  __$$GetWalletCopyWithImpl(
-      _$GetWallet _value, $Res Function(_$GetWallet) _then)
-      : super(_value, (v) => _then(v as _$GetWallet));
-
-  @override
-  _$GetWallet get _value => super._value as _$GetWallet;
-}
-
-/// @nodoc
-
-class _$GetWallet implements GetWallet {
-  const _$GetWallet();
-
-  @override
-  String toString() {
-    return 'WalletEvent.getWallet()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GetWallet);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(Mnemonic mnemonic) mnemonicChanged,
-    required TResult Function(Password password) passwordChanged,
-    required TResult Function(BlockchainUrl url) blockChainUrlChanged,
-    required TResult Function() createWallet,
-    required TResult Function() loadWallet,
-    required TResult Function() genSeed,
-    required TResult Function() getNewAddress,
-    required TResult Function() getLastUsedAddress,
-    required TResult Function() sync,
-    required TResult Function() getConfirmedTransaction,
-    required TResult Function() getPendingTransaction,
-    required TResult Function(String recipient, double amount)
-        broadcastTransaction,
-    required TResult Function() walletExists,
-    required TResult Function() getWallet,
-  }) {
-    return getWallet();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Mnemonic mnemonic)? mnemonicChanged,
-    TResult Function(Password password)? passwordChanged,
-    TResult Function(BlockchainUrl url)? blockChainUrlChanged,
-    TResult Function()? createWallet,
-    TResult Function()? loadWallet,
-    TResult Function()? genSeed,
-    TResult Function()? getNewAddress,
-    TResult Function()? getLastUsedAddress,
-    TResult Function()? sync,
-    TResult Function()? getConfirmedTransaction,
-    TResult Function()? getPendingTransaction,
-    TResult Function(String recipient, double amount)? broadcastTransaction,
-    TResult Function()? walletExists,
-    TResult Function()? getWallet,
-  }) {
-    return getWallet?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Mnemonic mnemonic)? mnemonicChanged,
-    TResult Function(Password password)? passwordChanged,
-    TResult Function(BlockchainUrl url)? blockChainUrlChanged,
-    TResult Function()? createWallet,
-    TResult Function()? loadWallet,
-    TResult Function()? genSeed,
-    TResult Function()? getNewAddress,
-    TResult Function()? getLastUsedAddress,
-    TResult Function()? sync,
-    TResult Function()? getConfirmedTransaction,
-    TResult Function()? getPendingTransaction,
-    TResult Function(String recipient, double amount)? broadcastTransaction,
-    TResult Function()? walletExists,
-    TResult Function()? getWallet,
-    required TResult orElse(),
-  }) {
-    if (getWallet != null) {
-      return getWallet();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(MnemonicChanged value) mnemonicChanged,
-    required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(BlockChainUrlChanged value) blockChainUrlChanged,
-    required TResult Function(CreateWallet value) createWallet,
-    required TResult Function(LoadWallet value) loadWallet,
-    required TResult Function(GenSeed value) genSeed,
-    required TResult Function(GetNewAddress value) getNewAddress,
-    required TResult Function(GetLastUsedAddress value) getLastUsedAddress,
-    required TResult Function(Sync value) sync,
-    required TResult Function(GetConfirmedTransaction value)
-        getConfirmedTransaction,
-    required TResult Function(GetPendingTransaction value)
-        getPendingTransaction,
-    required TResult Function(BroadcastTransaction value) broadcastTransaction,
-    required TResult Function(WalletExists value) walletExists,
-    required TResult Function(GetWallet value) getWallet,
-  }) {
-    return getWallet(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(MnemonicChanged value)? mnemonicChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
-    TResult Function(CreateWallet value)? createWallet,
-    TResult Function(LoadWallet value)? loadWallet,
-    TResult Function(GenSeed value)? genSeed,
-    TResult Function(GetNewAddress value)? getNewAddress,
-    TResult Function(GetLastUsedAddress value)? getLastUsedAddress,
-    TResult Function(Sync value)? sync,
-    TResult Function(GetConfirmedTransaction value)? getConfirmedTransaction,
-    TResult Function(GetPendingTransaction value)? getPendingTransaction,
-    TResult Function(BroadcastTransaction value)? broadcastTransaction,
-    TResult Function(WalletExists value)? walletExists,
-    TResult Function(GetWallet value)? getWallet,
-  }) {
-    return getWallet?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(MnemonicChanged value)? mnemonicChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(BlockChainUrlChanged value)? blockChainUrlChanged,
-    TResult Function(CreateWallet value)? createWallet,
-    TResult Function(LoadWallet value)? loadWallet,
-    TResult Function(GenSeed value)? genSeed,
-    TResult Function(GetNewAddress value)? getNewAddress,
-    TResult Function(GetLastUsedAddress value)? getLastUsedAddress,
-    TResult Function(Sync value)? sync,
-    TResult Function(GetConfirmedTransaction value)? getConfirmedTransaction,
-    TResult Function(GetPendingTransaction value)? getPendingTransaction,
-    TResult Function(BroadcastTransaction value)? broadcastTransaction,
-    TResult Function(WalletExists value)? walletExists,
-    TResult Function(GetWallet value)? getWallet,
-    required TResult orElse(),
-  }) {
-    if (getWallet != null) {
-      return getWallet(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class GetWallet implements WalletEvent {
-  const factory GetWallet() = _$GetWallet;
 }
 
 /// @nodoc
 mixin _$WalletState {
   WalletEntity? get walletEntity => throw _privateConstructorUsedError;
-  bool? get walletExists => throw _privateConstructorUsedError;
-  List<TransactionDTO>? get transactions => throw _privateConstructorUsedError;
   bool get isSubmitting => throw _privateConstructorUsedError;
   bool get showErrorMessage => throw _privateConstructorUsedError;
-  Option<Either<WalletFailure, String>> get walletFailureOrSuccessOption =>
+  Option<Either<WalletFailure, dynamic>> get walletFailureOrSuccessOption =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -2810,71 +2533,64 @@ mixin _$WalletState {
 abstract class $WalletStateCopyWith<$Res> {
   factory $WalletStateCopyWith(
           WalletState value, $Res Function(WalletState) then) =
-      _$WalletStateCopyWithImpl<$Res>;
+      _$WalletStateCopyWithImpl<$Res, WalletState>;
+  @useResult
   $Res call(
       {WalletEntity? walletEntity,
-      bool? walletExists,
-      List<TransactionDTO>? transactions,
       bool isSubmitting,
       bool showErrorMessage,
-      Option<Either<WalletFailure, String>> walletFailureOrSuccessOption});
+      Option<Either<WalletFailure, dynamic>> walletFailureOrSuccessOption});
 
   $WalletEntityCopyWith<$Res>? get walletEntity;
 }
 
 /// @nodoc
-class _$WalletStateCopyWithImpl<$Res> implements $WalletStateCopyWith<$Res> {
+class _$WalletStateCopyWithImpl<$Res, $Val extends WalletState>
+    implements $WalletStateCopyWith<$Res> {
   _$WalletStateCopyWithImpl(this._value, this._then);
 
-  final WalletState _value;
   // ignore: unused_field
-  final $Res Function(WalletState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? walletEntity = freezed,
-    Object? walletExists = freezed,
-    Object? transactions = freezed,
-    Object? isSubmitting = freezed,
-    Object? showErrorMessage = freezed,
-    Object? walletFailureOrSuccessOption = freezed,
+    Object? isSubmitting = null,
+    Object? showErrorMessage = null,
+    Object? walletFailureOrSuccessOption = null,
   }) {
     return _then(_value.copyWith(
-      walletEntity: walletEntity == freezed
+      walletEntity: freezed == walletEntity
           ? _value.walletEntity
           : walletEntity // ignore: cast_nullable_to_non_nullable
               as WalletEntity?,
-      walletExists: walletExists == freezed
-          ? _value.walletExists
-          : walletExists // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      transactions: transactions == freezed
-          ? _value.transactions
-          : transactions // ignore: cast_nullable_to_non_nullable
-              as List<TransactionDTO>?,
-      isSubmitting: isSubmitting == freezed
+      isSubmitting: null == isSubmitting
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
               as bool,
-      showErrorMessage: showErrorMessage == freezed
+      showErrorMessage: null == showErrorMessage
           ? _value.showErrorMessage
           : showErrorMessage // ignore: cast_nullable_to_non_nullable
               as bool,
-      walletFailureOrSuccessOption: walletFailureOrSuccessOption == freezed
+      walletFailureOrSuccessOption: null == walletFailureOrSuccessOption
           ? _value.walletFailureOrSuccessOption
           : walletFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
-              as Option<Either<WalletFailure, String>>,
-    ));
+              as Option<Either<WalletFailure, dynamic>>,
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $WalletEntityCopyWith<$Res>? get walletEntity {
     if (_value.walletEntity == null) {
       return null;
     }
 
     return $WalletEntityCopyWith<$Res>(_value.walletEntity!, (value) {
-      return _then(_value.copyWith(walletEntity: value));
+      return _then(_value.copyWith(walletEntity: value) as $Val);
     });
   }
 }
@@ -2886,62 +2602,50 @@ abstract class _$$_WalletStateCopyWith<$Res>
           _$_WalletState value, $Res Function(_$_WalletState) then) =
       __$$_WalletStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {WalletEntity? walletEntity,
-      bool? walletExists,
-      List<TransactionDTO>? transactions,
       bool isSubmitting,
       bool showErrorMessage,
-      Option<Either<WalletFailure, String>> walletFailureOrSuccessOption});
+      Option<Either<WalletFailure, dynamic>> walletFailureOrSuccessOption});
 
   @override
   $WalletEntityCopyWith<$Res>? get walletEntity;
 }
 
 /// @nodoc
-class __$$_WalletStateCopyWithImpl<$Res> extends _$WalletStateCopyWithImpl<$Res>
+class __$$_WalletStateCopyWithImpl<$Res>
+    extends _$WalletStateCopyWithImpl<$Res, _$_WalletState>
     implements _$$_WalletStateCopyWith<$Res> {
   __$$_WalletStateCopyWithImpl(
       _$_WalletState _value, $Res Function(_$_WalletState) _then)
-      : super(_value, (v) => _then(v as _$_WalletState));
+      : super(_value, _then);
 
-  @override
-  _$_WalletState get _value => super._value as _$_WalletState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? walletEntity = freezed,
-    Object? walletExists = freezed,
-    Object? transactions = freezed,
-    Object? isSubmitting = freezed,
-    Object? showErrorMessage = freezed,
-    Object? walletFailureOrSuccessOption = freezed,
+    Object? isSubmitting = null,
+    Object? showErrorMessage = null,
+    Object? walletFailureOrSuccessOption = null,
   }) {
     return _then(_$_WalletState(
-      walletEntity: walletEntity == freezed
+      walletEntity: freezed == walletEntity
           ? _value.walletEntity
           : walletEntity // ignore: cast_nullable_to_non_nullable
               as WalletEntity?,
-      walletExists: walletExists == freezed
-          ? _value.walletExists
-          : walletExists // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      transactions: transactions == freezed
-          ? _value._transactions
-          : transactions // ignore: cast_nullable_to_non_nullable
-              as List<TransactionDTO>?,
-      isSubmitting: isSubmitting == freezed
+      isSubmitting: null == isSubmitting
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
               as bool,
-      showErrorMessage: showErrorMessage == freezed
+      showErrorMessage: null == showErrorMessage
           ? _value.showErrorMessage
           : showErrorMessage // ignore: cast_nullable_to_non_nullable
               as bool,
-      walletFailureOrSuccessOption: walletFailureOrSuccessOption == freezed
+      walletFailureOrSuccessOption: null == walletFailureOrSuccessOption
           ? _value.walletFailureOrSuccessOption
           : walletFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
-              as Option<Either<WalletFailure, String>>,
+              as Option<Either<WalletFailure, dynamic>>,
     ));
   }
 }
@@ -2951,36 +2655,22 @@ class __$$_WalletStateCopyWithImpl<$Res> extends _$WalletStateCopyWithImpl<$Res>
 class _$_WalletState implements _WalletState {
   const _$_WalletState(
       {this.walletEntity,
-      this.walletExists,
-      final List<TransactionDTO>? transactions,
       required this.isSubmitting,
       required this.showErrorMessage,
-      required this.walletFailureOrSuccessOption})
-      : _transactions = transactions;
+      required this.walletFailureOrSuccessOption});
 
   @override
   final WalletEntity? walletEntity;
-  @override
-  final bool? walletExists;
-  final List<TransactionDTO>? _transactions;
-  @override
-  List<TransactionDTO>? get transactions {
-    final value = _transactions;
-    if (value == null) return null;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
   @override
   final bool isSubmitting;
   @override
   final bool showErrorMessage;
   @override
-  final Option<Either<WalletFailure, String>> walletFailureOrSuccessOption;
+  final Option<Either<WalletFailure, dynamic>> walletFailureOrSuccessOption;
 
   @override
   String toString() {
-    return 'WalletState(walletEntity: $walletEntity, walletExists: $walletExists, transactions: $transactions, isSubmitting: $isSubmitting, showErrorMessage: $showErrorMessage, walletFailureOrSuccessOption: $walletFailureOrSuccessOption)';
+    return 'WalletState(walletEntity: $walletEntity, isSubmitting: $isSubmitting, showErrorMessage: $showErrorMessage, walletFailureOrSuccessOption: $walletFailureOrSuccessOption)';
   }
 
   @override
@@ -2988,33 +2678,25 @@ class _$_WalletState implements _WalletState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_WalletState &&
-            const DeepCollectionEquality()
-                .equals(other.walletEntity, walletEntity) &&
-            const DeepCollectionEquality()
-                .equals(other.walletExists, walletExists) &&
-            const DeepCollectionEquality()
-                .equals(other._transactions, _transactions) &&
-            const DeepCollectionEquality()
-                .equals(other.isSubmitting, isSubmitting) &&
-            const DeepCollectionEquality()
-                .equals(other.showErrorMessage, showErrorMessage) &&
-            const DeepCollectionEquality().equals(
-                other.walletFailureOrSuccessOption,
-                walletFailureOrSuccessOption));
+            (identical(other.walletEntity, walletEntity) ||
+                other.walletEntity == walletEntity) &&
+            (identical(other.isSubmitting, isSubmitting) ||
+                other.isSubmitting == isSubmitting) &&
+            (identical(other.showErrorMessage, showErrorMessage) ||
+                other.showErrorMessage == showErrorMessage) &&
+            (identical(other.walletFailureOrSuccessOption,
+                    walletFailureOrSuccessOption) ||
+                other.walletFailureOrSuccessOption ==
+                    walletFailureOrSuccessOption));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(walletEntity),
-      const DeepCollectionEquality().hash(walletExists),
-      const DeepCollectionEquality().hash(_transactions),
-      const DeepCollectionEquality().hash(isSubmitting),
-      const DeepCollectionEquality().hash(showErrorMessage),
-      const DeepCollectionEquality().hash(walletFailureOrSuccessOption));
+  int get hashCode => Object.hash(runtimeType, walletEntity, isSubmitting,
+      showErrorMessage, walletFailureOrSuccessOption);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_WalletStateCopyWith<_$_WalletState> get copyWith =>
       __$$_WalletStateCopyWithImpl<_$_WalletState>(this, _$identity);
 }
@@ -3022,26 +2704,19 @@ class _$_WalletState implements _WalletState {
 abstract class _WalletState implements WalletState {
   const factory _WalletState(
       {final WalletEntity? walletEntity,
-      final bool? walletExists,
-      final List<TransactionDTO>? transactions,
       required final bool isSubmitting,
       required final bool showErrorMessage,
-      required final Option<Either<WalletFailure, String>>
+      required final Option<Either<WalletFailure, dynamic>>
           walletFailureOrSuccessOption}) = _$_WalletState;
 
   @override
-  WalletEntity? get walletEntity => throw _privateConstructorUsedError;
+  WalletEntity? get walletEntity;
   @override
-  bool? get walletExists => throw _privateConstructorUsedError;
+  bool get isSubmitting;
   @override
-  List<TransactionDTO>? get transactions => throw _privateConstructorUsedError;
+  bool get showErrorMessage;
   @override
-  bool get isSubmitting => throw _privateConstructorUsedError;
-  @override
-  bool get showErrorMessage => throw _privateConstructorUsedError;
-  @override
-  Option<Either<WalletFailure, String>> get walletFailureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<WalletFailure, dynamic>> get walletFailureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
   _$$_WalletStateCopyWith<_$_WalletState> get copyWith =>
