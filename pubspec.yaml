@@ -21,7 +21,10 @@ dependencies:
   injectable: ^1.5.3
   validators:
   google_fonts: ^3.0.1
-  bdk_flutter: ^0.3.0
+  bdk_flutter:
+    git:
+      url: https://github.com/LtbLightning/bdk-flutter.git
+      ref: main
 dev_dependencies:
   build_runner: ^2.3.2
   freezed: ^2.0.3+1

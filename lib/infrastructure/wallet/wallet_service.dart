@@ -165,7 +165,7 @@ Future<Descriptor> createDescriptorSecret(WalletDto walletDto, KeychainKind keyC
       mnemonic: mnemonic,
       password: walletDto.password
   );
-  final descriptor = await Descriptor.newBip84(secretKey: descriptorSecretKey.asString(), network: walletDto.network, keyChainKind: keyChainKind);
+  final descriptor = await Descriptor.newBip84(secretKey: descriptorSecretKey, network: walletDto.network, keychain: keyChainKind);
   return descriptor;
 }
 
