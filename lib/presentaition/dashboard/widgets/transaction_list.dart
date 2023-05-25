@@ -18,16 +18,17 @@ class _TransactionListState extends State<TransactionList> {
   Widget build(BuildContext context) {
     return BlocConsumer<WalletBloc, WalletState>(
       listener: (context, state) {
-        state.walletFailureOrSuccessOption.fold(() => Navigator.of(context)
-            .pushReplacementNamed(Routes.wrapper), (a) =>
-            a.fold((l) {
-              final snackBar = SnackBar(
-                content: Text(l.toString() ,style: const TextStyle(fontSize: 13, color: Colors.white),),
-
-              );
-              ScaffoldMessenger.of(context).showSnackBar(snackBar);
-            },
-                    (r) => null ));
+        state.walletFailureOrSuccessOption.fold(
+            () => Navigator.of(context).pushReplacementNamed(Routes.wrapper),
+            (a) => a.fold((l) {
+                  final snackBar = SnackBar(
+                    content: Text(
+                      l.toString(),
+                      style: const TextStyle(fontSize: 13, color: Colors.white),
+                    ),
+                  );
+                  ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                }, (r) => null));
       },
       listenWhen: (p, q) => p.isSubmitting != q.isSubmitting,
       builder: (context, state) {
@@ -41,23 +42,20 @@ class _TransactionListState extends State<TransactionList> {
                   padding: const EdgeInsets.only(top: 50),
                   child: (state.walletEntity!.transactions != null)
                       ? ListView.builder(
+                          key: const Key('transaction_list_view'),
                           shrinkWrap: true,
                           reverse: true,
                           physics: const NeverScrollableScrollPhysics(),
                           itemCount: state.walletEntity!.transactions?.length,
                           itemBuilder: (context, index) => TransactionTile(
-                                txId: state
-                                    .walletEntity!.transactions![index].txid,
-                                fees: state
-                                    .walletEntity!.transactions![index].fee
-                                    .toString(),
-                                sent: state
-                                    .walletEntity!.transactions![index].sent
-                                  ,
-                                received: state
-                                    .walletEntity!.transactions![index].received
-
-                              ))
+                              txId:
+                                  state.walletEntity!.transactions![index].txid,
+                              fees: state.walletEntity!.transactions![index].fee
+                                  .toString(),
+                              sent:
+                                  state.walletEntity!.transactions![index].sent,
+                              received: state
+                                  .walletEntity!.transactions![index].received))
                       : Text('No Transactions Found',
                           style: GoogleFonts.montserrat(
                               fontSize: 15,

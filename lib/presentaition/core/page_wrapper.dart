@@ -39,12 +39,7 @@ class _PageWrapperState extends State<PageWrapper> {
             controller: pageController,
             physics: const NeverScrollableScrollPhysics(),
             onPageChanged: pageChanged,
-            children: const [
-              Home(),
-              Send(),
-              Receive(),
-              LoadBdkWallet()
-            ],
+            children: const [Home(), Send(), Receive(), LoadBdkWallet()],
           ),
         ),
         floatingActionButton: FloatingActionButton(
@@ -130,6 +125,7 @@ class _PageWrapperState extends State<PageWrapper> {
   Widget bottomAppBarItem(
       String label, int index, int selectedIndex, Icon? icon) {
     return GestureDetector(
+      key: Key(label),
       onTap: () {
         bottomTapped(index);
       },

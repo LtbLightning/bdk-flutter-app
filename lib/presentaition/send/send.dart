@@ -125,6 +125,7 @@ class _SendState extends State<Send> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: <Widget>[
                               TextFormField(
+                                key: const Key('address_text_field'),
                                 controller: _address,
                                 validator: (value) {
                                   if (value == null ||
@@ -167,6 +168,7 @@ class _SendState extends State<Send> {
                                 height: 10,
                               ),
                               TextFormField(
+                                  key: const Key('amount_text_field'),
                                   keyboardType:
                                       const TextInputType.numberWithOptions(),
                                   controller: _amount,
@@ -208,6 +210,7 @@ class _SendState extends State<Send> {
                                 height: 10,
                               ),
                               GestureDetector(
+                                key: const Key('send_btc_button'),
                                 onTap: () {
                                   _formKey.currentState?.save();
                                   (_formKey.currentState!.validate())
@@ -216,8 +219,8 @@ class _SendState extends State<Send> {
                                               WalletEvent.createAndSign(
                                                   _address.text,
                                                   int.parse(_amount.text))),
-                                          // _address.clear(),
-                                          // _amount.clear(),
+                                          _address.clear(),
+                                          _amount.clear(),
                                         }
                                       : ScaffoldMessenger.of(context)
                                           .showSnackBar(SnackBar(

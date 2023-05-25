@@ -63,6 +63,7 @@ class _HomeState extends State<Home> {
                   centerTitle: false,
                   actions: [
                     IconButton(
+                        key: const Key('sync_button'),
                         onPressed: () {
                           context.read<WalletBloc>().add(WalletEvent.sync(
                               blockchainBloc
