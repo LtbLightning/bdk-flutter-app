@@ -17,16 +17,17 @@ class CreateBdkWallet extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<WalletBloc, WalletState>(
       listener: (context, state) {
-        state.walletFailureOrSuccessOption.fold(() => Navigator.of(context)
-            .pushReplacementNamed(Routes.wrapper), (a) =>
-            a.fold((l) {
-              final snackBar = SnackBar(
-                content: Text(l.toString() ,style: const TextStyle(fontSize: 13, color: Colors.white),),
-
-              );
-              ScaffoldMessenger.of(context).showSnackBar(snackBar);
-            },
-                    (r) => null ));
+        state.walletFailureOrSuccessOption.fold(
+            () => Navigator.of(context).pushReplacementNamed(Routes.wrapper),
+            (a) => a.fold((l) {
+                  final snackBar = SnackBar(
+                    content: Text(
+                      l.toString(),
+                      style: const TextStyle(fontSize: 13, color: Colors.white),
+                    ),
+                  );
+                  ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                }, (r) => null));
       },
       listenWhen: (p, q) => p.isSubmitting != q.isSubmitting,
       buildWhen: (p, q) => p.isSubmitting != q.isSubmitting,
@@ -144,6 +145,7 @@ class SignInFormState extends State<SignInForm> {
         child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: <
             Widget>[
           TextFormField(
+            key: const Key('mnemonic_textfield'),
             controller: mnemonic,
             onChanged: (value) =>
                 walletBloc.add(WalletEvent.mnemonicChanged(MnemonicStr(value))),
@@ -173,6 +175,7 @@ class SignInFormState extends State<SignInForm> {
                   color: Colors.black.withOpacity(.4)),
               floatingLabelBehavior: FloatingLabelBehavior.always,
               suffixIcon: IconButton(
+                key: const Key('gen_seed_button'),
                 focusColor: Colors.blue,
                 icon: const Icon(
                   CupertinoIcons.arrow_2_circlepath,
@@ -188,6 +191,7 @@ class SignInFormState extends State<SignInForm> {
             height: 10,
           ),
           TextFormField(
+              key: const Key('password_textfield'),
               onChanged: (value) =>
                   walletBloc.add(WalletEvent.passwordChanged(value)),
               style: GoogleFonts.montserrat(
@@ -221,6 +225,7 @@ class SignInFormState extends State<SignInForm> {
             height: 10,
           ),
           TextFormField(
+              key: const Key('bitcoin_url_textfield'),
               onChanged: (value) => blockchainBloc.add(
                   BlockchainEvent.blockChainUrlChanged(BlockchainUrl(value))),
               validator: (_) => blockchainBloc
@@ -260,6 +265,7 @@ class SignInFormState extends State<SignInForm> {
             height: 10,
           ),
           DropdownButton<BlockChainType>(
+              key: const Key('blockchain_drop_down'),
               borderRadius: BorderRadius.circular(10),
               isExpanded: true,
               alignment: AlignmentDirectional.centerStart,
@@ -280,6 +286,7 @@ class SignInFormState extends State<SignInForm> {
             height: 20,
           ),
           GestureDetector(
+            key: const Key('create_wallet_button'),
             onTap: () {
               if (walletBloc.state.walletEntity!.mnemonic!.isValid()) {
                 walletBloc.add(const WalletEvent.createWallet());

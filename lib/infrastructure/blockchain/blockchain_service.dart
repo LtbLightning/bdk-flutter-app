@@ -26,7 +26,8 @@ class BlockchainService extends IBlockchainService {
   Future<Either<BlockchainFailure, Unit>> broadcastTransaction(
       {required PartiallySignedTransaction psbt}) async {
     try {
-      await _blockchain!.broadcast(psbt);
+      final tx = await psbt.extractTx();
+      await _blockchain!.broadcast(tx);
       return const Right(unit);
     } on Exception catch (_) {
       return const Left(BlockchainFailure.unexpected());

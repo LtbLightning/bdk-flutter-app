@@ -4,7 +4,6 @@ import 'package:bloc/bloc.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:meta/meta.dart';
 
 import '../../core/constants/enums.dart';
 import '../../domain/connectivity/i_connectivity_service.dart';
@@ -33,10 +32,4 @@ class ConnectivityCubit extends Cubit<ConnectivityState> {
   void emitConnected(ConnectionType type) => emit(Connected(type));
 
   void emitDisconnected() => emit(Disconnected());
-
-  @override
-  Future<void> close() {
-    connectivitySubscription.cancel();
-    return super.close();
-  }
 }

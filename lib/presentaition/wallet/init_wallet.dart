@@ -57,6 +57,7 @@ class InitWallet extends StatelessWidget {
             const Spacer(),
             const SizedBox(height: 10),
             CupertinoButton(
+              key: const Key('create_new_wallet'),
               color: Colors.black,
               padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
               onPressed: () {
@@ -73,6 +74,7 @@ class InitWallet extends StatelessWidget {
             ),
             const SizedBox(height: 10),
             CupertinoButton(
+              key: const Key('load_wallet'),
               color: Colors.black,
               padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
               onPressed: () {
