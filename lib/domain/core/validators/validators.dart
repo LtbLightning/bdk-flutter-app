@@ -1,6 +1,5 @@
 import 'package:bdk_wallet/core/failures/bdk_failures.dart';
 import 'package:dartz/dartz.dart';
-import 'package:validators/validators.dart';
 
 
 

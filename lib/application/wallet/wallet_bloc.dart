@@ -4,7 +4,7 @@ import 'package:bdk_flutter/bdk_flutter.dart';
 import 'package:bdk_wallet/domain/core/value_objects/value_objects.dart';
 import 'package:bdk_wallet/domain/wallet/entity/wallet.dart';
 import 'package:bdk_wallet/domain/wallet/failure/wallet_failure.dart';
-import 'package:bdk_wallet/domain/wallet/interface/i_wallet_Service.dart';
+import 'package:bdk_wallet/domain/wallet/interface/i_wallet_service.dart';
 import 'package:bdk_wallet/infrastructure/wallet/dto/wallet_dto.dart';
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
@@ -32,7 +32,7 @@ class WalletBloc extends Bloc<WalletEvent, WalletState> {
     on<GetPendingTransaction>(_onGetPendingTransaction);
     on<CreateAndSign>(_onCreateAndSign);
     on<RestoreWallet>(_onRestoreWallet);
-     on<GetWallets>(_onGetWallets);
+    on<GetWallets>(_onGetWallets);
   }
 
   FutureOr<void> _onCreateWallet(
@@ -40,7 +40,8 @@ class WalletBloc extends Bloc<WalletEvent, WalletState> {
     emit(state.copyWith(
         isSubmitting: true, walletFailureOrSuccessOption: some(right(unit))));
     print(state.walletEntity!.mnemonic!.getOrCrash());
-    final failureOrSuccess = await _walletService.createWallet(walletDto: state.walletEntity!.toWalletDto());
+    final failureOrSuccess = await _walletService.createWallet(
+        walletDto: state.walletEntity!.toWalletDto());
 
     if (failureOrSuccess.isLeft()) {
       final failure = failureOrSuccess.fold((l) => l, (r) => null);
@@ -87,7 +88,8 @@ class WalletBloc extends Bloc<WalletEvent, WalletState> {
     } else {
       final success = failureOrSuccess.fold((l) => null, (r) => r);
       final wallet =
-      state.walletEntity?.copyWith(mnemonic: MnemonicStr(success!));
+          state.walletEntity?.copyWith(mnemonic: MnemonicStr(success!));
+
       emit(state.copyWith(
           walletEntity: wallet,
           isSubmitting: false,
@@ -110,6 +112,7 @@ class WalletBloc extends Bloc<WalletEvent, WalletState> {
     } else {
       final success = failureOrSuccess.fold((l) => null, (r) => r);
       final wallet = state.walletEntity?.copyWith(address: success!);
+
       emit(state.copyWith(
           walletEntity: wallet,
           isSubmitting: false,
@@ -122,43 +125,32 @@ class WalletBloc extends Bloc<WalletEvent, WalletState> {
     emit(state.copyWith(
         isSubmitting: true, walletFailureOrSuccessOption: none()));
     final failureOrSuccess = await _walletService.sync(event.blockchain);
-    final res = await _walletService.getAllWallets();
+    final _ = await _walletService.getAllWallets();
     add(const WalletEvent.getConfirmedTransaction());
     add(const WalletEvent.getBalance());
-    if (failureOrSuccess.isLeft()) {
-      final failure = failureOrSuccess.fold((l) => l, (r) => null);
-      emit(state.copyWith(
-          isSubmitting: false,
-          showErrorMessage: true,
-          walletFailureOrSuccessOption: some(left(failure!))));
-    } else {
-      emit(state.copyWith(
-          isSubmitting: false,
-          showErrorMessage: true,
-          walletFailureOrSuccessOption: const None()));
-    }
+    final value = failureOrSuccess.map((_) => none());
+
+    emit(state.copyWith(
+        isSubmitting: false,
+        showErrorMessage: true,
+        walletFailureOrSuccessOption: some(value)));
   }
 
   Future<FutureOr<void>> _onGetConfirmedTransaction(
       GetConfirmedTransaction event, Emitter<WalletState> emit) async {
     emit(state.copyWith(
         isSubmitting: true, walletFailureOrSuccessOption: none()));
+
     final failureOrSuccess = await _walletService.getConfirmedTransactions();
-    if (failureOrSuccess.isLeft()) {
-      final failure = failureOrSuccess.fold((l) => l, (r) => null);
-      emit(state.copyWith(
-          isSubmitting: false,
-          showErrorMessage: true,
-          walletFailureOrSuccessOption: some(left(failure!))));
-    } else {
-      final success = failureOrSuccess.fold((l) => null, (r) => r);
-      final wallet = state.walletEntity?.copyWith(transactions: success);
-      emit(state.copyWith(
-          walletEntity: wallet,
-          isSubmitting: false,
-          showErrorMessage: true,
-          walletFailureOrSuccessOption: some(right(unit))));
-    }
+    final wallet = failureOrSuccess.fold(
+        (_) => state.walletEntity /* no update in case of `WalletFailure` */,
+        (txs) => state.walletEntity?.copyWith(transactions: txs));
+
+    emit(state.copyWith(
+        isSubmitting: false,
+        showErrorMessage: true,
+        walletEntity: wallet,
+        walletFailureOrSuccessOption: some(failureOrSuccess)));
   }
 
   Future<FutureOr<void>> _onGetPendingTransaction(
@@ -166,21 +158,15 @@ class WalletBloc extends Bloc<WalletEvent, WalletState> {
     emit(state.copyWith(
         isSubmitting: true, walletFailureOrSuccessOption: none()));
     final failureOrSuccess = await _walletService.getPendingTransactions();
-    if (failureOrSuccess.isLeft()) {
-      final failure = failureOrSuccess.fold((l) => l, (r) => null);
-      emit(state.copyWith(
-          isSubmitting: false,
-          showErrorMessage: true,
-          walletFailureOrSuccessOption: some(left(failure!))));
-    } else {
-      final success = failureOrSuccess.fold((l) => null, (r) => r);
-      final wallet = state.walletEntity?.copyWith(transactions: success);
-      emit(state.copyWith(
-          walletEntity: wallet,
-          isSubmitting: false,
-          showErrorMessage: true,
-          walletFailureOrSuccessOption: some(right(unit))));
-    }
+    final wallet = failureOrSuccess.fold(
+        (_) => state.walletEntity /* no update in case of `WalletFailure` */,
+        (txs) => state.walletEntity?.copyWith(transactions: txs));
+
+    emit(state.copyWith(
+        isSubmitting: false,
+        showErrorMessage: true,
+        walletEntity: wallet,
+        walletFailureOrSuccessOption: some(failureOrSuccess)));
   }
 
   Future<FutureOr<void>> _onGetLastUsedAddress(
@@ -188,42 +174,31 @@ class WalletBloc extends Bloc<WalletEvent, WalletState> {
     emit(state.copyWith(
         isSubmitting: true, walletFailureOrSuccessOption: none()));
     final failureOrSuccess = await _walletService.getLastUsedAddress();
-    if (failureOrSuccess.isLeft()) {
-      final failure = failureOrSuccess.fold((l) => l, (r) => null);
-      emit(state.copyWith(
-          isSubmitting: false,
-          showErrorMessage: true,
-          walletFailureOrSuccessOption: some(left(failure!))));
-    } else {
-      final success = failureOrSuccess.fold((l) => null, (r) => r);
-      final wallet = state.walletEntity?.copyWith(address: success!);
-      emit(state.copyWith(
-          walletEntity: wallet,
-          isSubmitting: false,
-          showErrorMessage: true,
-          walletFailureOrSuccessOption: some(right(unit))));
-    }
+    final wallet = failureOrSuccess.fold(
+        (_) => state.walletEntity /* no update in case of `WalletFailure` */,
+        (address) => state.walletEntity?.copyWith(address: address));
+
+    emit(state.copyWith(
+        walletEntity: wallet,
+        isSubmitting: false,
+        showErrorMessage: true,
+        walletFailureOrSuccessOption: some(failureOrSuccess)));
   }
 
   Future<FutureOr<void>> _onGetBalance(
       GetBalance event, Emitter<WalletState> emit) async {
-    emit(state.copyWith(isSubmitting: true, walletFailureOrSuccessOption: none()));
+    emit(state.copyWith(
+        isSubmitting: true, walletFailureOrSuccessOption: none()));
     final failureOrSuccess = await _walletService.getBalance();
-    if (failureOrSuccess.isLeft()) {
-      final failure = failureOrSuccess.fold((l) => l, (r) => null);
-      emit(state.copyWith(
-          isSubmitting: false,
-          showErrorMessage: true,
-          walletFailureOrSuccessOption: some(left(failure!))));
-    } else {
-      final success = failureOrSuccess.fold((l) => null, (r) => r);
-      final wallet = state.walletEntity?.copyWith(balance: success!);
-      emit(state.copyWith(
-          walletEntity: wallet,
-          isSubmitting: false,
-          showErrorMessage: true,
-          walletFailureOrSuccessOption: some(right(unit))));
-    }
+    final wallet = failureOrSuccess.fold(
+        (_) => state.walletEntity /* no update in case of `WalletFailure` */,
+        (balance) => state.walletEntity?.copyWith(balance: balance));
+
+    emit(state.copyWith(
+        walletEntity: wallet,
+        isSubmitting: false,
+        showErrorMessage: true,
+        walletFailureOrSuccessOption: some(failureOrSuccess)));
   }
 
   Future<FutureOr<void>> _onCreateAndSign(
@@ -231,48 +206,45 @@ class WalletBloc extends Bloc<WalletEvent, WalletState> {
     emit(state.copyWith(
         isSubmitting: true, walletFailureOrSuccessOption: none()));
     final failureOrSuccess =
-    await _walletService.createAndSign(event.address, event.amount);
-    if (failureOrSuccess.isLeft()) {
-      final failure = failureOrSuccess.fold((l) => l, (r) => null);
-      emit(state.copyWith(
-          isSubmitting: false,
-          showErrorMessage: true,
-          walletFailureOrSuccessOption: some(left(failure!))));
-    } else {
-      final success = failureOrSuccess.fold((l) => null, (r) => r);
-      emit(state.copyWith(
-          isSubmitting: false,
-          showErrorMessage: true,
-          walletFailureOrSuccessOption: some(right(success))));
-    }
+        await _walletService.createAndSign(event.address, event.amount);
+
+    emit(state.copyWith(
+        isSubmitting: false,
+        showErrorMessage: true,
+        walletFailureOrSuccessOption: some(failureOrSuccess)));
   }
 
-  Future<void> _onRestoreWallet(RestoreWallet event, Emitter<WalletState> emit) async {
-    emit(state.copyWith(isSubmitting: true, walletFailureOrSuccessOption: some(right(unit))));
-    final failureOrSuccess = await _walletService.createWallet(walletDto: event.walletDto);
-    if (failureOrSuccess.isLeft()) {
-      final failure = failureOrSuccess.fold((l) => l, (r) => null);
-      emit(state.copyWith(
-          isSubmitting: false,
-          showErrorMessage: true,
-          walletFailureOrSuccessOption: some(left(failure!))));
-    } else {
-      final success = failureOrSuccess.fold((l) => null, (r) => r);
-      final wallet = state.walletEntity?.copyWith(wallet: success);
-      emit(state.copyWith(
-          walletEntity: wallet,
-          isSubmitting: false,
-          showErrorMessage: true,
-          walletFailureOrSuccessOption: const None()));
-    }
+  Future<void> _onRestoreWallet(
+      RestoreWallet event, Emitter<WalletState> emit) async {
+    emit(state.copyWith(
+        isSubmitting: true, walletFailureOrSuccessOption: some(right(unit))));
+    final failureOrSuccess =
+        await _walletService.createWallet(walletDto: event.walletDto);
+
+    failureOrSuccess.fold(
+        (failure) => {
+              emit(state.copyWith(
+                  isSubmitting: false,
+                  showErrorMessage: true,
+                  walletFailureOrSuccessOption: some(left(failure))))
+            },
+        (wallet) => {
+              emit(state.copyWith(
+                  walletEntity: state.walletEntity?.copyWith(wallet: wallet),
+                  isSubmitting: false,
+                  showErrorMessage: true,
+                  walletFailureOrSuccessOption: const None()))
+            });
   }
 
-  Future<void> _onGetWallets(GetWallets event, Emitter<WalletState> emit) async {
-    emit(state.copyWith(isSubmitting: true, walletFailureOrSuccessOption: some(right(unit))));
+  Future<void> _onGetWallets(
+      GetWallets event, Emitter<WalletState> emit) async {
+    emit(state.copyWith(
+        isSubmitting: true, walletFailureOrSuccessOption: some(right(unit))));
     final wallets = await _walletService.getAllWallets();
-      emit(state.copyWith(
-          isSubmitting: false,
-          showErrorMessage: true,
-          walletFailureOrSuccessOption: some(right(wallets))));
-    }
+    emit(state.copyWith(
+        isSubmitting: false,
+        showErrorMessage: true,
+        walletFailureOrSuccessOption: some(right(wallets))));
   }
+}

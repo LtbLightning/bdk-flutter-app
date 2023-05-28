@@ -1,7 +1,6 @@
 import 'package:bdk_wallet/application/wallet/wallet_bloc.dart';
 import 'package:bdk_wallet/presentaition/core/routes/routes.dart';
 import 'package:bdk_wallet/presentaition/wallet/widgets/cached_wallet_list.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -105,5 +104,3 @@ class Body extends StatelessWidget {
     );
   }
 }
-
-

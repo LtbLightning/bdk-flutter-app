@@ -225,7 +225,7 @@ class _SendState extends State<Send> {
                                               'All fields must have a valid value',
                                               style: Theme.of(context)
                                                   .textTheme
-                                                  .bodyText1!
+                                                  .bodyLarge!
                                                   .copyWith(
                                                     color: Colors.white,
                                                     fontSize: 14,
