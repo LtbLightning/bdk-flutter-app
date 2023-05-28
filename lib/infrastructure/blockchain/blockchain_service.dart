@@ -1,8 +1,8 @@
 import 'package:bdk_flutter/bdk_flutter.dart';
 import 'package:bdk_wallet/domain/blockchain/entity/blockchain.dart';
 import 'package:bdk_wallet/domain/blockchain/failure/blockchain_failure.dart';
-import 'package:bdk_wallet/domain/blockchain/interface/i_blockchain_serivice.dart';
-import 'package:bdk_wallet/infrastructure/blockchain/DTO/blockchain_dto.dart';
+import 'package:bdk_wallet/domain/blockchain/interface/i_blockchain_service.dart';
+import 'package:bdk_wallet/infrastructure/blockchain/dto/blockchain_dto.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 
@@ -26,7 +26,8 @@ class BlockchainService extends IBlockchainService {
   Future<Either<BlockchainFailure, Unit>> broadcastTransaction(
       {required PartiallySignedTransaction psbt}) async {
     try {
-      await _blockchain!.broadcast(psbt);
+      final tx = await psbt.extractTx();
+      await _blockchain!.broadcast(tx);
       return const Right(unit);
     } on Exception catch (_) {
       return const Left(BlockchainFailure.unexpected());
@@ -52,7 +53,7 @@ Future<String> createDescriptorSecret(String mnemonicStr) async {
   );
   final path = await DerivationPath.create(path: "m/84'/1'/0'");
   final extendedXprv = await descriptorSecretKey.derive(path);
-  final extendedXprvStr = await extendedXprv.asString();
+  final extendedXprvStr = extendedXprv.asString();
   return extendedXprvStr;
 }
 

@@ -1,5 +1,4 @@
 import 'package:bdk_flutter/bdk_flutter.dart';
-import 'package:bdk_wallet/domain/core/value_objects/value_objects.dart';
 import 'package:bdk_wallet/domain/wallet/failure/wallet_failure.dart';
 import 'package:dartz/dartz.dart';
 
@@ -25,6 +24,6 @@ abstract class IWalletService {
   Future<Either<WalletFailure, List<TransactionDetails>>>
       getConfirmedTransactions();
 
-  Future<Either<WalletFailure, String>> createAndSign(
+  Future<Either<WalletFailure, PartiallySignedTransaction>> createAndSign(
       String address, int amount);
 }

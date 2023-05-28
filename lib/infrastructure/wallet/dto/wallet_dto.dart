@@ -10,9 +10,9 @@ class WalletDto{
 
   Map<String, dynamic> toJson() {
     return {
-      "mnemonic": this.mnemonic,
-      "password": this.password,
-      "network": this.network.name.toString(),
+      "mnemonic": mnemonic,
+      "password": password,
+      "network": network.name.toString(),
     };
   }
 

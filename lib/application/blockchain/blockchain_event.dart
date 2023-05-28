@@ -10,6 +10,6 @@ class BlockchainEvent with _$BlockchainEvent {
 
   const factory BlockchainEvent.blockchainCreate() = BlockchainCreate;
 
-  const factory BlockchainEvent.broadcastTransaction({required String psbt}) =
+  const factory BlockchainEvent.broadcastTransaction({required PartiallySignedTransaction psbt}) =
       BroadcastTransaction;
 }

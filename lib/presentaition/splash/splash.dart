@@ -1,5 +1,4 @@
 import 'package:bdk_wallet/application/connectivity/connectivity_cubit.dart';
-import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -33,7 +32,7 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
     });
 
     scaleAnimation = Tween(
-      begin: 0.4,
+      begin: 0.2,
       end: 1.0,
     ).animate(CurvedAnimation(parent: _controller, curve: Curves.bounceIn));
 

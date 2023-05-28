@@ -67,7 +67,7 @@ class _PageWrapperState extends State<PageWrapper> {
             color: Colors.white,
             elevation: 5.0,
             notchMargin: 5,
-            shape: CircularNotchedRectangle(),
+            shape: const CircularNotchedRectangle(),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -151,7 +151,7 @@ class _PageWrapperState extends State<PageWrapper> {
             Text(
               label,
               textAlign: TextAlign.start,
-              style: Theme.of(context).textTheme.bodyText1?.copyWith(
+              style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                   fontSize: 12,
                   color: _selectedIndex == index
                       ? Theme.of(context).primaryColor

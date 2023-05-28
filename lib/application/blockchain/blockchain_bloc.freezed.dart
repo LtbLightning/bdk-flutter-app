@@ -21,7 +21,8 @@ mixin _$BlockchainEvent {
     required TResult Function(BlockchainUrl url) blockChainUrlChanged,
     required TResult Function(BlockChainType blockchain) blockChainChanged,
     required TResult Function() blockchainCreate,
-    required TResult Function(String psbt) broadcastTransaction,
+    required TResult Function(PartiallySignedTransaction psbt)
+        broadcastTransaction,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -29,7 +30,7 @@ mixin _$BlockchainEvent {
     TResult? Function(BlockchainUrl url)? blockChainUrlChanged,
     TResult? Function(BlockChainType blockchain)? blockChainChanged,
     TResult? Function()? blockchainCreate,
-    TResult? Function(String psbt)? broadcastTransaction,
+    TResult? Function(PartiallySignedTransaction psbt)? broadcastTransaction,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -37,7 +38,7 @@ mixin _$BlockchainEvent {
     TResult Function(BlockchainUrl url)? blockChainUrlChanged,
     TResult Function(BlockChainType blockchain)? blockChainChanged,
     TResult Function()? blockchainCreate,
-    TResult Function(String psbt)? broadcastTransaction,
+    TResult Function(PartiallySignedTransaction psbt)? broadcastTransaction,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -154,7 +155,8 @@ class _$BlockChainUrlChanged implements BlockChainUrlChanged {
     required TResult Function(BlockchainUrl url) blockChainUrlChanged,
     required TResult Function(BlockChainType blockchain) blockChainChanged,
     required TResult Function() blockchainCreate,
-    required TResult Function(String psbt) broadcastTransaction,
+    required TResult Function(PartiallySignedTransaction psbt)
+        broadcastTransaction,
   }) {
     return blockChainUrlChanged(url);
   }
@@ -165,7 +167,7 @@ class _$BlockChainUrlChanged implements BlockChainUrlChanged {
     TResult? Function(BlockchainUrl url)? blockChainUrlChanged,
     TResult? Function(BlockChainType blockchain)? blockChainChanged,
     TResult? Function()? blockchainCreate,
-    TResult? Function(String psbt)? broadcastTransaction,
+    TResult? Function(PartiallySignedTransaction psbt)? broadcastTransaction,
   }) {
     return blockChainUrlChanged?.call(url);
   }
@@ -176,7 +178,7 @@ class _$BlockChainUrlChanged implements BlockChainUrlChanged {
     TResult Function(BlockchainUrl url)? blockChainUrlChanged,
     TResult Function(BlockChainType blockchain)? blockChainChanged,
     TResult Function()? blockchainCreate,
-    TResult Function(String psbt)? broadcastTransaction,
+    TResult Function(PartiallySignedTransaction psbt)? broadcastTransaction,
     required TResult orElse(),
   }) {
     if (blockChainUrlChanged != null) {
@@ -301,7 +303,8 @@ class _$BlockChainChanged implements BlockChainChanged {
     required TResult Function(BlockchainUrl url) blockChainUrlChanged,
     required TResult Function(BlockChainType blockchain) blockChainChanged,
     required TResult Function() blockchainCreate,
-    required TResult Function(String psbt) broadcastTransaction,
+    required TResult Function(PartiallySignedTransaction psbt)
+        broadcastTransaction,
   }) {
     return blockChainChanged(blockchain);
   }
@@ -312,7 +315,7 @@ class _$BlockChainChanged implements BlockChainChanged {
     TResult? Function(BlockchainUrl url)? blockChainUrlChanged,
     TResult? Function(BlockChainType blockchain)? blockChainChanged,
     TResult? Function()? blockchainCreate,
-    TResult? Function(String psbt)? broadcastTransaction,
+    TResult? Function(PartiallySignedTransaction psbt)? broadcastTransaction,
   }) {
     return blockChainChanged?.call(blockchain);
   }
@@ -323,7 +326,7 @@ class _$BlockChainChanged implements BlockChainChanged {
     TResult Function(BlockchainUrl url)? blockChainUrlChanged,
     TResult Function(BlockChainType blockchain)? blockChainChanged,
     TResult Function()? blockchainCreate,
-    TResult Function(String psbt)? broadcastTransaction,
+    TResult Function(PartiallySignedTransaction psbt)? broadcastTransaction,
     required TResult orElse(),
   }) {
     if (blockChainChanged != null) {
@@ -421,7 +424,8 @@ class _$BlockchainCreate implements BlockchainCreate {
     required TResult Function(BlockchainUrl url) blockChainUrlChanged,
     required TResult Function(BlockChainType blockchain) blockChainChanged,
     required TResult Function() blockchainCreate,
-    required TResult Function(String psbt) broadcastTransaction,
+    required TResult Function(PartiallySignedTransaction psbt)
+        broadcastTransaction,
   }) {
     return blockchainCreate();
   }
@@ -432,7 +436,7 @@ class _$BlockchainCreate implements BlockchainCreate {
     TResult? Function(BlockchainUrl url)? blockChainUrlChanged,
     TResult? Function(BlockChainType blockchain)? blockChainChanged,
     TResult? Function()? blockchainCreate,
-    TResult? Function(String psbt)? broadcastTransaction,
+    TResult? Function(PartiallySignedTransaction psbt)? broadcastTransaction,
   }) {
     return blockchainCreate?.call();
   }
@@ -443,7 +447,7 @@ class _$BlockchainCreate implements BlockchainCreate {
     TResult Function(BlockchainUrl url)? blockChainUrlChanged,
     TResult Function(BlockChainType blockchain)? blockChainChanged,
     TResult Function()? blockchainCreate,
-    TResult Function(String psbt)? broadcastTransaction,
+    TResult Function(PartiallySignedTransaction psbt)? broadcastTransaction,
     required TResult orElse(),
   }) {
     if (blockchainCreate != null) {
@@ -500,7 +504,7 @@ abstract class _$$BroadcastTransactionCopyWith<$Res> {
           $Res Function(_$BroadcastTransaction) then) =
       __$$BroadcastTransactionCopyWithImpl<$Res>;
   @useResult
-  $Res call({String psbt});
+  $Res call({PartiallySignedTransaction psbt});
 }
 
 /// @nodoc
@@ -520,7 +524,7 @@ class __$$BroadcastTransactionCopyWithImpl<$Res>
       psbt: null == psbt
           ? _value.psbt
           : psbt // ignore: cast_nullable_to_non_nullable
-              as String,
+              as PartiallySignedTransaction,
     ));
   }
 }
@@ -531,7 +535,7 @@ class _$BroadcastTransaction implements BroadcastTransaction {
   const _$BroadcastTransaction({required this.psbt});
 
   @override
-  final String psbt;
+  final PartiallySignedTransaction psbt;
 
   @override
   String toString() {
@@ -562,7 +566,8 @@ class _$BroadcastTransaction implements BroadcastTransaction {
     required TResult Function(BlockchainUrl url) blockChainUrlChanged,
     required TResult Function(BlockChainType blockchain) blockChainChanged,
     required TResult Function() blockchainCreate,
-    required TResult Function(String psbt) broadcastTransaction,
+    required TResult Function(PartiallySignedTransaction psbt)
+        broadcastTransaction,
   }) {
     return broadcastTransaction(psbt);
   }
@@ -573,7 +578,7 @@ class _$BroadcastTransaction implements BroadcastTransaction {
     TResult? Function(BlockchainUrl url)? blockChainUrlChanged,
     TResult? Function(BlockChainType blockchain)? blockChainChanged,
     TResult? Function()? blockchainCreate,
-    TResult? Function(String psbt)? broadcastTransaction,
+    TResult? Function(PartiallySignedTransaction psbt)? broadcastTransaction,
   }) {
     return broadcastTransaction?.call(psbt);
   }
@@ -584,7 +589,7 @@ class _$BroadcastTransaction implements BroadcastTransaction {
     TResult Function(BlockchainUrl url)? blockChainUrlChanged,
     TResult Function(BlockChainType blockchain)? blockChainChanged,
     TResult Function()? blockchainCreate,
-    TResult Function(String psbt)? broadcastTransaction,
+    TResult Function(PartiallySignedTransaction psbt)? broadcastTransaction,
     required TResult orElse(),
   }) {
     if (broadcastTransaction != null) {
@@ -632,10 +637,11 @@ class _$BroadcastTransaction implements BroadcastTransaction {
 }
 
 abstract class BroadcastTransaction implements BlockchainEvent {
-  const factory BroadcastTransaction({required final String psbt}) =
+  const factory BroadcastTransaction(
+          {required final PartiallySignedTransaction psbt}) =
       _$BroadcastTransaction;
 
-  String get psbt;
+  PartiallySignedTransaction get psbt;
   @JsonKey(ignore: true)
   _$$BroadcastTransactionCopyWith<_$BroadcastTransaction> get copyWith =>
       throw _privateConstructorUsedError;

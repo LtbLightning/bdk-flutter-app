@@ -37,12 +37,12 @@ class _CachedWalletListState extends State<CachedWalletList> {
                         (l) => null,
                         (r) {
                       if (r ==dartz.unit){
-                        return Container(child: Text('No Wallets Found',
+                        return Text('No Wallets Found',
                             style: GoogleFonts.montserrat(
                                 fontSize: 15,
                                 color: Colors.black.withOpacity(.8),
                                 height: 2.2,
-                                fontWeight: FontWeight.w600)));
+                                fontWeight: FontWeight.w600));
                       } else{
                         final dtos = r as List<WalletDto>;
                       return Container(
@@ -96,5 +96,3 @@ class _CachedWalletListState extends State<CachedWalletList> {
 
   }
 }
-
-

@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:bdk_flutter/bdk_flutter.dart';
 import 'package:bdk_wallet/domain/wallet/failure/wallet_failure.dart';
-import 'package:bdk_wallet/domain/wallet/interface/i_wallet_Service.dart';
+import 'package:bdk_wallet/domain/wallet/interface/i_wallet_service.dart';
 import 'package:bdk_wallet/infrastructure/wallet/dto/wallet_dto.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
@@ -43,7 +43,7 @@ class WalletService extends IWalletService {
     for ( var e in walletDtos){
       wallets.add(jsonEncode(e.toJson()));
     }
-    final res =  await Persist().writeToFile("${wallets.toString()}", "wallets");
+    final res =  await Persist().writeToFile(wallets.toString(), "wallets");
     return res;
   }
 
@@ -80,7 +80,7 @@ class WalletService extends IWalletService {
     try {
       final response = await _wallet!.getBalance();
       return Right(response);
-    } on Exception catch (e) {
+    } on Exception catch (_) {
       return const Left(WalletFailure.unexpected());
     }
   }
@@ -89,9 +89,9 @@ class WalletService extends IWalletService {
   Future<Either<WalletFailure, List<TransactionDetails>>>
   getConfirmedTransactions() async {
     try {
-      final response = await _wallet!.listTransactions();
+      final response = await _wallet!.listTransactions(false);
       return Right(response);
-    } on Exception catch (e) {
+    } on Exception catch (_) {
       return const Left(WalletFailure.noTransactions());
     }
   }
@@ -100,7 +100,7 @@ class WalletService extends IWalletService {
   Future<Either<WalletFailure, String>> getNewAddress() async {
     try {
       final response =
-      await _wallet!.getAddress(addressIndex: AddressIndex.New);
+      await _wallet!.getAddress(addressIndex: const AddressIndex());
       return Right(response.address);
     } on Exception catch (_) {
       return const Left(WalletFailure.unexpected());
@@ -111,9 +111,9 @@ class WalletService extends IWalletService {
   Future<Either<WalletFailure, List<TransactionDetails>>>
   getPendingTransactions() async {
     try {
-      final response = await _wallet!.listTransactions();
+      final response = await _wallet!.listTransactions(true);
       return Right(response);
-    } on Exception catch (e) {
+    } on Exception catch (_) {
       return const Left(WalletFailure.noTransactions());
     }
   }
@@ -123,7 +123,7 @@ class WalletService extends IWalletService {
     try {
       await _wallet!.sync(blockchain);
       return const Right(unit);
-    } on Exception catch (e) {
+    } on Exception catch (_) {
       return const Left(WalletFailure.unexpected());
     }
   }
@@ -132,7 +132,7 @@ class WalletService extends IWalletService {
   Future<Either<WalletFailure, String>> getLastUsedAddress() async {
     try {
       final response =
-      await _wallet!.getAddress(addressIndex: AddressIndex.LastUnused);
+      await _wallet!.getAddress(addressIndex: const AddressIndex.lastUnused());
       return Right(response.address);
     } on Exception catch (_) {
       return const Left(WalletFailure.unexpected());
@@ -140,17 +140,17 @@ class WalletService extends IWalletService {
   }
 
   @override
-  Future<Either<WalletFailure, String>> createAndSign(
+  Future<Either<WalletFailure, PartiallySignedTransaction>> createAndSign(
       String address, int amount) async {
     try {
       final resAddress = await Address.create(address: address);
       final script = await resAddress.scriptPubKey();
-      final sbt = await TxBuilder()
+      final tx = await TxBuilder()
           .addRecipient(script, amount)
           .feeRate(1.5)
           .finish(_wallet!);
-      final response = await _wallet!.sign(sbt);
-      return Right(response.psbtBase64);
+      final response = await _wallet!.sign(psbt: tx.psbt);
+      return Right(response);
     } on Exception catch (_) {
       return const Left(WalletFailure.unexpected());
     }
@@ -165,7 +165,6 @@ Future<Descriptor> createDescriptorSecret(WalletDto walletDto, KeychainKind keyC
       mnemonic: mnemonic,
       password: walletDto.password
   );
-  final descriptor = await Descriptor.newBip84(secretKey: descriptorSecretKey.asString(), network: walletDto.network, keyChainKind: keyChainKind);
+  final descriptor = await Descriptor.newBip84(secretKey: descriptorSecretKey, network: walletDto.network, keychain: keyChainKind);
   return descriptor;
 }
-

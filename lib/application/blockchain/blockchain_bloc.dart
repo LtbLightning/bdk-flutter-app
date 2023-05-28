@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:bdk_flutter/bdk_flutter.dart';
 import 'package:bdk_wallet/core/constants/enums.dart';
 import 'package:bdk_wallet/domain/blockchain/entity/blockchain.dart';
-import 'package:bdk_wallet/domain/blockchain/interface/i_blockchain_serivice.dart';
+import 'package:bdk_wallet/domain/blockchain/interface/i_blockchain_service.dart';
 import 'package:bdk_wallet/domain/core/value_objects/value_objects.dart';
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
@@ -50,21 +50,15 @@ class BlockchainBloc extends Bloc<BlockchainEvent, BlockchainState> {
   Future<FutureOr<void>> _onBroadcastTransaction(
       BroadcastTransaction event, Emitter<BlockchainState> emit) async {
     emit(state.copyWith(isSubmitting: true));
-    final failureOrSuccess = await _blockchainService.broadcastTransaction(
-        psbt: PartiallySignedTransaction(psbtBase64: event.psbt));
 
-    if (failureOrSuccess.isLeft()) {
-      final failure = failureOrSuccess.fold((l) => l, (r) => null);
-      emit(state.copyWith(
-          isSubmitting: false,
-          showErrorMessage: true,
-          blockchainFailureOrSuccessOption: some(left(failure!))));
-    } else {
-      emit(state.copyWith(
-          isSubmitting: false,
-          showErrorMessage: true,
-          blockchainFailureOrSuccessOption: some(right(unit))));
-    }
+    final failureOrSuccess = await _blockchainService.broadcastTransaction(
+        psbt: event.psbt
+    );
+
+    emit(state.copyWith(
+        isSubmitting: false,
+        showErrorMessage: true,
+        blockchainFailureOrSuccessOption: some(failureOrSuccess)));
   }
 
   Future<FutureOr<void>> _onBlockchainCreate(
